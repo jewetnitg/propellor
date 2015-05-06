@@ -15,9 +15,9 @@
     "gulp-autoprefixer": "1.0.1",
     "gulp-cache": "^0.2.0",
     "gulp-changed": "1.0.0",
-    "gulp-cucumber": "0.0.8",
     "gulp-coffee": "2.2.0",
     "gulp-concat": "^2.3.4",
+    "gulp-cucumber": "0.0.8",
     "gulp-if": "^1.2.4",
     "gulp-imagemin": "^1.0.1",
     "gulp-jade": "0.8.0",
@@ -42,8 +42,7 @@
     "rimraf": "*",
     "run-sequence": "1.0.0",
     "sails": "~0.11.0",
-    "sails-disk": "~0.10.0",
-    "sails-hook-gulp": "0.0.1"
+    "sails-disk": "~0.10.0"
   },
   "scripts": {
     "start": "node app.js",
