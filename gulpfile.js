@@ -66,13 +66,22 @@ var gulp = require('gulp'),
 	function invokeConfigFn(tasks) {
 		for (var taskName in tasks) {
 			if (tasks.hasOwnProperty(taskName)) {
-				tasks[taskName](gulp, plugins, growl, path);
+				tasks[taskName](gulp, plugins, growl, path, childTasks);
 			}
 		}
 	}
 
 
-
+var childTasks = {
+  client: {
+    config: loadTasks('./src/client/tasks/config'),
+    register: loadTasks('./src/client/tasks/register')
+  },
+  server: {
+    config: loadTasks('./src/server/tasks/config'),
+    register: loadTasks('./src/server/tasks/register')
+  }
+};
 
 	// Load task functions
 	var taskConfigurations = loadTasks('./tasks/config'),
@@ -86,5 +95,4 @@ var gulp = require('gulp'),
 	// Run task functions to configure Gulp.
 	invokeConfigFn(taskConfigurations);
 	invokeConfigFn(registerDefinitions);
-
 //};
