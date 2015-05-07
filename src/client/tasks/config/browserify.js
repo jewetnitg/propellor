@@ -12,12 +12,12 @@
 'use strict';
 
 var browserify  = require('browserify'),
-  source      = require('vinyl-source-stream'),
-  buffer      = require('vinyl-buffer'),
-  uglify      = require('gulp-uglify'),
-  gutil       = require('gulp-util'),
-  babelify    = require('babelify'),
-  sourcemaps  = require('gulp-sourcemaps');
+    source      = require('vinyl-source-stream'),
+    buffer      = require('vinyl-buffer'),
+    uglify      = require('gulp-uglify'),
+    gutil       = require('gulp-util'),
+    babelify    = require('babelify'),
+    sourcemaps  = require('gulp-sourcemaps');
 
 module.exports = function(gulp, plugins, growl) {
   gulp.task('browserify', function () {
@@ -33,9 +33,13 @@ module.exports = function(gulp, plugins, growl) {
       .bundle()
       .pipe(source('main.js'))
       .pipe(buffer())
+
       .pipe(sourcemaps.init({loadMaps: true}))
+
       // Add transformation tasks to the pipeline here.
+
       .pipe(uglify())
+
       .on('error', gutil.log)
       .pipe(sourcemaps.write('./'))
       .pipe(gulp.dest('./src/client/.tmp/'));

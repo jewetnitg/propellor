@@ -1,10 +1,7 @@
 var World;
 
-var BaseObject  = require('../../assets/js/lib/entities/BaseObject');
 
 module.exports.World = World = function(callback) {
-
-  this.BaseObject = BaseObject;
 
   this.pages = {
     'index': '/index',
@@ -12,19 +9,19 @@ module.exports.World = World = function(callback) {
   };
 
   this.instantiate = function(arg) {
-    this.baseObject = new this.BaseObject(arg);
+    this.baseObject = {};
   };
 
   this.set = function(key, value) {
-    this.baseObject.set(key, value);
+    this.baseObject[key] = value;
   };
 
   this.get = function(arg) {
-    return this.baseObject.get(arg);
+    return this.baseObject[arg];
   };
 
   this.result = function() {
-    this.baseObject.get();
+    this.baseObject;
   };
 
   this.doBeforeScenario = function() {

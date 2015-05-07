@@ -4,6 +4,7 @@ module.exports = function (gulp, plugins) {
 			'clean:client',
       'browserify',
       'copy:client',
+      'cucumber:client',
 			cb
 		);
 	});
