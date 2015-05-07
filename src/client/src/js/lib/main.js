@@ -8,5 +8,6 @@ if (window) {
   window.$ = $;
 }
 
-
-window.document.body.innerHTML = 'Hello World :) !!';
+$(function () {
+  $('body').text('Hello World :) !!');
+});
