@@ -1,7 +1,7 @@
 module.exports = function (gulp, plugins) {
 	gulp.task('default', function(cb) {
 		plugins.sequence(
-      
+
       'build:server',
       'build:client',
       
@@ -13,10 +13,12 @@ module.exports = function (gulp, plugins) {
       'clean:sails-tasks',
       'copy:sails-tasks',
 
+      'copy:gulpfile',
       'copy:package-json',
       'copy:node-modules',
 
 			cb
+      
 		);
 	});
 };

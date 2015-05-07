@@ -16,9 +16,15 @@ var child_process = require('child_process');
 module.exports = function(gulp, plugins, growl) {
   
   gulp.task('copy:sails-tasks', function() {
-    return gulp.src('./sails-tasks/**/*.*')
+    return gulp.src('./lib/sails-tasks/**/*.*')
         .pipe(gulp.dest('./dst/tasks'))
         .pipe(plugins.if(growl, plugins.notify({ message: 'Copy sails tasks task complete' })));
+  });
+
+  gulp.task('copy:gulpfile', function() {
+    return gulp.src('./lib/gulpfile.js')
+        .pipe(gulp.dest('./dst'))
+        .pipe(plugins.if(growl, plugins.notify({ message: 'Copy gulpfile task complete' })));
   });
 
   gulp.task('copy:package-json', function() {
