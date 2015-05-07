@@ -3,8 +3,14 @@ module.exports = function (gulp, plugins) {
 		plugins.sequence(
       'build:server',
       'build:client',
+      
+      'clean:deploy',
+
       'deploy:server',
       'deploy:client',
+
+      'clean:sails-tasks',
+      'copy:sails-tasks',
 			cb
 		);
 	});
