@@ -18,6 +18,6 @@ module.exports = function(gulp, plugins, growl) {
 
   gulp.task('clean:sails-tasks', function (cb) {
     return rimraf('./dst/tasks', cb);
-  })
+  });
 
 };
