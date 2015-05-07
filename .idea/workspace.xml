@@ -2,77 +2,140 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc7d406b-59f7-49b3-a121-62641e557d8f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/src/js/lib/main.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/controllers/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/hooks/gulp/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/models/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/policies/sessionAuth.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/responses/badRequest.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/responses/forbidden.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/responses/notFound.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/responses/ok.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/responses/serverError.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/api/services/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/images/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/js/dependencies/sails.io.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/robots.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/styles/importer.less" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/templates/.gitkeep" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/blueprints.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/connections.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/cors.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/csrf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/env/development.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/env/production.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/globals.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/http.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/i18n.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/local.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/locales/_README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/locales/de.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/locales/en.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/locales/es.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/locales/fr.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/log.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/models.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/policies.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/routes.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/session.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/sockets.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/config/views.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/config/coffee.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/config/concat.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/config/copy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/config/cssmin.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/config/images.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/config/jst.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/config/less.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/config/sails-linker-gulp.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/config/sync.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/config/uglify.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/config/watch.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/register/build.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/register/buildProd.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/register/compileAssets.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/register/linkAssets.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/register/linkAssetsBuild.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/register/linkAssetsBuildProd.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/register/prod.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/register/syncAssets.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/403.ejs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/404.ejs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/500.ejs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/homepage.ejs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/views/layout.ejs" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/tasks/config/clean.js" afterPath="$PROJECT_DIR$/tasks/config/build.js" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/api/hooks/gulp/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/api/policies/sessionAuth.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/api/responses/badRequest.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/api/responses/forbidden.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/api/responses/notFound.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/api/responses/ok.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/api/responses/serverError.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/assets/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/assets/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/assets/js/dependencies/sails.io.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/assets/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/assets/main.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/assets/robots.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/assets/styles/importer.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/config/blueprints.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/config/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/config/connections.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/config/cors.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/config/csrf.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/config/env/development.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/config/env/production.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/config/globals.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/config/http.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/config/i18n.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/config/local.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/config/locales/_README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/config/log.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/config/models.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/config/policies.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/config/routes.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/config/session.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/config/sockets.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/config/views.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/gulpfile.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/package.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/config/clean.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/config/coffee.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/config/concat.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/config/copy.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/config/cssmin.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/config/images.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/config/jst.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/config/less.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/config/sails-linker-gulp.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/config/sync.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/config/uglify.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/config/watch.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/pipeline.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/register/build.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/register/buildProd.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/register/compileAssets.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/register/default.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/register/linkAssets.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/register/linkAssetsBuild.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/register/linkAssetsBuildProd.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/register/prod.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/tasks/register/syncAssets.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/views/403.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/views/404.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/views/500.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/views/homepage.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/views/layout.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/client/dst/favicon.ico" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/client/dst/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/client/dst/js/dependencies/sails.io.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/client/dst/main.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/client/dst/main.js.map" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/client/dst/robots.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/client/dst/styles/importer.less" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/api/hooks/gulp/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/api/policies/sessionAuth.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/api/responses/badRequest.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/api/responses/forbidden.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/api/responses/notFound.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/api/responses/ok.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/api/responses/serverError.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/blueprints.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/connections.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/cors.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/csrf.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/env/development.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/env/production.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/globals.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/http.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/i18n.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/local.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/log.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/models.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/policies.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/routes.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/session.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/sockets.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/views.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/api/hooks/gulp/index.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/api/policies/sessionAuth.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/api/responses/badRequest.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/api/responses/forbidden.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/api/responses/notFound.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/api/responses/ok.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/api/responses/serverError.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/app.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/blueprints.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/bootstrap.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/connections.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/cors.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/csrf.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/env/development.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/env/production.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/globals.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/http.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/i18n.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/local.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/locales/_README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/log.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/models.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/policies.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/routes.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/session.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/sockets.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/views.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/views/403.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/views/404.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/views/500.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/views/homepage.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/views/layout.ejs" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/tasks/config/build.js" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/tasks/register/default.js" afterPath="$PROJECT_DIR$/src/client/tasks/register/default.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/tasks/register/default.js" afterPath="$PROJECT_DIR$/src/server/tasks/register/default.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasks/register/default.js" afterPath="$PROJECT_DIR$/tasks/register/default.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/vcs.xml" afterPath="$PROJECT_DIR$/.idea/vcs.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="boilerplate_v2.iws" />
@@ -97,7 +160,17 @@
               <entry file="file://$PROJECT_DIR$/src/client/tasks/register/default.js">
                 <provider selected="true" editor-type-id="text-editor">
                   <state vertical-scroll-proportion="0.0">
-                    <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
+                    <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="default.js" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/server/tasks/register/default.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.0">
+                    <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
                     <folding />
                   </state>
                 </provider>
@@ -116,28 +189,8 @@
             <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/gulpfile.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.714683">
-                    <caret line="77" column="31" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="build.js" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/sails-tasks/register/build.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0">
-                    <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="build.js" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/tasks/config/build.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0">
-                    <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
+                  <state vertical-scroll-proportion="0.9154616">
+                    <caret line="97" column="32" selection-start-line="97" selection-start-column="32" selection-end-line="97" selection-end-column="32" />
                     <folding />
                   </state>
                 </provider>
@@ -148,6 +201,16 @@
                 <provider selected="true" editor-type-id="text-editor">
                   <state vertical-scroll-proportion="0.0">
                     <caret line="11" column="49" selection-start-line="11" selection-start-column="49" selection-end-line="11" selection-end-column="49" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="default.js" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/tasks/register/default.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.0">
+                    <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
                     <folding />
                   </state>
                 </provider>
@@ -178,20 +241,20 @@
         <option value="$PROJECT_DIR$/tasks/config/coffee.js" />
         <option value="$PROJECT_DIR$/tasks/register/compileAssets.js" />
         <option value="$PROJECT_DIR$/tasks/config/copy.js" />
-        <option value="$PROJECT_DIR$/tasks/register/default.js" />
         <option value="$PROJECT_DIR$/tasks/config/clean.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/src/server/tasks/config/babel.js" />
         <option value="$PROJECT_DIR$/src/server/tasks/config/copy.js" />
-        <option value="$PROJECT_DIR$/src/server/tasks/register/default.js" />
         <option value="$PROJECT_DIR$/sails-tasks/config/clean.js" />
         <option value="$PROJECT_DIR$/src/server/tasks/config/clean.js" />
         <option value="$PROJECT_DIR$/src/client/tasks/config/clean.js" />
         <option value="$PROJECT_DIR$/src/client/tasks/config/copy.js" />
         <option value="$PROJECT_DIR$/src/client/tasks/config/babel.js" />
-        <option value="$PROJECT_DIR$/src/client/tasks/register/default.js" />
         <option value="$PROJECT_DIR$/src/client/src/js/lib/main.js" />
         <option value="$PROJECT_DIR$/tasks/config/build.js" />
+        <option value="$PROJECT_DIR$/tasks/register/default.js" />
+        <option value="$PROJECT_DIR$/src/client/tasks/register/default.js" />
+        <option value="$PROJECT_DIR$/src/server/tasks/register/default.js" />
         <option value="$PROJECT_DIR$/gulpfile.js" />
       </list>
     </option>
@@ -398,22 +461,8 @@
               <option name="myItemId" value="src" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-          </PATH>
-          <PATH>
             <PATH_ELEMENT>
-              <option name="myItemId" value="boilerplate_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="boilerplate_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
+              <option name="myItemId" value="server" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -431,7 +480,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
+              <option name="myItemId" value="server" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -457,17 +506,13 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
+              <option name="myItemId" value="server" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="tasks" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="config" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -480,99 +525,13 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="boilerplate_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="boilerplate_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="boilerplate_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="boilerplate_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="boilerplate_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="boilerplate_v2" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="dst" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -671,16 +630,16 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1536" y="23" width="384" height="1053" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="1.0" sideWeight="0.5590551" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.66959065" sideWeight="0.5590551" order="4" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3287234" sideWeight="0.49614644" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.34027055" sideWeight="0.5555556" order="11" side_tool="false" content_ui="tabs" x="1995" y="579" width="1899" height="370" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33956388" sideWeight="0.5555556" order="11" side_tool="false" content_ui="tabs" x="1995" y="579" width="1899" height="370" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24561404" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.66959065" sideWeight="0.44094488" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -732,35 +691,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/sails-tasks/config/copy.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tasks/register/default.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="9" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/server/tasks/config/copy.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17964405">
           <caret line="17" column="71" selection-start-line="17" selection-start-column="71" selection-end-line="17" selection-end-column="71" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sails-tasks/config/clean.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12680757">
-          <caret line="12" column="22" selection-start-line="12" selection-start-column="22" selection-end-line="12" selection-end-column="22" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -768,15 +702,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.16907676">
           <caret line="16" column="33" selection-start-line="16" selection-start-column="33" selection-end-line="16" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/tasks/register/default.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="0" selection-start-line="10" selection-start-column="0" selection-end-line="10" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -784,7 +709,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15850945">
           <caret line="15" column="68" selection-start-line="15" selection-start-column="68" selection-end-line="15" selection-end-column="68" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -792,7 +716,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.22191323">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -800,31 +723,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.07397108">
           <caret line="7" column="40" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/tasks/register/default.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="18" selection-start-line="5" selection-start-column="18" selection-end-line="5" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sails-tasks/register/build.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tasks/config/build.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="33" column="5" selection-start-line="33" selection-start-column="5" selection-end-line="33" selection-end-column="5" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -844,10 +742,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/tasks/register/default.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="5" column="20" selection-start-line="5" selection-start-column="20" selection-end-line="5" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/tasks/register/default.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tasks/register/default.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="19" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/gulpfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.714683">
-          <caret line="77" column="31" selection-start-line="77" selection-start-column="31" selection-end-line="77" selection-end-column="31" />
+        <state vertical-scroll-proportion="0.9154616">
+          <caret line="97" column="32" selection-start-line="97" selection-start-column="32" selection-end-line="97" selection-end-column="32" />
           <folding />
         </state>
       </provider>

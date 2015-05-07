@@ -2,11 +2,11 @@ module.exports = function (gulp, plugins) {
 	gulp.task('default', function(cb) {
 		plugins.sequence(
 
-      'build:server',
-      'build:client',
-      
+      'default:server',
+      'default:client',
+
       'clean:deploy',
-      
+
       'deploy:server',
       'deploy:client',
 
@@ -18,7 +18,7 @@ module.exports = function (gulp, plugins) {
       'copy:node-modules',
 
 			cb
-      
+
 		);
 	});
 };
