@@ -3,6 +3,8 @@ module.exports = function (gulp, plugins) {
 		plugins.sequence(
       'build:server',
       'build:client',
+      'deploy:server',
+      'deploy:client',
 			cb
 		);
 	});
