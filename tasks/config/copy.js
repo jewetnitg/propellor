@@ -18,4 +18,17 @@ module.exports = function(gulp, plugins, growl) {
         .pipe(gulp.dest('./dst/tasks'))
         .pipe(plugins.if(growl, plugins.notify({ message: 'Copy sails tasks task complete' })));
   });
+
+  gulp.task('copy:node-modules', function() {
+    return gulp.src('./node_modules/**/*.*')
+        .pipe(gulp.dest('./dst/node_modules'))
+        .pipe(plugins.if(growl, plugins.notify({ message: 'Copy node modules task complete' })));
+  });
+
+  gulp.task('copy:package-json', function() {
+    return gulp.src('./package.json')
+        .pipe(gulp.dest('./dst'))
+        .pipe(plugins.if(growl, plugins.notify({ message: 'Copy package.json task complete' })));
+  });
+
 };
