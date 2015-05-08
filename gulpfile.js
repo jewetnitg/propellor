@@ -19,7 +19,7 @@ var gulp    = require('gulp'),
       lazy: true // whether the plugins should be lazy loaded on demand
     }),
     path    = require('path'),
-    growl   = false;
+    growl   = true;
 
 // Load the include-all library in order to require all of our grunt
 // configurations and task registrations dynamically.
