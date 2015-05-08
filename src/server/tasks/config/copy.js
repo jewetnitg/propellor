@@ -3,12 +3,11 @@
  *
  * ---------------------------------------------------------------
  *
- * # dev task config
- * Copies all directories and files, except coffeescript and less files, from the sails
- * assets folder into the .tmp/public directory.
- *
- * # build task config
- * Copies all directories nd files from the .tmp/public directory into a www directory.
+ * Copies all directories and files from
+ * ./src/server/.tmp
+ * and
+ * all non js files from ./src/server/src
+ * to ./src/server/dst
  *
  */
 module.exports = function(gulp, plugins, growl) {

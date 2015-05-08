@@ -12,8 +12,8 @@ var child_process = require('child_process');
 var spawn = child_process.spawn;
 
 module.exports = function (gulp) {
-  gulp.task('cucumber:client', function (cb) {
-    var runner = spawn('cucumber-js', ['-r' ,'src/client/features/', 'src/client/features/']);
+  gulp.task('cucumber:server', function (cb) {
+    var runner = spawn('cucumber-js', ['-r' ,'src/server/features/', 'src/server/features/']);
 
     runner.stdout.on('data', function(data) {
       process.stdout.write(data);

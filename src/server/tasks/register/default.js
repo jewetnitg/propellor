@@ -4,6 +4,7 @@ module.exports = function (gulp, plugins) {
 			'clean:server',
       'babel:server',
       'copy:server',
+      'cucumber:server',
 			cb
 		);
 	});

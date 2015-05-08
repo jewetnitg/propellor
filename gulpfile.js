@@ -93,7 +93,9 @@ var childTasks = {
 };
 
 for (var key in childTasks) {
-  // Run task functions to configure Gulp.
-  invokeConfigFn(childTasks[key].config);
-  invokeConfigFn(childTasks[key].register);
+  if (childTasks.hasOwnProperty(key)) {
+    // Run task functions to configure Gulp.
+    invokeConfigFn(childTasks[key].config);
+    invokeConfigFn(childTasks[key].register);
+  }
 }
