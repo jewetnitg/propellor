@@ -180,6 +180,21 @@ export function bootstrap (cb) {
     return requestArray;
   }
 
+  function makeValidateRequestForModel(entity, requestArray, model) {
+    const requestObject = {
+      entity,
+      route: '/validate/' + entity,
+      method: 'POST',
+      pathVariables: [],
+      name: 'validate'
+    };
+    
+    model.requests.push(requestObject);
+    requestArray.push(requestObject);
+
+    return requestArray;
+  }
+
   function makeShortcutRequestsForModel (entity, requestArray, model) {
     const requestObjects = [
       {
@@ -214,8 +229,8 @@ export function bootstrap (cb) {
 
     requestArray = requestArray || [];
 
-    requestArray.push.apply(requestArray, requestObjects);
     model.requests.push.apply(model.requests, requestObjects);
+    requestArray.push.apply(requestArray, requestObjects);
 
     return requestArray;
   }
@@ -255,6 +270,10 @@ export function bootstrap (cb) {
 
         if (blueprints.shortcuts && model) {
           makeShortcutRequestsForModel(entity, requestArray, model);
+        }
+
+        if (model) {
+          makeValidateRequestForModel(entity, requestArray, model);
         }
 
         _.each(methods, (_key) => {

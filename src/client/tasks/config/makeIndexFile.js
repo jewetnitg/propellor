@@ -43,12 +43,11 @@ module.exports = function(gulp, plugins, growl) {
   var root = './src/client/src/js/';
   var paths       = {
     'config'      : 'config',
-    'models'      : 'api/models',
+    'adapters'    : 'api/adapters',
     'views'       : 'api/views',
     'services'    : 'api/services',
     'controllers' : 'api/controllers'
   };
-
 
   gulp.task('makeIndexFile:client', function(cb) {
     var fileStr = '',
