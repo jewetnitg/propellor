@@ -9,5 +9,20 @@
 
 module.exports = {
 
-  attributes: {}
+  attributes: {
+
+    firstName: {
+      defaultsTo: "John"
+    },
+
+    lastName: {
+      type: "string"
+    },
+
+    age: {
+      type: "number"
+    }
+
+  }
+
 };

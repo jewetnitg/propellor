@@ -9,6 +9,8 @@
  * http://sailsjs.org/#/documentation/reference/sails.config/sails.config.bootstrap.html
  */
 import _ from 'lodash';
+import fs from 'fs';
+import files from '../lib/files';
 
 export function bootstrap (cb) {
   // It's very important to trigger this callback method when you are finished
@@ -43,7 +45,7 @@ export function bootstrap (cb) {
         "string": "",
         "date": new Date(),
         "boolean": null,
-        "enum": [], // TODO: make enum smarter, check enum attribute on model
+        "enum": null, // TODO: make enum smarter, check enum attribute on model
         "binary": {}, // TODO: ??
         "json": {},
         "object": {}
@@ -54,8 +56,8 @@ export function bootstrap (cb) {
 
         if (typeof value !== 'undefined') {
           model.defaults[key] = value;
-        } else if (typeof _attribute.type !== 'undefined' && typeDefaults[_attribute.type]) {
-          model.defaults[key] = typeDefaults[_attribute.type];
+        } else if (_attribute.type && typeof typeDefaults[_attribute.type.toLowerCase()] !== 'undefined') {
+          model.defaults[key] = typeDefaults[_attribute.type.toLowerCase()];
         }
       });
 
@@ -79,11 +81,13 @@ export function bootstrap (cb) {
     const methodRegex       = /^(\w+)(?=\s+)/g;
     const pathVariableRegex = /\/[:|*]{1}\w+(?=[\/]?)/g;
     const routeRegex        = /\/.+/g;
+    const nameFromPathRegex = /^(?:\/)([\w|-]+)/g;
 
     const method            = path.match(methodRegex) && path.match(methodRegex)[0];
     const route             = path.match(routeRegex) && path.match(routeRegex)[0];
 
     let   pathVariables     = path.match(pathVariableRegex) || [];
+
     let   entity            = "";
     let   name              = "";
 
@@ -95,6 +99,8 @@ export function bootstrap (cb) {
         entity  = split[0].replace(/controller/ig, '');
         name    = split[1];
       }
+    } else {
+      name = route.match(nameFromPathRegex)[0].replace('/', '');
     }
 
     pathVariables = _.map(pathVariables, (pathVariable) => {
@@ -112,12 +118,59 @@ export function bootstrap (cb) {
     return requestObject;
   }
 
-  function semanticizeControllers(blueprints) {
+  // actions : boolean
+  // Whether routes are automatically generated for every action in your controllers
+  // (also maps index to /:controller) '/:controller', '/:controller/index', and '/:controller/:action'
 
+  // rest : boolean
+  // Automatic REST blueprints enabled?
+  // e.g. 'get /:controller/:id?' 'post /:controller' 'put /:controller/:id' 'delete /:controller/:id'
+
+  // shortcuts : boolean
+  // These CRUD shortcuts exist for your convenience during development,
+  // but you'll want to disable them in production.:
+  // '/:controller/find/:id?', '/:controller/create', '/:controller/update/:id', and '/:controller/destroy/:id'
+
+  // prefix : string
+  // Optional mount path prefix for blueprints (the automatically bound routes in your controllers) e.g. '/api/v2'
+
+  // restPrefix : string
+  // Optional mount path prefix for RESTful blueprints
+  // (the automatically bound RESTful routes for your controllers and models)
+  // e.g. '/api/v2'. Will be joined to your prefix config.
+  // e.g. prefix: '/api' and restPrefix: '/rest', RESTful actions will be available under /api/rest
+
+  // pluralize : boolean
+  // Optionally use plural controller names in blueprint routes,
+  // e.g. /users for api/controllers/UserController.js.
+  function semanticizeControllers(blueprints) {
+    const requestArray = [];
+
+    _.each(files, (val, key) => {
+      let matches = key.match(/^controllers/ig);
+
+      if (matches && matches.length) {
+        requestArray.push(key.replace('controllers.', ''));
+      }
+    });
+
+
+
+    return requestArray;
   }
 
-  function makePolicyArray(sails) {
-    return [];
+  function makePolicyArray() {
+    const policyArray = [];
+
+    _.each(files, (val, key) => {
+      let matches = key.match(/^policies/ig);
+
+      if (matches && matches.length) {
+        policyArray.push(key.replace('policies.', ''));
+      }
+    });
+
+    return policyArray;
   }
 
   console.log(JSON.stringify(serverDefinition));

@@ -9,6 +9,19 @@ module.exports = {
 
   attributes: {
 
+    firstName: {
+      defaultsTo: "John"
+    },
+
+    lastName: {
+      type: "string"
+    },
+
+    age: {
+      type: "number"
+    }
+
   }
+
 };
 
