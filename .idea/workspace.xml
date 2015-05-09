@@ -2,76 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc7d406b-59f7-49b3-a121-62641e557d8f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/runConfigurations/client.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/server/tasks/config/cucumber.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/runConfigurations/default.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/runConfigurations/server.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/api/hooks/gulp/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/api/policies/sessionAuth.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/api/responses/badRequest.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/api/responses/forbidden.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/api/responses/notFound.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/api/responses/ok.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/api/responses/serverError.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/connections.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/cors.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/csrf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/env/development.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/env/production.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/globals.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/http.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/i18n.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/local.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/log.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/models.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/policies.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/routes.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/session.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/sockets.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/.tmp/config/views.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/api/hooks/gulp/index.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/api/policies/sessionAuth.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/api/responses/badRequest.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/api/responses/forbidden.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/api/responses/notFound.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/api/responses/ok.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/api/responses/serverError.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/app copy.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/app.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/blueprints.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/connections.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/cors.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/csrf.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/env/development.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/env/production.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/globals.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/http.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/i18n.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/local.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/locales/_README.md" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/log.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/models.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/policies.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/routes.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/session.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/sockets.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/config/views.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/views/403.ejs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/views/404.ejs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/views/500.ejs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/views/homepage.ejs" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/server/dst/views/layout.ejs" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/tasks/config/babel.js" afterPath="$PROJECT_DIR$/src/server/tasks/config/babel.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/.tmp/config/blueprints.js" afterPath="$PROJECT_DIR$/src/server/.tmp/config/blueprints.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/boilerplate_v2.iml" afterPath="$PROJECT_DIR$/.idea/boilerplate_v2.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/config/bootstrap.js" afterPath="$PROJECT_DIR$/dst/config/bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/.tmp/config/bootstrap.js" afterPath="$PROJECT_DIR$/src/server/.tmp/config/bootstrap.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/dst/config/bootstrap.js" afterPath="$PROJECT_DIR$/src/server/dst/config/bootstrap.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/src/config/bootstrap.js" afterPath="$PROJECT_DIR$/src/server/src/config/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/tasks/config/copy.js" afterPath="$PROJECT_DIR$/src/server/tasks/config/copy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/tasks/config/cucumber.js" afterPath="$PROJECT_DIR$/src/client/tasks/config/cucumber.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/tasks/register/default.js" afterPath="$PROJECT_DIR$/src/server/tasks/register/default.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gulpfile.js" afterPath="$PROJECT_DIR$/gulpfile.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasks/config/copy.js" afterPath="$PROJECT_DIR$/tasks/config/copy.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/config/routes.js" afterPath="$PROJECT_DIR$/dst/config/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/.tmp/config/routes.js" afterPath="$PROJECT_DIR$/src/server/.tmp/config/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/dst/config/routes.js" afterPath="$PROJECT_DIR$/src/server/dst/config/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/src/config/routes.js" afterPath="$PROJECT_DIR$/src/server/src/config/routes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="boilerplate_v2.iws" />
@@ -92,11 +32,11 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="bootstrap.js" pinned="false" current-in-tab="true">
+            <file leaf-file-name="bootstrap.js" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/server/src/config/bootstrap.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.12680757">
-                    <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+                  <state vertical-scroll-proportion="0.0">
+                    <caret line="69" column="52" selection-start-line="69" selection-start-column="52" selection-end-line="69" selection-end-column="52" />
                     <folding>
                       <element signature="n#!!doc" expanded="true" />
                     </folding>
@@ -104,11 +44,21 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="bootstrap.js" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/dst/config/bootstrap.js">
+            <file leaf-file-name="copy.js" pinned="false" current-in-tab="true">
+              <entry file="file://$PROJECT_DIR$/tasks/config/copy.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.39099">
+                    <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/server/src/config/routes.js">
                 <provider selected="true" editor-type-id="text-editor">
                   <state vertical-scroll-proportion="0.0">
-                    <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+                    <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
                     <folding />
                   </state>
                 </provider>
@@ -175,7 +125,6 @@
         <option value="$PROJECT_DIR$/assets/index.html" />
         <option value="$PROJECT_DIR$/tasks/config/coffee.js" />
         <option value="$PROJECT_DIR$/tasks/register/compileAssets.js" />
-        <option value="$PROJECT_DIR$/tasks/config/copy.js" />
         <option value="$PROJECT_DIR$/tasks/config/clean.js" />
         <option value="$PROJECT_DIR$/package.json" />
         <option value="$PROJECT_DIR$/sails-tasks/config/clean.js" />
@@ -199,7 +148,9 @@
         <option value="$PROJECT_DIR$/src/server/tasks/config/cucumber.js" />
         <option value="$PROJECT_DIR$/src/server/tasks/register/default.js" />
         <option value="$PROJECT_DIR$/dst/config/bootstrap.js" />
+        <option value="$PROJECT_DIR$/src/server/src/config/routes.js" />
         <option value="$PROJECT_DIR$/src/server/src/config/bootstrap.js" />
+        <option value="$PROJECT_DIR$/tasks/config/copy.js" />
       </list>
     </option>
   </component>
@@ -649,7 +600,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="editor.config.accepted" value="true" />
     <property name="JavaScriptLanguageLevel" value="ES6" />
-    <property name="SearchEverywhereHistoryKey" value="bootst&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/dst/config/bootstrap.js&#10;defau&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/tasks/register/default.js&#10;bootstrap&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/dst/config/bootstrap.js&#10;default&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/tasks/register/default.js&#10;cucumb&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/tasks/config/cucumber.js&#10;cucu&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/tasks/config/cucumber.js&#10;babel&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/tasks/config/babel.js" />
+    <property name="SearchEverywhereHistoryKey" value="routes&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/routes.js&#10;bootst&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/dst/config/bootstrap.js&#10;defau&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/tasks/register/default.js&#10;bootstrap&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/dst/config/bootstrap.js&#10;default&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/tasks/register/default.js&#10;cucumb&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/tasks/config/cucumber.js&#10;cucu&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/tasks/config/cucumber.js&#10;babel&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/tasks/config/babel.js" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -971,21 +922,29 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/dst/config/bootstrap.js">
+    <entry file="file://$PROJECT_DIR$/src/server/src/config/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="3" selection-start-line="0" selection-start-column="3" selection-end-line="0" selection-end-column="3" />
+          <caret line="46" column="0" selection-start-line="46" selection-start-column="0" selection-end-line="46" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/src/config/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.12680757">
-          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="69" column="52" selection-start-line="69" selection-start-column="52" selection-end-line="69" selection-end-column="52" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tasks/config/copy.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.39099">
+          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>

@@ -14,7 +14,7 @@
 var child_process = require('child_process');
 
 module.exports = function(gulp, plugins, growl) {
-  
+
   gulp.task('copy:sails-tasks', function() {
     return gulp.src('./lib/sails-tasks/**/*.*')
         .pipe(gulp.dest('./dst/tasks'))
@@ -34,7 +34,7 @@ module.exports = function(gulp, plugins, growl) {
   });
 
   gulp.task('copy:node-modules', function(cb) {
-    child_process.exec('cp -a ./node_modules ./dst/node_modules', cb);
+    child_process.exec('ln -s "$(pwd)"/node_modules "$(pwd)"/dst/node_modules', cb);
   });
 
 };

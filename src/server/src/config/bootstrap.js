@@ -21,9 +21,13 @@ export function bootstrap (cb) {
     policies: makePolicyArray()
   };
 
+  sails.serverDefinition = serverDefinition;
 
   function makeConfigObject(config) {
-    return {};
+    return {
+      adapter: "SAILS_IO",
+      baseUrl: "http://www.localhost:1337"
+    };
   }
 
   function makeModelArray(_models) {
@@ -61,8 +65,55 @@ export function bootstrap (cb) {
     });
   }
 
+  // TODO: requests can be semanticized from config/routes.js and api/controllers/*.js + config/blueprints.js
   function makeRequestArray(sails) {
-    return [];
+    const requestFromRoutesConfigFile = semanticizeRoutesConfigObject(sails.config.routes);
+    return requestFromRoutesConfigFile;
+  }
+
+  function semanticizeRoutesConfigObject(routes) {
+    return _.map(routes, semanticizeRoute);
+  }
+
+  function semanticizeRoute(routeObject, path) {
+    const methodRegex       = /^(\w+)(?=\s+)/g;
+    const pathVariableRegex = /\/[:|*]{1}\w+(?=[\/]?)/g;
+    const routeRegex        = /\/.+/g;
+
+    const method            = path.match(methodRegex) && path.match(methodRegex)[0];
+    const route             = path.match(routeRegex) && path.match(routeRegex)[0];
+
+    let   pathVariables     = path.match(pathVariableRegex) || [];
+    let   entity            = "";
+    let   name              = "";
+
+    const controller        = typeof routeObject === 'string' ? routeObject : routeObject.controller;
+
+    if (controller) {
+      const split = controller.split('.');
+      if (split.length === 2) {
+        entity  = split[0].replace(/controller/ig, '');
+        name    = split[1];
+      }
+    }
+
+    pathVariables = _.map(pathVariables, (pathVariable) => {
+      return pathVariable.replace(/^\/[:|*]{1}/g);
+    });
+
+    const requestObject = {
+      method,
+      entity,
+      name,
+      pathVariables,
+      route
+    };
+
+    return requestObject;
+  }
+
+  function semanticizeControllers(blueprints) {
+
   }
 
   function makePolicyArray(sails) {
@@ -70,6 +121,7 @@ export function bootstrap (cb) {
   }
 
   console.log(JSON.stringify(serverDefinition));
-
+  console.log('----------------------------\n\n\n\n\n');
+  console.log(JSON.stringify(sails));
   cb();
 };
