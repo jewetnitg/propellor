@@ -15,7 +15,7 @@ class Request {
     } else {
       singletons[options.entity][options.name] = this;
     }
-
+    _.bindAll(this, 'execute');
     _.extend(this, options);
   }
 

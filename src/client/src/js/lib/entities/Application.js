@@ -11,6 +11,27 @@ import Request  from '../entities/Request';
 
 let singleton = null;
 
+function setDottedKeyOnObject(keyStr, value, obj) {
+  obj = obj || {};
+
+  const split = keyStr.split('.');
+  const len   = split.length;
+
+  let i       = 0;
+
+  _.each(split, (key) => {
+    if (i === len - 1) {
+      obj[key] = value;
+    } else {
+      obj[key] = obj[key] || {};
+      obj = obj[key];
+    }
+    i++;
+  });
+
+  return obj;
+}
+
 class Application {
 
   constructor(options) {
@@ -22,15 +43,26 @@ class Application {
 
     window.app = this;
     _.extend(this, options);
-    _.bindAll(this, 'interpretServerDefinition', 'instantiateModel', 'instantiateRequest');
-
+    _.bindAll(this, 'interpretServerDefinition', 'instantiateModel', 'instantiateRequest', 'executeBootstrap');
+    this._files = files;
     this.data = {};
     this.models = {};
     this.config = {};
-    this.server = {};
+    this.server = {
+      _requests: []
+    };
+
+    this.files = this.interpretFiles();
 
     this.getServerDefinition()
-      .then(this.interpretServerDefinition);
+      .then(this.interpretServerDefinition)
+      .then(this.executeBootstrap);
+  }
+
+  executeBootstrap() {
+    return new Promise((resolve, reject) => {
+      this.files.config.bootstrap(resolve, reject);
+    });
   }
 
   getServerDefinition() {
@@ -42,9 +74,19 @@ class Application {
     });
   }
 
+  interpretFiles() {
+    const files = {};
+
+    _.each(this._files, (value, key) => {
+      setDottedKeyOnObject(key, value, files);
+    });
+
+    return files;
+  }
+
   interpretServerDefinition(data) {
-    console.log(data);
     _.extend(this.config, data.config || {});
+
     _.each(data.models, this.instantiateModel);
     _.each(data.requests, this.instantiateRequest)
   }
@@ -54,12 +96,15 @@ class Application {
     this.models[name] = new Model(model);
   }
 
-  instantiateRequest(request) {
-    const entity  = request.entity;
-    const name    = request.name;
+  instantiateRequest(_request) {
+    const entity  = _request.entity;
+    const name    = _request.name;
+    const request = new Request(_request);
 
-    this.server[entity] = this.server[entity] || {};
-    this.server[entity][name] = new Request(request);
+    this.server[entity]       = this.server[entity] || {};
+    this.server[entity][name] = request.execute;
+
+    this.server._requests.push(request);
   }
 
 }
