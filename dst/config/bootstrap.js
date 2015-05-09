@@ -37,9 +37,10 @@ function bootstrap(cb) {
   var serverDefinition = {
     config: makeConfigObject(sails.config),
     models: makeModelArray(sails.models),
-    requests: makeRequestArray(sails),
     policies: makePolicyArray()
   };
+
+  serverDefinition.requests = makeRequestArray(sails, serverDefinition.models);
 
   sails.serverDefinition = serverDefinition;
 
@@ -54,12 +55,13 @@ function bootstrap(cb) {
     return _lodash2['default'].map(_models, function (_model) {
       var model = {
         defaults: {},
+        requests: [],
         name: _model.globalId,
         entity: _model.globalId
       };
 
       var typeDefaults = {
-        'number': 0,
+        'number': null,
         'string': '',
         'date': new Date(),
         'boolean': null,
@@ -86,16 +88,20 @@ function bootstrap(cb) {
   }
 
   // TODO: requests can be semanticized from config/routes.js and api/controllers/*.js + config/blueprints.js
-  function makeRequestArray(sails) {
-    var requestFromRoutesConfigFile = semanticizeRoutesConfigObject(sails.config.routes);
-    return requestFromRoutesConfigFile;
+  function makeRequestArray(sails, modelArray) {
+    var requestsFromRoutesConfigFile = semanticizeRoutesConfigObject(sails.config.routes, modelArray);
+    var requestsFromControllersAndBlueprints = semanticizeControllers(sails.config.blueprints, requestsFromRoutesConfigFile, modelArray);
+
+    return _lodash2['default'].uniq(_lodash2['default'].union(requestsFromRoutesConfigFile, requestsFromControllersAndBlueprints));
   }
 
-  function semanticizeRoutesConfigObject(routes) {
-    return _lodash2['default'].map(routes, semanticizeRoute);
+  function semanticizeRoutesConfigObject(routes, modelArray) {
+    return _lodash2['default'].map(routes, function (routeObject, path) {
+      return semanticizeRoute(routeObject, path, modelArray);
+    });
   }
 
-  function semanticizeRoute(routeObject, path) {
+  function semanticizeRoute(routeObject, path, modelArray) {
     var methodRegex = /^(\w+)(?=\s+)/g;
     var pathVariableRegex = /\/[:|*]{1}\w+(?=[\/]?)/g;
     var routeRegex = /\/.+/g;
@@ -133,12 +139,98 @@ function bootstrap(cb) {
       route: route
     };
 
+    if (entity) {
+      var model = findByEntity(modelArray, entity);
+      if (model && model.requests) {
+        model.requests.push(requestObject);
+      }
+    }
     return requestObject;
   }
 
-  // actions : boolean
-  // Whether routes are automatically generated for every action in your controllers
-  // (also maps index to /:controller) '/:controller', '/:controller/index', and '/:controller/:action'
+  function makeRestRequestsForModel(entity, requestArray, model, prefix) {
+    prefix = prefix || '';
+
+    var requestObjects = [{
+      entity: entity,
+      method: 'GET',
+      name: 'findAll',
+      route: prefix + '/' + entity,
+      pathVariables: []
+    }, {
+      entity: entity,
+      method: 'GET',
+      name: 'findById',
+      route: prefix + '/' + entity + '/:id',
+      pathVariables: ['id']
+    }, {
+      entity: entity,
+      method: 'DELETE',
+      name: 'destroy',
+      route: prefix + '/' + entity + '/:id',
+      pathVariables: ['id']
+    }, {
+      entity: entity,
+      method: 'POST',
+      name: 'create',
+      route: prefix + '/' + entity,
+      pathVariables: []
+    }, {
+      entity: entity,
+      method: 'PUT',
+      name: 'update',
+      route: prefix + '/' + entity + '/:id',
+      pathVariables: ['id']
+    }];
+
+    requestArray = requestArray || [];
+
+    requestArray.push.apply(requestArray, requestObjects);
+    model.requests.push.apply(model.requests, requestObjects);
+
+    return requestArray;
+  }
+
+  function makeShortcutRequestsForModel(entity, requestArray, model) {
+    var requestObjects = [{
+      entity: entity,
+      method: 'GET',
+      name: 'READ',
+      route: '/' + entity + '/find/:id',
+      pathVariables: ['id']
+    }, {
+      entity: entity,
+      method: 'POST',
+      name: 'CREATE',
+      route: '/' + entity + '/create',
+      pathVariables: []
+    }, {
+      entity: entity,
+      method: 'DELETE',
+      name: 'DELETE',
+      route: '/' + entity + '/destroy/:id',
+      pathVariables: ['id']
+    }, {
+      entity: entity,
+      method: 'PUT',
+      name: 'UPDATE',
+      route: '/' + entity + '/update/:id',
+      pathVariables: ['id']
+    }];
+
+    requestArray = requestArray || [];
+
+    requestArray.push.apply(requestArray, requestObjects);
+    model.requests.push.apply(model.requests, requestObjects);
+
+    return requestArray;
+  }
+
+  function findByEntity(arr, entity) {
+    return _lodash2['default'].filter(arr, function (item) {
+      return item.entity.toLowerCase() == entity.toLowerCase();
+    })[0];
+  }
 
   // rest : boolean
   // Automatic REST blueprints enabled?
@@ -152,17 +244,62 @@ function bootstrap(cb) {
   // prefix : string
   // Optional mount path prefix for blueprints (the automatically bound routes in your controllers) e.g. '/api/v2'
 
-  // restPrefix : string
-  // Optional mount path prefix for RESTful blueprints
-  // (the automatically bound RESTful routes for your controllers and models)
-  // e.g. '/api/v2'. Will be joined to your prefix config.
-  // e.g. prefix: '/api' and restPrefix: '/rest', RESTful actions will be available under /api/rest
+  function semanticizeControllers(blueprints, explicitRequests, modelArray) {
+    var requestArray = [];
 
-  // pluralize : boolean
-  // Optionally use plural controller names in blueprint routes,
-  // e.g. /users for api/controllers/UserController.js.
-  function semanticizeControllers(blueprints) {
-    _fs2['default'].readdir('api/controllers', function () {});
+    _lodash2['default'].each(_libFiles2['default'], function (val, key) {
+      var matches = key.match(/^controllers/ig);
+
+      if (matches && matches.length) {
+        (function () {
+          var entity = key.replace('controllers.', '').replace(/Controller$/ig, '');
+          var methods = _lodash2['default'].methods(val) || [];
+          var model = findByEntity(modelArray, entity);
+
+          if (blueprints.rest && model) {
+            makeRestRequestsForModel(entity, requestArray, model, blueprints.restPrefix || '');
+          }
+
+          if (blueprints.shortcuts && model) {
+            makeShortcutRequestsForModel(entity, requestArray, model);
+          }
+
+          _lodash2['default'].each(methods, function (_key) {
+            var name = _key;
+            var requestObject = undefined;
+
+            if (!_lodash2['default'].findWhere(explicitRequests, { entity: entity, name: name })) {
+              if (blueprints.actions !== false) {
+                requestObject = makeRequestObjectForAutowiredRequest(blueprints, name, entity);
+              }
+
+              if (requestObject) {
+                if (model && model.requests) {
+                  model.requests.push(requestObject);
+                }
+
+                requestArray.push(requestObject);
+              }
+            }
+          });
+        })();
+      }
+    });
+
+    return requestArray;
+  }
+
+  function makeRequestObjectForAutowiredRequest(blueprints, name, entity) {
+    var requestObject = {
+      name: name,
+      entity: entity,
+      route: (blueprints.prefix || '') + '/' + entity + '/' + (name === 'index' ? '' : name) + '/:id',
+      pathVariables: ['id']
+    };
+
+    requestObject.entity += blueprints.pluralize ? 's' : '';
+
+    return requestObject;
   }
 
   function makePolicyArray() {
