@@ -110,7 +110,7 @@ function bootstrap(cb) {
     }
 
     pathVariables = _lodash2["default"].map(pathVariables, function (pathVariable) {
-      return pathVariable.replace(/^\/[:|*]{1}/g);
+      return pathVariable.replace(/^\/[:|*]{1}/g, "");
     });
 
     var requestObject = {

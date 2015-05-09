@@ -2,16 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc7d406b-59f7-49b3-a121-62641e557d8f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/boilerplate_v2.iml" afterPath="$PROJECT_DIR$/.idea/boilerplate_v2.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/config/bootstrap.js" afterPath="$PROJECT_DIR$/dst/config/bootstrap.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/.tmp/config/bootstrap.js" afterPath="$PROJECT_DIR$/src/server/.tmp/config/bootstrap.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/dst/config/bootstrap.js" afterPath="$PROJECT_DIR$/src/server/dst/config/bootstrap.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/src/config/bootstrap.js" afterPath="$PROJECT_DIR$/src/server/src/config/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/tasks/config/copy.js" afterPath="$PROJECT_DIR$/tasks/config/copy.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/config/routes.js" afterPath="$PROJECT_DIR$/dst/config/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/.tmp/config/routes.js" afterPath="$PROJECT_DIR$/src/server/.tmp/config/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/dst/config/routes.js" afterPath="$PROJECT_DIR$/src/server/dst/config/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/src/config/routes.js" afterPath="$PROJECT_DIR$/src/server/src/config/routes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="boilerplate_v2.iws" />
@@ -32,11 +26,11 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="bootstrap.js" pinned="false" current-in-tab="false">
+            <file leaf-file-name="bootstrap.js" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/server/src/config/bootstrap.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0">
-                    <caret line="69" column="52" selection-start-line="69" selection-start-column="52" selection-end-line="69" selection-end-column="52" />
+                  <state vertical-scroll-proportion="0.60901004">
+                    <caret line="91" column="21" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
                     <folding>
                       <element signature="n#!!doc" expanded="true" />
                     </folding>
@@ -44,10 +38,10 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="copy.js" pinned="false" current-in-tab="true">
+            <file leaf-file-name="copy.js" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/tasks/config/copy.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.39099">
+                  <state vertical-scroll-proportion="0.0">
                     <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
                     <folding />
                   </state>
@@ -149,8 +143,8 @@
         <option value="$PROJECT_DIR$/src/server/tasks/register/default.js" />
         <option value="$PROJECT_DIR$/dst/config/bootstrap.js" />
         <option value="$PROJECT_DIR$/src/server/src/config/routes.js" />
-        <option value="$PROJECT_DIR$/src/server/src/config/bootstrap.js" />
         <option value="$PROJECT_DIR$/tasks/config/copy.js" />
+        <option value="$PROJECT_DIR$/src/server/src/config/bootstrap.js" />
       </list>
     </option>
   </component>
@@ -701,7 +695,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1536" y="23" width="384" height="1053" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -930,21 +924,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/src/config/bootstrap.js">
+    <entry file="file://$PROJECT_DIR$/tasks/config/copy.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="69" column="52" selection-start-line="69" selection-start-column="52" selection-end-line="69" selection-end-column="52" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tasks/config/copy.js">
+    <entry file="file://$PROJECT_DIR$/src/server/src/config/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.39099">
-          <caret line="37" column="5" selection-start-line="37" selection-start-column="5" selection-end-line="37" selection-end-column="5" />
-          <folding />
+        <state vertical-scroll-proportion="0.60901004">
+          <caret line="91" column="21" selection-start-line="91" selection-start-column="21" selection-end-line="91" selection-end-column="21" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

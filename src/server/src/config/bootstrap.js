@@ -98,7 +98,7 @@ export function bootstrap (cb) {
     }
 
     pathVariables = _.map(pathVariables, (pathVariable) => {
-      return pathVariable.replace(/^\/[:|*]{1}/g);
+      return pathVariable.replace(/^\/[:|*]{1}/g, '');
     });
 
     const requestObject = {
