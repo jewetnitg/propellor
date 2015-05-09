@@ -19,7 +19,12 @@ class Model {
 
     this.data = [];
     app.data[this.name] = this.data;
-    //this.makeRequestWrapperFunctions();
+
+    this.makeRequestWrapperFunctions();
+  }
+
+  makeRequestWrapperFunctions() {
+
   }
 
 }

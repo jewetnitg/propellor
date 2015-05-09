@@ -188,7 +188,7 @@ export function bootstrap (cb) {
       pathVariables: [],
       name: 'validate'
     };
-    
+
     model.requests.push(requestObject);
     requestArray.push(requestObject);
 
