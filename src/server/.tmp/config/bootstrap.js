@@ -40,7 +40,7 @@ function bootstrap(cb) {
     policies: makePolicyArray()
   };
 
-  serverDefinition.requests = makeRequestArray(sails, serverDefinition.models);
+  serverDefinition.requests = makeRequestArray(sails, serverDefinition.models, serverDefinition.policies);
 
   sails.serverDefinition = serverDefinition;
 
@@ -81,18 +81,26 @@ function bootstrap(cb) {
         }
       });
 
-      // TODO: add requests related to this model
-
       return model;
     });
   }
 
-  // TODO: requests can be semanticized from config/routes.js and api/controllers/*.js + config/blueprints.js
-  function makeRequestArray(sails, modelArray) {
+  function makeRequestArray(sails, modelArray, policyArray) {
     var requestsFromRoutesConfigFile = semanticizeRoutesConfigObject(sails.config.routes, modelArray);
     var requestsFromControllersAndBlueprints = semanticizeControllers(sails.config.blueprints, requestsFromRoutesConfigFile, modelArray);
+    var requestsFromPolicies = _lodash2['default'].map(policyArray, createRequestForPolicy);
 
-    return _lodash2['default'].uniq(_lodash2['default'].union(requestsFromRoutesConfigFile, requestsFromControllersAndBlueprints));
+    return _lodash2['default'].uniq(_lodash2['default'].union(requestsFromRoutesConfigFile, requestsFromControllersAndBlueprints, requestsFromPolicies));
+  }
+
+  function createRequestForPolicy(policy) {
+    return {
+      entity: 'Policy',
+      method: 'POST',
+      name: policy,
+      route: '/policy/' + policy,
+      pathVariables: []
+    };
   }
 
   function semanticizeRoutesConfigObject(routes, modelArray) {
@@ -247,18 +255,6 @@ function bootstrap(cb) {
     })[0];
   }
 
-  // rest : boolean
-  // Automatic REST blueprints enabled?
-  // e.g. 'get /:controller/:id?' 'post /:controller' 'put /:controller/:id' 'delete /:controller/:id'
-
-  // shortcuts : boolean
-  // These CRUD shortcuts exist for your convenience during development,
-  // but you'll want to disable them in production.:
-  // '/:controller/find/:id?', '/:controller/create', '/:controller/update/:id', and '/:controller/destroy/:id'
-
-  // prefix : string
-  // Optional mount path prefix for blueprints (the automatically bound routes in your controllers) e.g. '/api/v2'
-
   function semanticizeControllers(blueprints, explicitRequests, modelArray) {
     var requestArray = [];
 
@@ -335,10 +331,5 @@ function bootstrap(cb) {
     return policyArray;
   }
 
-  console.log(JSON.stringify(serverDefinition));
-  console.log('----------------------------\n\n\n\n\n');
-  console.log(JSON.stringify(sails));
   cb();
 }
-
-;

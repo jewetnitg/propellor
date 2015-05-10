@@ -11,6 +11,7 @@ import Request  from '../entities/Request';
 
 let singleton = null;
 
+// TODO: move to helpers
 function setDottedKeyOnObject(keyStr, value, obj) {
   obj = obj || {};
 
@@ -42,8 +43,10 @@ class Application {
     }
 
     window.app = this;
+
     _.extend(this, options);
     _.bindAll(this, 'interpretServerDefinition', 'instantiateModel', 'instantiateRequest', 'executeBootstrap');
+
     this._files = files;
     this.data = {};
     this.models = {};
