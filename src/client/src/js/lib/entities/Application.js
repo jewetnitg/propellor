@@ -51,6 +51,7 @@ class Application {
     this.data = {};
     this.models = {};
     this.config = {};
+    this.policies = {};
     this.server = {
       _requests: []
     };
@@ -91,7 +92,7 @@ class Application {
     _.extend(this.config, data.config || {});
 
     _.each(data.models, this.instantiateModel);
-    _.each(data.requests, this.instantiateRequest)
+    _.each(data.requests, this.instantiateRequest);
   }
 
   instantiateModel(model) {
@@ -103,9 +104,13 @@ class Application {
     const entity  = _request.entity;
     const name    = _request.name;
     const request = new Request(_request);
-
+    
     this.server[entity]       = this.server[entity] || {};
     this.server[entity][name] = request.execute;
+
+    if (entity === 'Policy') {
+      this.policies[name] = request.execute;
+    }
 
     this.server._requests.push(request);
   }
