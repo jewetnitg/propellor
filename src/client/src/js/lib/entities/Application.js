@@ -3,11 +3,12 @@
  */
 'use strict';
 
-import _      from 'lodash';
-import files  from '../files';
-import $      from 'jquery';
-import Model  from '../entities/Model';
+import _        from 'lodash';
+import files    from '../files';
+import $        from 'jquery';
+import Model    from '../entities/Model';
 import Request  from '../entities/Request';
+import Route    from '../entities/Route';
 
 let singleton = null;
 
@@ -45,9 +46,13 @@ class Application {
     window.app = this;
 
     _.extend(this, options);
-    _.bindAll(this, 'interpretServerDefinition', 'instantiateModel', 'instantiateRequest', 'executeBootstrap');
+    _.bindAll(this, 'interpretServerDefinition', 'instantiateModel', 'instantiateRequest', 'executeBootstrap', 'instantiateRoute');
 
     this._files = files;
+    //this.router = new Router();
+    this.routerOptions = {
+      routes: {}
+    };
     this.data = {};
     this.models = {};
     this.config = {};
@@ -85,7 +90,22 @@ class Application {
       setDottedKeyOnObject(key, value, files);
     });
 
+    _.each(files.config.routes, this.instantiateRoute);
+
     return files;
+  }
+
+  instantiateRoute(obj, key) {
+    if (typeof obj === 'object' && !(obj instanceof Array)) {
+      const route = new Route(key, obj);
+      this.routerOptions.routes[key] = route.execute;
+    } else {
+      if (key === 'pushState') {
+        this.routerOptions.pushState = obj;
+      } else if (key === 'defaultRoute') {
+        this.routerOptions.defaultRoute = obj;
+      }
+    }
   }
 
   interpretServerDefinition(data) {
@@ -104,7 +124,7 @@ class Application {
     const entity  = _request.entity;
     const name    = _request.name;
     const request = new Request(_request);
-    
+
     this.server[entity]       = this.server[entity] || {};
     this.server[entity][name] = request.execute;
 

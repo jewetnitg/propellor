@@ -2,19 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc7d406b-59f7-49b3-a121-62641e557d8f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/localDiskDb.db" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/api/webcomponents/my-element/my-element.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/dependencies/sails.io.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/main.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/robots.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/styles/importer.css" afterPath="" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/client/src/js/lib/entities/Route.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/src/js/lib/entities/Application.js" afterPath="$PROJECT_DIR$/src/client/src/js/lib/entities/Application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/src/js/lib/files.js" afterPath="$PROJECT_DIR$/src/client/src/js/lib/files.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/.tmp/public/main.js.map" afterPath="$PROJECT_DIR$/dst/.tmp/public/main.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/main.js.map" afterPath="$PROJECT_DIR$/dst/assets/main.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/.tmp/main.js.map" afterPath="$PROJECT_DIR$/src/client/.tmp/main.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/main.js.map" afterPath="$PROJECT_DIR$/src/client/dst/main.js.map" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/.tmp/public/main.js" afterPath="$PROJECT_DIR$/dst/.tmp/public/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/main.js" afterPath="$PROJECT_DIR$/dst/assets/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/.tmp/main.js" afterPath="$PROJECT_DIR$/src/client/.tmp/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/main.js" afterPath="$PROJECT_DIR$/src/client/dst/main.js" />
@@ -93,11 +88,21 @@
             <file leaf-file-name="Application.js" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/client/src/js/lib/entities/Application.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.85172796">
-                    <caret line="106" column="4" selection-start-line="106" selection-start-column="4" selection-end-line="106" selection-end-column="4" />
+                  <state vertical-scroll-proportion="0.47658864">
+                    <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
                     <folding>
                       <element signature="e#0#47#0" expanded="false" />
                     </folding>
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/client/src/js/config/routes.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.0">
+                    <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+                    <folding />
                   </state>
                 </provider>
               </entry>
@@ -106,7 +111,17 @@
               <entry file="file://$PROJECT_DIR$/src/client/src/js/lib/entities/Request.js">
                 <provider selected="true" editor-type-id="text-editor">
                   <state vertical-scroll-proportion="0.0">
-                    <caret line="22" column="55" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
+                    <caret line="32" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="Route.js" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/client/src/js/lib/entities/Route.js">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="0.0">
+                    <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
                     <folding />
                   </state>
                 </provider>
@@ -180,6 +195,8 @@
         <option value="$PROJECT_DIR$/src/client/src/js/lib/entities/Model.js" />
         <option value="$PROJECT_DIR$/src/client/src/js/lib/entities/Request.js" />
         <option value="$PROJECT_DIR$/src/server/src/config/bootstrap.js" />
+        <option value="$PROJECT_DIR$/src/client/src/js/config/routes.js" />
+        <option value="$PROJECT_DIR$/src/client/src/js/lib/entities/Route.js" />
         <option value="$PROJECT_DIR$/src/client/src/js/lib/entities/Application.js" />
       </list>
     </option>
@@ -298,7 +315,7 @@
     <option name="x" value="1536" />
     <option name="y" value="23" />
     <option name="width" value="384" />
-    <option name="height" value="1057" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -702,7 +719,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="editor.config.accepted" value="true" />
     <property name="JavaScriptLanguageLevel" value="ES6" />
-    <property name="SearchEverywhereHistoryKey" value="boots&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/bootstrap.js&#10;defau&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/tasks/register/default.js&#10;usercon&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/controllers/UserController.js&#10;usercontr&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/controllers/UserController.js&#10;default&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/tasks/register/default.js&#10;routes&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/routes.js&#10;bootst&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/dst/config/bootstrap.js&#10;bootstrap&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/dst/config/bootstrap.js&#10;cucumb&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/tasks/config/cucumber.js&#10;cucu&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/tasks/config/cucumber.js&#10;babel&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/tasks/config/babel.js" />
+    <property name="SearchEverywhereHistoryKey" value="routes&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/config/routes.js&#10;boots&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/bootstrap.js&#10;defau&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/tasks/register/default.js&#10;usercon&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/controllers/UserController.js&#10;usercontr&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/controllers/UserController.js&#10;default&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/tasks/register/default.js&#10;bootst&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/dst/config/bootstrap.js&#10;bootstrap&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/dst/config/bootstrap.js&#10;cucumb&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/tasks/config/cucumber.js&#10;cucu&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/tasks/config/cucumber.js&#10;babel&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/tasks/config/babel.js" />
     <property name="last.edited.regexp" value="" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -819,14 +836,14 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1536" y="23" width="384" height="1057" extended-state="0" />
+    <frame x="1536" y="23" width="384" height="1053" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298647" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32778355" sideWeight="0.49614644" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33815926" sideWeight="0.5555556" order="11" side_tool="false" content_ui="tabs" x="1995" y="579" width="1899" height="370" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.33956388" sideWeight="0.5555556" order="11" side_tool="false" content_ui="tabs" x="1995" y="579" width="1899" height="370" />
       <window_info id="Terminal" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.66959065" sideWeight="0.44094488" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.5643275" sideWeight="0.5590551" order="4" side_tool="false" content_ui="combo" />
@@ -1137,14 +1154,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/src/js/lib/entities/Request.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="22" column="55" selection-start-line="22" selection-start-column="55" selection-end-line="22" selection-end-column="55" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/src/js/config/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1179,10 +1188,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/src/js/lib/entities/Route.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/src/js/lib/entities/Request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="32" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/src/js/config/routes.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="5" selection-start-line="45" selection-start-column="5" selection-end-line="45" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/src/js/lib/entities/Application.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.85172796">
-          <caret line="106" column="4" selection-start-line="106" selection-start-column="4" selection-end-line="106" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.47658864">
+          <caret line="69" column="0" selection-start-line="69" selection-start-column="0" selection-end-line="69" selection-end-column="0" />
           <folding>
             <element signature="e#0#47#0" expanded="false" />
           </folding>
