@@ -13,7 +13,7 @@
  */
 module.exports = function(gulp, plugins, growl) {
 	gulp.task('copy:client', function() {
-		return gulp.src(['./src/client/.tmp/**/*.*', './src/client/src/**/*.!(js)'])
+		return gulp.src(['./src/client/.tmp/**/*.*', './src/client/src/**/*!(.js)', './src/client/src/js/dependencies/*.js'])
 				.pipe(gulp.dest('./src/client/dst'))
 				.pipe(plugins.if(growl, plugins.notify({ message: 'Copy client task complete' })));
 	});
