@@ -76,10 +76,30 @@ class Router extends Backbone.Router {
     }
   }
 
+  /**
+   * reload the current route, without refreshing the page
+   * @returns {*}
+   */
   reload() {
     return Backbone.history.loadUrl(Backbone.history.fragment);
   }
 
+  redirect(route, options) {
+    options = options || {};
+
+    _.extend(options, {
+      replace: true
+    });
+
+    this.navigateTo(route, options);
+  }
+
+  /**
+   * Navigates to a certain route
+   * @param route
+   * @param options
+   * @returns {*}
+   */
   navigateTo(route, options) {
     // check if route is current route
     if (route === window.location.hash.replace(/^#/g, '')) {

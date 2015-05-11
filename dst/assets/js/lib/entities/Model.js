@@ -18,13 +18,9 @@ class Model {
     _.extend(this, options);
 
     this.data = [];
+
+    // expose the model's data on app.data so it's easily accessible
     app.data[this.name] = this.data;
-
-    this.makeRequestWrapperFunctions();
-  }
-
-  makeRequestWrapperFunctions() {
-
   }
 
 }

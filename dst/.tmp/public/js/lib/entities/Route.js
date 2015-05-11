@@ -171,7 +171,6 @@ class Route {
    * Once the controller has collected all the data it needs the view is instantiated and fed this data
    */
   executeView(data) {
-    console.log('execute view', data);
     const view = new this.view({
       attributes: data
     });
@@ -195,9 +194,8 @@ class Route {
    * the user will be redirected to this route
    */
   executeRedirect(...args) {
-    console.log('execute redirect', args);
     if (this.unauthorized) {
-      //app.router.redirect(this.unauthorized, {replace: true});
+      app.router.redirect(this.unauthorized);
     }
   }
 

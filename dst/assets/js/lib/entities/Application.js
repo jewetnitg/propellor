@@ -16,6 +16,12 @@ import setDottedKeyOnObject from '../helpers/setDottedKeyOnObject';
 
 let singleton = null;
 
+/**
+ * The Application singleton serves as the glue between the various components of the application,
+ * it incorporates interpreting the config files (both server and client), instantiating models,
+ * requests, controllers, routes and services.
+ * It's there to allow for easy access to your data and classes, and for functionality like running policy checks.
+ */
 class Application {
 
   constructor(options) {
@@ -65,12 +71,23 @@ class Application {
       .then(this.instantiateRouter);
   }
 
+  /**
+   * executes the bootstrap function specified by the using in ./config/bootstrap.js
+   * @returns {Promise}
+   */
   executeBootstrap() {
     return new Promise((resolve, reject) => {
       this.files.config.bootstrap(resolve, reject);
     });
   }
 
+  /**
+   * gets the server definition from the server,
+   * this tells the client what the server can do and how to talk to it,
+   * it will be used to autowire making requests to the server
+   *
+   * @returns {Promise}
+   */
   getServerDefinition() {
     return new Promise((resolve) => {
       $.get('/describe', (data) => {
@@ -80,6 +97,11 @@ class Application {
     });
   }
 
+  /**
+   * Interprets client side files object,
+   * it interprets the configs and instantiates all controllers, routes and services
+   * @returns {{}}
+   */
   interpretFiles() {
     const files = {};
 
@@ -95,11 +117,20 @@ class Application {
     return files;
   }
 
+  /**
+   * Instantiates the router with the router options containing the routes, defaultRoute and pushState property
+   */
   instantiateRouter() {
     this.routerOptions.routes['*other'] = 'redirectToDefault';
     this.router = new (Router.extend(this.routerOptions));
   }
 
+  /**
+   * instantiates a {Controller} singleton,
+   * stores it on app.controllers[key] so app.controllers.UserController for example
+   * @param controller
+   * @param key
+   */
   instantiateController(controller, key) {
     controller = controller || {};
     controller.prototype.entity = key.replace(/controller$/ig, '');
@@ -110,6 +141,14 @@ class Application {
 
   }
 
+  /**
+   * makes a route object using an item from the routes config,
+   * adds it to the routeOptions so the backbone router will call its
+   * execute method.
+   *
+   * @param obj
+   * @param key
+   */
   instantiateRoute(obj, key) {
     if (typeof obj === 'object' && !(obj instanceof Array)) {
       const split = obj.controller.split('.');
@@ -132,6 +171,10 @@ class Application {
     }
   }
 
+  /**
+   * transforms the server definition into something useful for the client
+   * @param data
+   */
   interpretServerDefinition(data) {
     _.extend(this.config, data.config || {});
 
@@ -139,11 +182,25 @@ class Application {
     _.each(data.requests, this.instantiateRequest);
   }
 
+  /**
+   * Instantiates a {Model} singleton from a model object (retrieved from the server),
+   * stores it on app.models[name], so app.models.User for example, a model is always a collection,
+   * there are no instances of single models, models are POJOs
+   *
+   * @param model
+   */
   instantiateModel(model) {
     const name = model.name;
     this.models[name] = new Model(model);
   }
 
+  /**
+   * Instantiates a {Request} from a request object (retrieved from the server)
+   * and stores the execute method on app.server[entity][name],
+   * app.server.User.login for example.
+   *
+   * @param _request
+   */
   instantiateRequest(_request) {
     const entity  = _request.entity;
     const name    = _request.name;

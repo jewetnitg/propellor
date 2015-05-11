@@ -139,7 +139,6 @@ class View {
       this.$el = $('<' + tag + '></' + tag + '>');
       this.__addAttributesToEl();
     }
-    console.log('!');
   }
 
   /**
@@ -219,5 +218,6 @@ class View {
 
 View.prototype.clearHolder  = true;
 View.prototype.absolutePathToPolymerComponentRoot = 'js/api/webcomponents/';
-_.extend(View.prototype, Backbone.Events)
+_.extend(View.prototype, Backbone.Events);
+
 export default View;
