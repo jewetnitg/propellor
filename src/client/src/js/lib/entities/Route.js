@@ -17,7 +17,17 @@ class Route {
 
     this.route = route;
 
-    _.bindAll(this, 'execute', 'executePolicies', 'executeController', 'executeView', 'executeFlash', 'executeRedirect');
+    _.bindAll(this,
+      'execute',
+      'executePolicies',
+      'executeController',
+      'executeView',
+      'executeFlash',
+      'executeRedirect',
+      'onControllerPass',
+      'onPolicyFail',
+      'onPolicyPass'
+    );
     _.extend(this, options);
   }
 
@@ -37,28 +47,48 @@ class Route {
    */
   execute(...args) {
     console.log('route', this, 'with data', args);
-
     const pathVariableObject = this.makePathVariableObject(args);
 
+    this.__tmp_args = args || [];
+    this.__tmp_pathVariableObject = pathVariableObject || {};
+
     return this.executePolicies(pathVariableObject)
-      .then(this.executeController,
-        (data) => {
-          return new Promise((resolve, reject) => {
-            this.executeFlash(data);
-            this.executeRedirect(data);
-            reject(data);
-          });
-        }
-      )
-      .then(
-        (data) => {
-          return new Promise((resolve, reject) => {
-            this.executeView(data);
-            this.executeFlash(data);
-            resolve(data);
-          });
-        }
-      );
+      .then(this.onPolicyPass, this.onPolicyFail)
+      .then(this.onControllerPass);
+  }
+
+  /**
+   * called when routing and the controller resolved
+   * @param data
+   * @returns {Promise}
+   */
+  onControllerPass(data) {
+    return new Promise((resolve, reject) => {
+      this.executeView(data);
+      this.executeFlash(data);
+      resolve(data);
+    });
+  }
+
+  /**
+   * called when routing and all policies have passed
+   * @param data
+   */
+  onPolicyPass(data) {
+    return this.executeController();
+  }
+
+  /**
+   * called when trying to route and not all policies pass
+   * @param data
+   * @returns {Promise}
+   */
+  onPolicyFail(data) {
+    return new Promise((resolve, reject) => {
+      this.executeFlash(data);
+      this.executeRedirect(data);
+      reject(data);
+    });
   }
 
   /**
@@ -104,22 +134,27 @@ class Route {
   }
 
   makeRequestObject() {
-    const requestObject = {};
+    const requestObject = {
+      session: app.session,
+      params: this.__tmp_pathVariableObject,
+      param: (key) => {
+        return this.__tmp_pathVariableObject[key];
+      }
+    };
 
     return requestObject;
   }
 
   /**
    * makes the responseobject that is available to the view,
-   * contains 3 attributes, send (resolve), forbidden (reject) and session (client side session)
+   * contains 2 attributes, send (resolve) and forbidden (reject)
    *
    * @param resolve
    * @param reject
-   * @returns {{session: (*|defaults.session|{}), send: *, forbidden: *}}
+   * @returns {{send: *, forbidden: *}}
    */
   makeResponseObject(resolve, reject) {
     const responseObject = {
-      session: app.session,
       send: resolve,
       forbidden: reject
     };
@@ -131,7 +166,7 @@ class Route {
    * Once the controller has collected all the data it needs the view is instantiated and fed this data
    */
   executeView(data) {
-    console.log('execute view', args);
+    console.log('execute view', data);
     //const view = new this.view(data);
     //app.router.setCurrentView(view);
   }
@@ -140,7 +175,7 @@ class Route {
    * In any case, if defined, a flash message will be shown to the user to affirm the success or failure of routing
    */
   executeFlash(data, failed) {
-    console.log('execute flash', args);
+    console.log('execute flash', data);
     //if (failed && this.flash.unauthorized) {
     //  app.notify.error();
     //} else (this.flash.authorized) {
