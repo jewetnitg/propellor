@@ -11,6 +11,7 @@ import Request    from './Request';
 import Route      from './Route';
 import Controller from './Controller';
 import Router     from './Router';
+import Connection from './Connection';
 
 import setDottedKeyOnObject from '../helpers/setDottedKeyOnObject';
 
@@ -34,6 +35,7 @@ class Application {
     window.app = this;
 
     const defaults = {
+      connected: false,
       _files: files,
       routerOptions: {
         routes: {}
@@ -60,13 +62,15 @@ class Application {
       'executeBootstrap',
       'instantiateRoute',
       'instantiateController',
-      'instantiateRouter'
+      'instantiateRouter',
+      'connectToServer'
     );
 
     this.files = this.interpretFiles();
 
     this.getServerDefinition()
       .then(this.interpretServerDefinition)
+      .then(this.connectToServer)
       .then(this.executeBootstrap)
       .then(this.instantiateRouter);
   }
@@ -79,6 +83,18 @@ class Application {
     return new Promise((resolve, reject) => {
       this.files.config.bootstrap(resolve, reject);
     });
+  }
+
+  connectToServer() {
+    const adapter = this.files.adapters[this.config.adapter];
+    const baseUrl = this.config.baseUrl;
+
+    this.connection = new Connection({
+      adapter,
+      baseUrl
+    });
+
+    return this.connection.connect()
   }
 
   /**

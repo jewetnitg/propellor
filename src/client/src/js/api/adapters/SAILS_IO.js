@@ -5,25 +5,28 @@
  *
  */
 
-const SAILS_IO = {
+import Adapter from '../../lib/entities/Adapter';
+
+
+class SAILS_IO extends Adapter {
 
   connect() {
     return new Promise((resolve, reject) => {
       resolve();
     });
-  },
+  }
 
   doRequest() {
     return new Promise((resolve, reject) => {
       resolve();
     });
-  },
+  }
 
   subscribe() {
     return new Promise((resolve, reject) => {
       resolve();
     });
-  },
+  }
 
   unsubscribe() {
     return new Promise((resolve, reject) => {
@@ -31,6 +34,6 @@ const SAILS_IO = {
     });
   }
 
-};
+}
 
 export default SAILS_IO;
