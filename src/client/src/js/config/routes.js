@@ -23,7 +23,7 @@ export default {
   },
 
   'user/list': {
-    controller    : 'UserController',
+    controller    : 'UserController.home',
     view          : 'UserListView', // lets try to make views webcomponents
     policies      : ['isLoggedIn'],
     unauthorized  : 'login',
@@ -35,7 +35,7 @@ export default {
   },
 
   'user/details/:id': {
-    controller    : 'UserController',
+    controller    : 'UserController.home',
     view          : 'UserDetailsView',
     policies      : ['isLoggedInUserOrAdmin'],
     unauthorized  : 'user/list',
@@ -47,12 +47,12 @@ export default {
   },
 
   'login': {
-    controller  : 'UserController',
+    controller  : 'UserController.home',
     view        : 'LoginView'
   },
 
   'register': {
-    controller  : 'UserController',
+    controller  : 'UserController.home',
     view        : 'RegisterView'
   }
 

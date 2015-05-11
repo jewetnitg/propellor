@@ -3,36 +3,18 @@
  */
 'use strict';
 
-import _        from 'lodash';
-import files    from '../files';
-import $        from 'jquery';
-import Model    from '../entities/Model';
-import Request  from '../entities/Request';
-import Route    from '../entities/Route';
+import _          from 'lodash';
+import files      from '../files';
+import $          from 'jquery';
+import Model      from './Model';
+import Request    from './Request';
+import Route      from './Route';
+import Controller from './Controller';
+import Router     from './Router';
+
+import setDottedKeyOnObject from '../helpers/setDottedKeyOnObject';
 
 let singleton = null;
-
-// TODO: move to helpers
-function setDottedKeyOnObject(keyStr, value, obj) {
-  obj = obj || {};
-
-  const split = keyStr.split('.');
-  const len   = split.length;
-
-  let i       = 0;
-
-  _.each(split, (key) => {
-    if (i === len - 1) {
-      obj[key] = value;
-    } else {
-      obj[key] = obj[key] || {};
-      obj = obj[key];
-    }
-    i++;
-  });
-
-  return obj;
-}
 
 class Application {
 
@@ -45,21 +27,33 @@ class Application {
 
     window.app = this;
 
-    _.extend(this, options);
-    _.bindAll(this, 'interpretServerDefinition', 'instantiateModel', 'instantiateRequest', 'executeBootstrap', 'instantiateRoute');
+    const defaults = {
+      _files: files,
+      routerOptions: {
+        routes: {}
+      },
+      router: null,
+      data: {},
+      session: {},
+      models: {},
+      controllers: {},
+      services: {},
+      config: {},
+      policies: {},
+      server: {
+        _requests: []
+      }
+    };
 
-    this._files = files;
-    //this.router = new Router();
-    this.routerOptions = {
-      routes: {}
-    };
-    this.data = {};
-    this.models = {};
-    this.config = {};
-    this.policies = {};
-    this.server = {
-      _requests: []
-    };
+    _.extend(this, defaults, options);
+    _.bindAll(this,
+      'interpretServerDefinition',
+      'instantiateModel',
+      'instantiateRequest',
+      'executeBootstrap',
+      'instantiateRoute',
+      'instantiateController'
+    );
 
     this.files = this.interpretFiles();
 
@@ -90,15 +84,35 @@ class Application {
       setDottedKeyOnObject(key, value, files);
     });
 
+    _.each(files.controllers, this.instantiateController);
     _.each(files.config.routes, this.instantiateRoute);
 
     return files;
   }
 
+  instantiateController(controller, key) {
+    controller = controller || {};
+    controller.prototype.entity = key.replace(/controller$/ig, '');
+
+    this.controllers[key] = new controller({
+      entity: controller.prototype.entity
+    });
+
+  }
+
   instantiateRoute(obj, key) {
     if (typeof obj === 'object' && !(obj instanceof Array)) {
+      const split = obj.controller.split('.');
+      const controller = split[0];
+      const controllerMethod = split[1] || 'index';
+
+      // TODO: do the same for view
+      obj.controller = this.controllers[controller][controllerMethod];
+
       const route = new Route(key, obj);
+
       this.routerOptions.routes[key] = route.execute;
+      this.routerOptions.routes[key]._route = route;
     } else {
       if (key === 'pushState') {
         this.routerOptions.pushState = obj;
@@ -125,9 +139,11 @@ class Application {
     const name    = _request.name;
     const request = new Request(_request);
 
+    // expose requests conveniently for the user, app.server.User.login(data) would GET /user/login body{data} for example
     this.server[entity]       = this.server[entity] || {};
     this.server[entity][name] = request.execute;
 
+    // we want to make policies even easier to access
     if (entity === 'Policy') {
       this.policies[name] = request.execute;
     }
