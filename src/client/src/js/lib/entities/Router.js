@@ -84,6 +84,13 @@ class Router extends Backbone.Router {
     return Backbone.history.loadUrl(Backbone.history.fragment);
   }
 
+  /**
+   * navigates to a route using the replace options, so if the client goes back it
+   * won't get redirected again
+   *
+   * @param route
+   * @param options
+   */
   redirect(route, options) {
     options = options || {};
 
