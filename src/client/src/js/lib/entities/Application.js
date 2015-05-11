@@ -52,14 +52,16 @@ class Application {
       'instantiateRequest',
       'executeBootstrap',
       'instantiateRoute',
-      'instantiateController'
+      'instantiateController',
+      'instantiateRouter'
     );
 
     this.files = this.interpretFiles();
 
     this.getServerDefinition()
       .then(this.interpretServerDefinition)
-      .then(this.executeBootstrap);
+      .then(this.executeBootstrap)
+      .then(this.instantiateRouter);
   }
 
   executeBootstrap() {
@@ -88,6 +90,11 @@ class Application {
     _.each(files.config.routes, this.instantiateRoute);
 
     return files;
+  }
+
+  instantiateRouter() {
+    this.routerOptions.routes['*other'] = 'redirectToDefault';
+    this.router = new (Router.extend(this.routerOptions));
   }
 
   instantiateController(controller, key) {
@@ -139,7 +146,8 @@ class Application {
     const name    = _request.name;
     const request = new Request(_request);
 
-    // expose requests conveniently for the user, app.server.User.login(data) would GET /user/login body{data} for example
+    // expose requests conveniently for the user,
+    // app.server.User.login(data) would GET /user/login body{data} for example
     this.server[entity]       = this.server[entity] || {};
     this.server[entity][name] = request.execute;
 

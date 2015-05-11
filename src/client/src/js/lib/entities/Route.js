@@ -16,7 +16,7 @@ class Route {
     }
 
     this.route = route;
-
+    this.pathVariables = this.pathVariables || [];
     _.bindAll(this,
       'execute',
       'executePolicies',
@@ -25,6 +25,7 @@ class Route {
       'executeFlash',
       'executeRedirect',
       'onControllerPass',
+      'makePathVariableObject',
       'onPolicyFail',
       'onPolicyPass'
     );
@@ -46,7 +47,6 @@ class Route {
    * @param args
    */
   execute(...args) {
-    console.log('route', this, 'with data', args);
     const pathVariableObject = this.makePathVariableObject(args);
 
     this.__tmp_args = args || [];
@@ -58,15 +58,30 @@ class Route {
   }
 
   /**
-   * called when routing and the controller resolved
-   * @param data
-   * @returns {Promise}
+   * Converts an array of pathVariables to a hashmap, useful for passing data to the policy
    */
-  onControllerPass(data) {
+  makePathVariableObject(pathVariableArray) {
+    const pathVariableObject = {};
+
+    _.each(pathVariableArray, (value, i) => {
+      const pathVariable = this.pathVariables[i];
+      if (pathVariable) {
+        pathVariableObject[pathVariable] = value;
+      }
+    });
+
+    return pathVariableObject;
+  }
+
+  /**
+   * When a route is 'secured' using policies, all policies must be executed before anything happens,
+   * if they all pass, the route will continue and the controller will be called
+   * returns a promise
+   */
+  executePolicies(data) {
     return new Promise((resolve, reject) => {
-      this.executeView(data);
-      this.executeFlash(data);
-      resolve(data);
+      // TODO: implement, policies available on app.policies, ex. app.policies.isLoggedIn(data)
+      resolve();
     });
   }
 
@@ -92,31 +107,16 @@ class Route {
   }
 
   /**
-   * When a route is 'secured' using policies, all policies must be executed before anything happens,
-   * if they all pass, the route will continue and the controller will be called
-   * returns a promise
+   * called when routing and the controller resolved
+   * @param data
+   * @returns {Promise}
    */
-  executePolicies(data) {
+  onControllerPass(data) {
     return new Promise((resolve, reject) => {
-      // TODO: implement, policies available on app.policies, ex. app.policies.isLoggedIn(data)
-      resolve();
+      this.executeView(data);
+      this.executeFlash(data);
+      resolve(data);
     });
-  }
-
-  /**
-   * Converts an array of pathVariables to a hashmap, useful for passing data to the policy
-   */
-  makePathVariableObject(pathVariableArray) {
-    const pathVariableObject = {};
-
-    _.each(pathVariableArray, (value, i) => {
-      const pathVariable = this.pathVariables[i];
-      if (pathVariable) {
-        pathVariableObject[pathVariable] = value;
-      }
-    });
-
-    return pathVariableObject;
   }
 
   /**
@@ -133,6 +133,11 @@ class Route {
     });
   }
 
+  /**
+   * makes the request object that is available to the controller,
+   * contains a session and param property and a params method
+   * @returns {{session: (*|defaults.session|{}), params: (*|{}), param: Function}}
+   */
   makeRequestObject() {
     const requestObject = {
       session: app.session,
@@ -146,7 +151,7 @@ class Route {
   }
 
   /**
-   * makes the responseobject that is available to the view,
+   * makes the response object that is available to the controller,
    * contains 2 attributes, send (resolve) and forbidden (reject)
    *
    * @param resolve

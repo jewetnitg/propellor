@@ -20,6 +20,13 @@ Backbone.$ = $;
 class Router extends Backbone.Router {
 
   /**
+   * Start watching for hash change events when the router is instantiated
+   */
+  initialize() {
+    this.startHistory();
+  }
+
+  /**
    * start navigation history using Backbone.history.start, using this.root and this.pushState options
    * @type function
    */
@@ -29,6 +36,7 @@ class Router extends Backbone.Router {
       root      : this.root
     });
   }
+
 
   /**
    * redirect to the default route specified in defaultRoute
