@@ -20,6 +20,8 @@ class Model {
       'add',
       'remove',
       'getIndex',
+      'subscribe',
+      'unsubscribe',
       'isNew'
     );
     _.extend(this, options);
@@ -28,6 +30,20 @@ class Model {
 
     // expose the model's data on app.data so it's easily accessible
     app.data[this.name] = this.data;
+  }
+
+  /**
+   * Starts listening to server events using the connection
+   */
+  subscribe() {
+    return app.connection.subscribe(this.entity);
+  }
+
+  /**
+   * Stops listening to server events
+   */
+  unsubscribe() {
+    return app.connection.unsubscribe(this.entity);
   }
 
   /**
