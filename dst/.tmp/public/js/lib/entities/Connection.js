@@ -17,7 +17,7 @@ class Connection {
 
   executeRequest(request, data) {
     const method = request.method ? request.method.toLowerCase() : 'get';
-    const url = request.route;
+    const url = request.fillRouteWithPathVariables(data);
 
     return this.adapter.executeRequest({
       method,
