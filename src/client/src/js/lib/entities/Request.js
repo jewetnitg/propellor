@@ -15,13 +15,30 @@ class Request {
     } else {
       singletons[options.entity][options.name] = this;
     }
-    _.bindAll(this, 'execute');
+    _.bindAll(this,
+      'execute',
+      'postRequest'
+    );
     _.extend(this, options);
   }
 
   execute(data) {
     console.log('do request', this, 'with data', data);
-    return app.connection.executeRequest(this, data);
+    return app.connection.executeRequest(this, data).
+      then(this.postRequest);
+  }
+
+  postRequest(data) {
+    return new Promise(resolve => {
+      if (this.rest && this.entity && this.app.models[this.entity]) {
+        if (data) {
+          this.app.models[this.entity].add(data);
+        } else if (this.destroy) {
+          this.app.models[this.entity].remove(data);
+        }
+      }
+      resolve(data);
+    });
   }
 
   fillRouteWithPathVariables(data) {

@@ -17,7 +17,10 @@ class Model {
 
     _.bindAll(this,
       'get',
-      'add'
+      'add',
+      'remove',
+      'getIndex',
+      'isNew'
     );
     _.extend(this, options);
 
@@ -79,6 +82,26 @@ class Model {
     return undefined;
   }
 
+  /**
+   * gets the index of a model by id, model or searchobject
+   * @param arg
+   * @returns {number}
+   */
+  getIndex(arg) {
+    if (arg instanceof Array) {
+      return _.map(arg, this.getIndex);
+    } else {
+      const model = this.get(arg);
+      return model ? this.data.indexOf(model) : -1;
+    }
+  }
+
+  /**
+   * Checks whether the model is new by looking at the id property,
+   * if it is falsy the model is new
+   * @param model
+   * @returns {boolean}
+   */
   isNew(model) {
     return !model.id;
   }
@@ -103,6 +126,23 @@ class Model {
         return arg;
       }
     }
+  }
+
+  /**
+   * Removes a model by id, by model object or by search object,
+   * if an array is given remove is executed for all items in the array
+   *
+   * @param arg
+   * @returns {undefined}
+   */
+  remove(arg) {
+    if (arg instanceof Array) {
+      _.each(arg, this.remove);
+    } else if (typeof arg === 'object') {
+      const index = this.getIndex(arg);
+      this.data.splice(index, 1);
+    }
+    return undefined;
   }
 
 }

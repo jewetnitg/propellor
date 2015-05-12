@@ -163,6 +163,7 @@ export function bootstrap (cb) {
         method: 'DELETE',
         name: 'destroy',
         restful: true,
+        destroy: true,
         route: prefix +'/' + entity + '/:id',
         pathVariables: ['id']
       },
@@ -230,6 +231,7 @@ export function bootstrap (cb) {
         method: 'DELETE',
         name: 'DELETE',
         restful: true,
+        destroy: true,
         route: '/' + entity + '/destroy/:id',
         pathVariables: ['id']
       },
