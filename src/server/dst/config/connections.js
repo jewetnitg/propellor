@@ -63,6 +63,13 @@ module.exports.connections = {
     host: 'localhost',
     port: 27017 },
 
+  localCouchDbServer: {
+    adapter: 'sails-couchdb-orm',
+    host: 'localhost',
+    port: 5984,
+    database: 'boilerplate_v2'
+  },
+
   /***************************************************************************
   *                                                                          *
   * PostgreSQL is another officially supported relational database.          *

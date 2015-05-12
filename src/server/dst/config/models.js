@@ -20,6 +20,6 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
 
-  // connection: 'localDiskDb',
+  'connection': 'localCouchDbServer',
   'migrate': 'safe'
 };

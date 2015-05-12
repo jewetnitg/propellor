@@ -86,9 +86,20 @@ class SAILS_IO extends Adapter {
     });
   }
 
-  subscribe() {
-    return new Promise((resolve, reject) => {
-      resolve();
+  subscribe(entity) {
+    app.server[entity].findAll().then(() => {
+      this.bindSocketListenerForEntity(entity);
+      return new Promise((resolve, reject) => {
+        resolve();
+      });
+    });
+  }
+
+  bindSocketListenerForEntity(entity) {
+    const event = entity.toLowerCase();
+    this.on(event, () => {
+      console.log('socket event');
+      // apply changes to app.data.User
     });
   }
 
@@ -96,6 +107,10 @@ class SAILS_IO extends Adapter {
     return new Promise((resolve, reject) => {
       resolve();
     });
+  }
+
+  on(...args) {
+    this.raw.on.apply(this.raw, ...args);
   }
 
 }

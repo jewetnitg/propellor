@@ -65,6 +65,13 @@ module.exports.connections = {
     // database: 'your_mongo_db_name_here'
   },
 
+  localCouchDbServer: {
+    adapter: 'sails-couchdb-orm',
+    host: 'localhost',
+    port: 5984,
+    database: 'boilerplate_v2'
+  },
+
   /***************************************************************************
   *                                                                          *
   * PostgreSQL is another officially supported relational database.          *

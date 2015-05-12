@@ -26,6 +26,18 @@ class Connection {
     });
   }
 
+  subscribe() {
+    this.adapter.subscribe(entity);
+  }
+
+  unsubscribe(entity) {
+    this.adapter.unsubscribe(entity);
+  }
+
+  on(...args) {
+    this.adapter.on.apply(this.adapter, args);
+  }
+
 }
 
 export default Connection;
