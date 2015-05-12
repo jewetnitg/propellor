@@ -64,6 +64,7 @@ class Application {
       'instantiateController',
       'instantiateRouter',
       'instantiateAdapter',
+      'subscribeToServerModelChanges',
       'connectToServer'
     );
 
@@ -72,6 +73,7 @@ class Application {
     this.getServerDefinition()
       .then(this.interpretServerDefinition)
       .then(this.connectToServer)
+      .then(this.subscribeToServerModelChanges)
       .then(this.executeBootstrap)
       .then(this.instantiateRouter);
   }
@@ -100,6 +102,18 @@ class Application {
     });
 
     return this.connection.connect()
+  }
+  /**
+   * Now that the models are instantiated and we are connected to the server,
+   * lets start are event listeners
+   * @returns {Promise}
+   */
+  subscribeToServerModelChanges() {
+    return Promise.all(
+      _.map(this.models, model => {
+        model.subscribe();
+      })
+    );
   }
 
   /**

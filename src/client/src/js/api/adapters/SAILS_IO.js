@@ -113,7 +113,7 @@ class SAILS_IO extends Adapter {
   }
 
   on(...args) {
-    this.raw.on.apply(this.raw, args);
+    return this.raw.on.apply(this.raw, args);
   }
 
 }

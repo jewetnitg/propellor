@@ -71,11 +71,7 @@ class Model {
         // argument has an id, return single model
         return _.chain(this.data)
           .filter((data) => {
-            const matchedProperties = _.map(arg, (_arg, key) => {
-              return data[key] == _arg;
-            });
-
-            return matchedProperties.indexOf(false) === -1;
+            return data.id == arg.id;
           })
           .first()
           .value();
@@ -133,9 +129,8 @@ class Model {
     if (arg instanceof Array) {
       return _.map(arg, this.add);
     } else if (typeof arg === 'object') {
-      const model = this.get(arg);
-
-      if(model) {
+      const model = this.get(arg.id);
+      if(model && arg.id) {
         return _.extend(model, arg);
       } else {
         this.data.push(arg);

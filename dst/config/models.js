@@ -20,6 +20,6 @@ module.exports.models = {
   *                                                                          *
   ***************************************************************************/
 
-  'connection': 'localCouchDbServer',
+  'connection': 'localMysqlServer',
   'migrate': 'safe'
 };

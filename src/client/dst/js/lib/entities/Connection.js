@@ -26,16 +26,16 @@ class Connection {
     });
   }
 
-  subscribe() {
-    this.adapter.subscribe(entity);
+  subscribe(entity) {
+    return this.adapter.subscribe(entity);
   }
 
   unsubscribe(entity) {
-    this.adapter.unsubscribe(entity);
+    return this.adapter.unsubscribe(entity);
   }
 
   on(...args) {
-    this.adapter.on.apply(this.adapter, args);
+    return this.adapter.on.apply(this.adapter, args);
   }
 
 }

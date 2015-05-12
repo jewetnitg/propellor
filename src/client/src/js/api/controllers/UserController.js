@@ -9,9 +9,10 @@ class UserController extends Controller {
   home(req, res) {
     app.server.User
       .findOne({
-        firstName: "Rik"
+        firstName: 'Joe'
       })
       .then((user) => {
+        console.log(user);
         res.send({
           user,
           testText: 'Hello View, I\'m a Controller, and this is my data!'

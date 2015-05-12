@@ -97,20 +97,23 @@ class SAILS_IO extends Adapter {
 
   bindSocketListenerForEntity(entity) {
     const event = entity.toLowerCase();
-    this.on(event, () => {
-      console.log('socket event');
-      // apply changes to app.data.User
+    this.on(event, (event) => {
+      if (event.verb === 'update' || event.verb === 'created') {
+        app.models[entity].add(event.data);
+      } else if (event.verb === 'destroyed') {
+        app.models[entity].remove(event.id);
+      }
     });
   }
 
-  unsubscribe() {
+  unsubscribe(entity) {
     return new Promise((resolve, reject) => {
       resolve();
     });
   }
 
   on(...args) {
-    this.raw.on.apply(this.raw, ...args);
+    return this.raw.on.apply(this.raw, args);
   }
 
 }
