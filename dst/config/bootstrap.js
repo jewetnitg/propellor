@@ -163,30 +163,35 @@ function bootstrap(cb) {
       entity: entity,
       method: 'GET',
       name: 'findAll',
+      restful: true,
       route: prefix + '/' + entity,
       pathVariables: []
     }, {
       entity: entity,
       method: 'GET',
       name: 'findById',
+      restful: true,
       route: prefix + '/' + entity + '/:id',
       pathVariables: ['id']
     }, {
       entity: entity,
       method: 'DELETE',
       name: 'destroy',
+      restful: true,
       route: prefix + '/' + entity + '/:id',
       pathVariables: ['id']
     }, {
       entity: entity,
       method: 'POST',
       name: 'create',
+      restful: true,
       route: prefix + '/' + entity,
       pathVariables: []
     }, {
       entity: entity,
       method: 'PUT',
       name: 'update',
+      restful: true,
       route: prefix + '/' + entity + '/:id',
       pathVariables: ['id']
     }];
@@ -219,24 +224,28 @@ function bootstrap(cb) {
       entity: entity,
       method: 'GET',
       name: 'READ',
+      restful: true,
       route: '/' + entity + '/find/:id',
       pathVariables: ['id']
     }, {
       entity: entity,
       method: 'POST',
       name: 'CREATE',
+      restful: true,
       route: '/' + entity + '/create',
       pathVariables: []
     }, {
       entity: entity,
       method: 'DELETE',
       name: 'DELETE',
+      restful: true,
       route: '/' + entity + '/destroy/:id',
       pathVariables: ['id']
     }, {
       entity: entity,
       method: 'PUT',
       name: 'UPDATE',
+      restful: true,
       route: '/' + entity + '/update/:id',
       pathVariables: ['id']
     }];

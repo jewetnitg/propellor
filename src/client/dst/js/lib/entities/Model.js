@@ -16,7 +16,8 @@ class Model {
     }
 
     _.bindAll(this,
-      'get'
+      'get',
+      'add'
     );
     _.extend(this, options);
 
@@ -34,6 +35,7 @@ class Model {
    * if the argument is an array get will be called recursively
    *
    * @param arg
+   * @returns {Object|Array|undefined}
    */
   get(arg) {
     if (typeof arg === 'string' || typeof arg === 'number') {
@@ -45,22 +47,58 @@ class Model {
         .first()
         .value();
     } else if (typeof arg === 'object' && !(arg instanceof Array)) {
-      // argument is a model or
-      return _.chain(this.data)
-        .filter((data) => {
-          const matchedProperties = _.map(arg, (_arg, key) => {
-            return data[key] == _arg;
-          });
+      // argument is a model or search object
+      if (arg.id) {
+        // argument has an id, return single model
+        return _.chain(this.data)
+          .filter((data) => {
+            const matchedProperties = _.map(arg, (_arg, key) => {
+              return data[key] == _arg;
+            });
 
-          return matchedProperties.indexOf(false) === -1;
-        })
-        .first()
-        .value();
+            return matchedProperties.indexOf(false) === -1;
+          })
+          .first()
+          .value();
+      } else {
+        // argument is a search object, return array of matches
+        return _.chain(this.data)
+          .filter((data) => {
+            const matchedProperties = _.map(arg, (_arg, key) => {
+              return data[key] == _arg;
+            });
+
+            return matchedProperties.indexOf(false) === -1;
+          })
+          .value();
+      }
     } else if (arg instanceof Array) {
-      return _.map(arg, this.get)
+      return _.map(arg, this.get);
     }
 
     return undefined;
+  }
+
+  /**
+   * Adds an object to the data, if it already exists it merges it
+   * TODO:  remove all attributes explicitly it could be that some attribute was removed,
+   *        extending doesn't remove anything
+   *
+   * @returns {Object|Array}
+   */
+  add(arg) {
+    if (arg instanceof Array) {
+      return _.map(arg, this.add);
+    } else if (typeof arg === 'object') {
+      const model = this.get(arg);
+
+      if(model) {
+        return _.extend(model, arg);
+      } else {
+        this.data.push(arg);
+        return arg;
+      }
+    }
   }
 
 }

@@ -146,6 +146,7 @@ export function bootstrap (cb) {
         entity,
         method: 'GET',
         name: 'findAll',
+        restful: true,
         route: prefix + '/' + entity,
         pathVariables: []
       },
@@ -153,6 +154,7 @@ export function bootstrap (cb) {
         entity,
         method: 'GET',
         name: 'findById',
+        restful: true,
         route: prefix +'/' + entity + '/:id',
         pathVariables: ['id']
       },
@@ -160,6 +162,7 @@ export function bootstrap (cb) {
         entity,
         method: 'DELETE',
         name: 'destroy',
+        restful: true,
         route: prefix +'/' + entity + '/:id',
         pathVariables: ['id']
       },
@@ -167,6 +170,7 @@ export function bootstrap (cb) {
         entity,
         method: 'POST',
         name: 'create',
+        restful: true,
         route: prefix +'/' + entity,
         pathVariables: []
       },
@@ -174,6 +178,7 @@ export function bootstrap (cb) {
         entity,
         method: 'PUT',
         name: 'update',
+        restful: true,
         route: prefix +'/' + entity + '/:id',
         pathVariables: ['id']
       }
@@ -208,6 +213,7 @@ export function bootstrap (cb) {
         entity,
         method: 'GET',
         name: 'READ',
+        restful: true,
         route: '/' + entity + '/find/:id',
         pathVariables: ['id']
       },
@@ -215,6 +221,7 @@ export function bootstrap (cb) {
         entity,
         method: 'POST',
         name: 'CREATE',
+        restful: true,
         route: '/' + entity + '/create',
         pathVariables: []
       },
@@ -222,6 +229,7 @@ export function bootstrap (cb) {
         entity,
         method: 'DELETE',
         name: 'DELETE',
+        restful: true,
         route: '/' + entity + '/destroy/:id',
         pathVariables: ['id']
       },
@@ -229,6 +237,7 @@ export function bootstrap (cb) {
         entity,
         method: 'PUT',
         name: 'UPDATE',
+        restful: true,
         route: '/' + entity + '/update/:id',
         pathVariables: ['id']
       }

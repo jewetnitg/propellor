@@ -51,18 +51,15 @@ module.exports.connections = {
   },
 
   /***************************************************************************
-  *                                                                          *
-  * MongoDB is the leading NoSQL database.                                   *
-  * http://en.wikipedia.org/wiki/MongoDB                                     *
-  *                                                                          *
-  * Run: npm install sails-mongo                                             *
-  *                                                                          *
-  ***************************************************************************/
-  someMongodbServer: {
-    adapter: 'sails-mongo',
-    host: 'localhost',
-    port: 27017 },
-
+   *                                                                          *
+   * CouchDb is a document-oriented NoSQL database that uses JSON to store    *
+   * data, JavaScript as its query language using MapReduce,                  *
+   * and HTTP for an API.                                                     *
+   * http://en.wikipedia.org/wiki/CouchDB                                     *
+   *                                                                          *
+   * Run: npm install sails-couchdb-orm                                       *
+   *                                                                          *
+   ***************************************************************************/
   localCouchDbServer: {
     adapter: 'sails-couchdb-orm',
     host: 'localhost',
@@ -94,7 +91,3 @@ module.exports.connections = {
   ***************************************************************************/
 
 };
-
-// user: 'username',
-// password: 'password',
-// database: 'your_mongo_db_name_here'
