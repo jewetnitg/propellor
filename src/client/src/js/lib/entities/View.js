@@ -188,11 +188,6 @@ class View {
   __addAttributesToEl() {
     for (var key in this.attributes) {
       var value = this.attributes[key];
-
-      if (typeof value.__type === 'function' && value.__type() === 'model') {
-        value = value.toObject();
-      }
-
       value = typeof value === "object" ? JSON.stringify(value) : value;
 
       this.$el.attr(key, value);

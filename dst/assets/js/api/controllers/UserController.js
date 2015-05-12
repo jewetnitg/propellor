@@ -7,9 +7,17 @@ import Controller from '../../lib/entities/Controller';
 class UserController extends Controller {
 
   home(req, res) {
-    res.send({
-      testText: 'Hello View, I\'m a Controller, and this is my data!'
-    });
+    app.server.User
+      .findOne({
+        firstName: "Rik"
+      })
+      .then((user) => {
+        res.send({
+          user,
+          testText: 'Hello View, I\'m a Controller, and this is my data!'
+        });
+      });
+
   }
 }
 

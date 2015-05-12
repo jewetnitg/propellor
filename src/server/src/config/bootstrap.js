@@ -153,6 +153,15 @@ export function bootstrap (cb) {
       {
         entity,
         method: 'GET',
+        name: 'findOne',
+        restful: true,
+        single: true,
+        route: prefix + '/' + entity,
+        pathVariables: []
+      },
+      {
+        entity,
+        method: 'GET',
         name: 'findById',
         restful: true,
         route: prefix +'/' + entity + '/:id',

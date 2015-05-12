@@ -22,25 +22,47 @@ class Request {
     _.extend(this, options);
   }
 
+  /**
+   * uses app.connection to execute itself
+   * @param data
+   * @returns {Promise.<T>}
+   */
   execute(data) {
-    console.log('do request', this, 'with data', data);
-    return app.connection.executeRequest(this, data).
-      then(this.postRequest);
+    return app.connection.executeRequest(this, data)
+      .then(this.postRequest);
   }
 
+  /**
+   * executed after a request, checks whether the request was restful (autowired)
+   * and whether it was a destroy request.
+   * if so, it applies the data to the local model array,
+   * otherwise it just resolves the data passed in
+   * @param data
+   * @returns {Promise}
+   */
   postRequest(data) {
-    return new Promise(resolve => {
-      if (this.rest && this.entity && this.app.models[this.entity]) {
-        if (data) {
-          this.app.models[this.entity].add(data);
-        } else if (this.destroy) {
-          this.app.models[this.entity].remove(data);
+    return new Promise((resolve) => {
+      if (this.restful && this.entity && app.models[this.entity]) {
+        if (this.single) {
+          data = data instanceof Array ? data[0] : data;
         }
+
+        if (data && this.destroy) {
+          resolve(app.models[this.entity].remove(data));
+        } else if (data) {
+          resolve(app.models[this.entity].add(data));
+        }
+      } else {
+        resolve(data);
       }
-      resolve(data);
     });
   }
 
+  /**
+   * replaces the path variables in the route of this request using a hashmap provided in the first argument
+   * @param data {Object}
+   * @returns {route|*}
+   */
   fillRouteWithPathVariables(data) {
     let url = this.route;
     _.each(this.pathVariables, (pathVariable) => {
