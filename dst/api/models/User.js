@@ -20,7 +20,8 @@ module.exports = {
     },
 
     age: {
-      type: "number"
+      type: "number",
+      required: true
     }
 
   }

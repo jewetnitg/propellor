@@ -53,8 +53,7 @@ class Route {
     this.__tmp_pathVariableObject = pathVariableObject || {};
 
     return this.executePolicies(pathVariableObject)
-      .then(this.onPolicyPass, this.onPolicyFail)
-      .then(this.onControllerPass);
+      .then(this.onPolicyPass, this.onPolicyFail);
   }
 
   /**
@@ -79,10 +78,13 @@ class Route {
    * returns a promise
    */
   executePolicies(data) {
-    return new Promise((resolve, reject) => {
-      // TODO: implement, policies available on app.policies, ex. app.policies.isLoggedIn(data)
-      resolve();
-    });
+    if (this.policies && this.policies.length) {
+      return app.executePolicies(this.policies, data);
+    } else {
+      return new Promise((resolve) => {
+        resolve(data);
+      });
+    }
   }
 
   /**
@@ -90,7 +92,8 @@ class Route {
    * @param data
    */
   onPolicyPass(data) {
-    return this.executeController();
+    return this.executeController()
+      .then(this.onControllerPass);
   }
 
   /**

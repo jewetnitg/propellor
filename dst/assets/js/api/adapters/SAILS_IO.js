@@ -6,19 +6,83 @@
  */
 
 import Adapter from '../../lib/entities/Adapter';
-
+import _ from 'lodash';
 
 class SAILS_IO extends Adapter {
 
-  connect() {
+  constructor(options) {
+    super(options);
+
+    _.bindAll(this,
+      'connect',
+      'bindConnectEventListener',
+      'handleSuccessfulConnect',
+      'executeRequest',
+      'subscribe',
+      'unsubscribe'
+    );
+  }
+
+  /**
+   * connects to sails, if connection isn't established within 5 seconds,
+   * it rejects
+   * @param baseUrl
+   * @returns {Promise}
+   */
+  connect(baseUrl) {
     return new Promise((resolve, reject) => {
-      resolve();
+      this.bindConnectEventListener(io.sails.connect(baseUrl), baseUrl, resolve);
+      this._connectionTimeout = setTimeout(() => {
+        reject();
+      }, 5000);
     });
   }
 
-  doRequest() {
+  /**
+   * listens to the 'on' event on the socket
+   * @param raw
+   * @param baseUrl
+   * @param resolve
+   */
+  bindConnectEventListener(raw, baseUrl, resolve) {
+    raw.on('connect', () => {
+      this.handleSuccessfulConnect(raw, baseUrl, resolve);
+    });
+  }
+
+  /**
+   * called when the connection has been established,
+   * resolves the connect function
+   * @param raw
+   * @param baseUrl
+   * @param resolve
+   */
+  handleSuccessfulConnect(raw, baseUrl, resolve) {
+    this.connected = true;
+    this.raw = raw;
+    this.baseUrl = baseUrl;
+
+    clearTimeout(this._connectionTimeout);
+    delete this._connectionTimeout;
+
+    resolve();
+  }
+
+  /**
+   * executes a request using the connected socket
+   * @param data
+   * @returns {Promise}
+   */
+  executeRequest(data) {
+    console.log('execute request adapter', arguments);
     return new Promise((resolve, reject) => {
-      resolve();
+      this.raw.request(data, (_data, JWR) => {
+        if (JWR.statusCode >= 200 && JWR.statusCode < 400) {
+          resolve(_data);
+        } else {
+          reject(_data);
+        }
+      });
     });
   }
 

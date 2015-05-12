@@ -35,11 +35,11 @@ class Application {
     window.app = this;
 
     const defaults = {
-      connected: false,
       _files: files,
       routerOptions: {
         routes: {}
       },
+      adapters: {},
       router: null,
       data: {},
       session: {},
@@ -63,6 +63,7 @@ class Application {
       'instantiateRoute',
       'instantiateController',
       'instantiateRouter',
+      'instantiateAdapter',
       'connectToServer'
     );
 
@@ -85,8 +86,12 @@ class Application {
     });
   }
 
+  /**
+   * Connects to the server using the adapter and host specified in the server definition
+   * @returns {Promise}
+   */
   connectToServer() {
-    const adapter = this.files.adapters[this.config.adapter];
+    const adapter = this.adapters[this.config.adapter];
     const baseUrl = this.config.baseUrl;
 
     this.connection = new Connection({
@@ -128,6 +133,7 @@ class Application {
     this.views = files.views;
 
     _.each(files.controllers, this.instantiateController);
+    _.each(files.adapters, this.instantiateAdapter);
     _.each(files.config.routes, this.instantiateRoute);
 
     return files;
@@ -148,13 +154,51 @@ class Application {
    * @param key
    */
   instantiateController(controller, key) {
-    controller = controller || {};
     controller.prototype.entity = key.replace(/controller$/ig, '');
 
     this.controllers[key] = new controller({
       entity: controller.prototype.entity
     });
 
+  }
+
+  /**
+   * Instantiates a {Model} singleton from a model object (retrieved from the server),
+   * stores it on app.models[name], so app.models.User for example, a model is always a collection,
+   * there are no instances of single models, models are POJOs
+   *
+   * @param Adapter
+   * @param key
+   */
+  instantiateAdapter(Adapter, key) {
+    if (typeof Adapter === 'function') {
+      this.adapters[key] = new Adapter({
+        name: key
+      });
+    } else {
+      console.warn(key, 'adapter not implemented');
+    }
+  }
+
+  executePolicies(policies, data) {
+    return Promise.all(
+      _.chain(policies)
+        .map(policy => {
+          return this.executePolicy(policy, data);
+        })
+        .uniq()
+        .compact()
+        .value()
+    );
+  }
+
+  executePolicy(key, data) {
+    if (!this.policies[key]) {
+      console.warn('policy', key, 'doensn\'t exist');
+      return;
+    }
+
+    return this.policies[key](data);
   }
 
   /**

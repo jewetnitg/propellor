@@ -8,13 +8,21 @@ class Connection {
 
   constructor(options) {
     _.extend(this, options);
-    this.adapter = new this.adapter();
+    this.connected = false;
   }
 
   connect() {
-    return new Promise((resolve, reject) => {
-      console.log('connect');
-      resolve();
+    return this.adapter.connect(this.baseUrl);
+  }
+
+  executeRequest(request, data) {
+    const method = request.method ? request.method.toLowerCase() : 'get';
+    const url = request.route;
+
+    return this.adapter.executeRequest({
+      method,
+      url,
+      data
     });
   }
 

@@ -16,6 +16,7 @@ class Controller {
     }
 
     _.extend(this, options);
+
   }
 
 }

@@ -47,7 +47,7 @@ function bootstrap(cb) {
   function makeConfigObject(config) {
     return {
       adapter: 'SAILS_IO',
-      baseUrl: 'http://www.localhost:1337'
+      baseUrl: 'http://localhost:1337'
     };
   }
 
@@ -96,7 +96,7 @@ function bootstrap(cb) {
   function createRequestForPolicy(policy) {
     return {
       entity: 'Policy',
-      method: 'POST',
+      method: 'GET',
       name: policy,
       route: '/policy/' + policy,
       pathVariables: []

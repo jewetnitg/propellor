@@ -11,8 +11,10 @@
 var fs   = require('fs'),
      _   = require('lodash');
 
+// TODO: fix trailing commas from being added
 function makeHashMapEntry (key, path, addComma) {
-  return "  '" + key + "': require('../" + path + "')" + (addComma ? ',' : '') + '\n';
+  //return "  '" + key + "': require('../" + path + "')" + (addComma ? ',' : '') + '\n';
+  return "  '" + key + "': require('../" + path + "')" +',' + '\n';
 }
 
 function getFilesInDirectory (dir, prefix) {

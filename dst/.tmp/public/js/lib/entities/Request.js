@@ -21,10 +21,17 @@ class Request {
 
   execute(data) {
     console.log('do request', this, 'with data', data);
+    return app.connection.executeRequest(this, data);
   }
 
-  fillRouteWithPathVariables() {
-
+  fillRouteWithPathVariables(data) {
+    let url = this.route;
+    _.each(this.pathVariables, (pathVariable) => {
+      const val   = typeof data[pathVariable] !== 'undefined' ? data[pathVariable] : '';
+      const regex = new RegExp('[:|*]{1}' + pathVariable + '', 'ig');
+      url = url.replace(regex, val);
+    });
+    return url
   }
 
 }
