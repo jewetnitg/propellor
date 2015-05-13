@@ -2,61 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bc7d406b-59f7-49b3-a121-62641e557d8f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/server/src/api/controllers/FileController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/server/src/api/services/UploadService.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/server/src/config/uploaders.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/favicon.ico" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/index.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/api/adapters/SAILS_IO.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/api/controllers/UserController.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/api/views/HomeView.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/api/webcomponents/view-home/view-home.html" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/config/bootstrap.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/config/routes.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/dependencies/polymer.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/dependencies/sails.io.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/lib/entities/Adapter.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/lib/entities/Application.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/lib/entities/Connection.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/lib/entities/Controller.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/lib/entities/Model.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/lib/entities/Request.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/lib/entities/Route.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/lib/entities/Router.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/lib/entities/Service.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/lib/entities/View.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/lib/files.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/lib/helpers/setDottedKeyOnObject.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/lib/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/main.js" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/main.js.map" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/robots.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/styles/importer.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/js/lib/entities/Request.js" afterPath="$PROJECT_DIR$/dst/assets/js/lib/entities/Request.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/js/lib/entities/Request.js" afterPath="$PROJECT_DIR$/src/client/dst/js/lib/entities/Request.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/src/js/lib/entities/Request.js" afterPath="$PROJECT_DIR$/src/client/src/js/lib/entities/Request.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/dictionaries/RikHoffbauer.xml" afterPath="$PROJECT_DIR$/.idea/dictionaries/RikHoffbauer.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/lib/files.js" afterPath="$PROJECT_DIR$/dst/lib/files.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/.tmp/lib/files.js" afterPath="$PROJECT_DIR$/src/server/.tmp/lib/files.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/dst/lib/files.js" afterPath="$PROJECT_DIR$/src/server/dst/lib/files.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/src/lib/files.js" afterPath="$PROJECT_DIR$/src/server/src/lib/files.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/config/http.js" afterPath="$PROJECT_DIR$/dst/config/http.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/.tmp/config/http.js" afterPath="$PROJECT_DIR$/src/server/.tmp/config/http.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/dst/config/http.js" afterPath="$PROJECT_DIR$/src/server/dst/config/http.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/src/config/http.js" afterPath="$PROJECT_DIR$/src/server/src/config/http.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/views/layout.ejs" afterPath="$PROJECT_DIR$/dst/views/layout.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/main.js.map" afterPath="$PROJECT_DIR$/dst/assets/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/.tmp/main.js.map" afterPath="$PROJECT_DIR$/src/client/.tmp/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/main.js.map" afterPath="$PROJECT_DIR$/src/client/dst/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/main.js" afterPath="$PROJECT_DIR$/dst/assets/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/.tmp/main.js" afterPath="$PROJECT_DIR$/src/client/.tmp/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/main.js" afterPath="$PROJECT_DIR$/src/client/dst/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/package.json" afterPath="$PROJECT_DIR$/dst/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/config/routes.js" afterPath="$PROJECT_DIR$/dst/config/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/.tmp/config/routes.js" afterPath="$PROJECT_DIR$/src/server/.tmp/config/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/dst/config/routes.js" afterPath="$PROJECT_DIR$/src/server/dst/config/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/src/config/routes.js" afterPath="$PROJECT_DIR$/src/server/src/config/routes.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/api/controllers/FileController.js" afterPath="$PROJECT_DIR$/dst/api/controllers/FileController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/.tmp/api/controllers/FileController.js" afterPath="$PROJECT_DIR$/src/server/.tmp/api/controllers/FileController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/dst/api/controllers/FileController.js" afterPath="$PROJECT_DIR$/src/server/dst/api/controllers/FileController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/src/api/controllers/FileController.js" afterPath="$PROJECT_DIR$/src/server/src/api/controllers/FileController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="boilerplate_v2.iws" />
@@ -77,10 +26,10 @@
       <content type="file-editors">
         <state>
           <leaf>
-            <file leaf-file-name="routes.js" pinned="false" current-in-tab="true">
+            <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/server/src/config/routes.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.47552836">
+                  <state vertical-scroll-proportion="0.0">
                     <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
                     <folding />
                   </state>
@@ -161,11 +110,11 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="FileController.js" pinned="false" current-in-tab="false">
+            <file leaf-file-name="FileController.js" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/server/src/api/controllers/FileController.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0">
-                    <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
+                  <state vertical-scroll-proportion="0.41212457">
+                    <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
                     <folding>
                       <element signature="n#!!doc" expanded="true" />
                     </folding>
@@ -247,8 +196,8 @@
         <option value="$PROJECT_DIR$/src/server/src/config/http.js" />
         <option value="$PROJECT_DIR$/src/server/src/api/controllers/UploadController.js" />
         <option value="$PROJECT_DIR$/src/server/src/config/uploaders.js" />
-        <option value="$PROJECT_DIR$/src/server/src/api/controllers/FileController.js" />
         <option value="$PROJECT_DIR$/src/server/src/config/routes.js" />
+        <option value="$PROJECT_DIR$/src/server/src/api/controllers/FileController.js" />
       </list>
     </option>
   </component>
@@ -1246,21 +1195,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/src/api/controllers/FileController.js">
+    <entry file="file://$PROJECT_DIR$/src/server/src/config/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="55" column="4" selection-start-line="55" selection-start-column="4" selection-end-line="55" selection-end-column="4" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
+          <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/src/config/routes.js">
+    <entry file="file://$PROJECT_DIR$/src/server/src/api/controllers/FileController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.47552836">
-          <caret line="45" column="17" selection-start-line="45" selection-start-column="17" selection-end-line="45" selection-end-column="17" />
-          <folding />
+        <state vertical-scroll-proportion="0.41212457">
+          <caret line="39" column="49" selection-start-line="39" selection-start-column="49" selection-end-line="39" selection-end-column="49" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

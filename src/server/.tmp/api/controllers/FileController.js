@@ -42,8 +42,13 @@ exports['default'] = {
 
       file.upload(uploadConfig, function (err, uploadedFiles) {
         if (err) return res.send(500, err);
+        var fileNameArray = _.chain(uploadedFiles).pluck('fd').map(function (path) {
+          var match = path.match(/[^\/]+$/g);
 
-        return res.json(uploadedFiles);
+          return match && match[0] && '/uploads/' + configKey + '/' + match[0];
+        }).compact().value();
+
+        return res.json(fileNameArray);
       });
     } else if (file) {
       return res.send(503, 'Config not found, no default specified');
