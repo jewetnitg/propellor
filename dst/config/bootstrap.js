@@ -1,12 +1,3 @@
-'use strict';
-
-Object.defineProperty(exports, '__esModule', {
-  value: true
-});
-exports.bootstrap = bootstrap;
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
-
 /**
  * Bootstrap
  * (sails.config.bootstrap)
@@ -17,6 +8,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'd
  * For more information on bootstrapping your app, check out:
  * http://sailsjs.org/#/documentation/reference/sails.config/sails.config.bootstrap.html
  */
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+exports.bootstrap = bootstrap;
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
 
 var _lodash = require('lodash');
 

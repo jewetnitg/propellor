@@ -1,46 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="bc7d406b-59f7-49b3-a121-62641e557d8f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/lib/entities/Application.js" afterPath="$PROJECT_DIR$/dst/.tmp/public/js/lib/entities/Application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/js/lib/entities/Application.js" afterPath="$PROJECT_DIR$/dst/assets/js/lib/entities/Application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/js/lib/entities/Application.js" afterPath="$PROJECT_DIR$/src/client/dst/js/lib/entities/Application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/src/js/lib/entities/Application.js" afterPath="$PROJECT_DIR$/src/client/src/js/lib/entities/Application.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/lib/entities/Connection.js" afterPath="$PROJECT_DIR$/dst/.tmp/public/js/lib/entities/Connection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/js/lib/entities/Connection.js" afterPath="$PROJECT_DIR$/dst/assets/js/lib/entities/Connection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/js/lib/entities/Connection.js" afterPath="$PROJECT_DIR$/src/client/dst/js/lib/entities/Connection.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/lib/entities/Model.js" afterPath="$PROJECT_DIR$/dst/.tmp/public/js/lib/entities/Model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/js/lib/entities/Model.js" afterPath="$PROJECT_DIR$/dst/assets/js/lib/entities/Model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/js/lib/entities/Model.js" afterPath="$PROJECT_DIR$/src/client/dst/js/lib/entities/Model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/src/js/lib/entities/Model.js" afterPath="$PROJECT_DIR$/src/client/src/js/lib/entities/Model.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/api/adapters/SAILS_IO.js" afterPath="$PROJECT_DIR$/dst/.tmp/public/js/api/adapters/SAILS_IO.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/js/api/adapters/SAILS_IO.js" afterPath="$PROJECT_DIR$/dst/assets/js/api/adapters/SAILS_IO.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/js/api/adapters/SAILS_IO.js" afterPath="$PROJECT_DIR$/src/client/dst/js/api/adapters/SAILS_IO.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/src/js/api/adapters/SAILS_IO.js" afterPath="$PROJECT_DIR$/src/client/src/js/api/adapters/SAILS_IO.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/.tmp/public/js/api/controllers/UserController.js" afterPath="$PROJECT_DIR$/dst/.tmp/public/js/api/controllers/UserController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/js/api/controllers/UserController.js" afterPath="$PROJECT_DIR$/dst/assets/js/api/controllers/UserController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/js/api/controllers/UserController.js" afterPath="$PROJECT_DIR$/src/client/dst/js/api/controllers/UserController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/src/js/api/controllers/UserController.js" afterPath="$PROJECT_DIR$/src/client/src/js/api/controllers/UserController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/config/connections.js" afterPath="$PROJECT_DIR$/dst/config/connections.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/.tmp/config/connections.js" afterPath="$PROJECT_DIR$/src/server/.tmp/config/connections.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/dst/config/connections.js" afterPath="$PROJECT_DIR$/src/server/dst/config/connections.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/src/config/connections.js" afterPath="$PROJECT_DIR$/src/server/src/config/connections.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/.tmp/public/main.js.map" afterPath="$PROJECT_DIR$/dst/.tmp/public/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/main.js.map" afterPath="$PROJECT_DIR$/dst/assets/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/.tmp/main.js.map" afterPath="$PROJECT_DIR$/src/client/.tmp/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/main.js.map" afterPath="$PROJECT_DIR$/src/client/dst/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/.tmp/public/main.js" afterPath="$PROJECT_DIR$/dst/.tmp/public/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/main.js" afterPath="$PROJECT_DIR$/dst/assets/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/.tmp/main.js" afterPath="$PROJECT_DIR$/src/client/.tmp/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/main.js" afterPath="$PROJECT_DIR$/src/client/dst/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/config/models.js" afterPath="$PROJECT_DIR$/dst/config/models.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/.tmp/config/models.js" afterPath="$PROJECT_DIR$/src/server/.tmp/config/models.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/dst/config/models.js" afterPath="$PROJECT_DIR$/src/server/dst/config/models.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/server/src/config/models.js" afterPath="$PROJECT_DIR$/src/server/src/config/models.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/package.json" afterPath="$PROJECT_DIR$/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/package.json" afterPath="$PROJECT_DIR$/dst/package.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-    </list>
+    <list default="true" id="bc7d406b-59f7-49b3-a121-62641e557d8f" name="Default" comment="" />
     <ignored path="boilerplate_v2.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -146,7 +107,7 @@
             <file leaf-file-name="models.js" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/server/src/config/models.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.21134594">
+                  <state vertical-scroll-proportion="0.39832285">
                     <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="27" />
                     <folding />
                   </state>
@@ -353,10 +314,9 @@
     <order />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="1536" />
     <option name="y" value="23" />
-    <option name="width" value="384" />
-    <option name="height" value="527" />
+    <option name="width" value="1536" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -743,17 +703,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1536" y="23" width="384" height="527" extended-state="0" />
-    <editor active="true" />
+    <frame x="0" y="23" width="1536" height="1053" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.7719298" sideWeight="0.50157726" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17670682" sideWeight="0.50157726" order="4" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298647" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298647" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32778355" sideWeight="0.49614644" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29061785" sideWeight="0.5263158" order="12" side_tool="false" content_ui="tabs" x="1995" y="579" width="1899" height="370" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.132154" sideWeight="0.5263158" order="12" side_tool="false" content_ui="tabs" x="1995" y="579" width="1899" height="370" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24561404" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7710718" sideWeight="0.47368422" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -1197,7 +1157,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/server/src/config/models.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.21134594">
+        <state vertical-scroll-proportion="0.39832285">
           <caret line="20" column="22" selection-start-line="20" selection-start-column="22" selection-end-line="20" selection-end-column="27" />
           <folding />
         </state>
