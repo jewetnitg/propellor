@@ -29,8 +29,10 @@ class HomeView extends View {
     _.bindAll(this, 'handleSave');
   }
 
-  handleSave(e, data) {
+  handleSave(data) {
     _.extend(this.attributes.user, data);
+
+    app.server.User.update(this.attributes.user);
   }
 
 }

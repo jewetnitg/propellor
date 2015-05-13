@@ -6,15 +6,15 @@
       <!--{{(user && welcomeText) || deletedStr}}-->
     <!--</should-be-visible>-->
     This is <b>{{user.firstName}} {{user.lastName}}</b>'s element.
-    <!--<label>-->
-      <!--first name:-->
-      <!--<input type="text" id="firstName" class="modelInput" value="{{user.firstName || deletedStr}}">-->
-    <!--</label>-->
-    <!--<label>-->
-      <!--last name:-->
-      <!--<input type="text" id="lastName" class="modelInput" value="{{user.lastName || deletedStr}}">-->
-    <!--</label>-->
-    <!--<button id="save" on-click="{{_doSave}}" class="modelInput">Save</button>-->
+    <label>
+      first name:
+      <input type="text" id="firstName" class="modelInput" value="{{user.firstName}}">
+    </label>
+    <label>
+      last name:
+      <input type="text" id="lastName" class="modelInput" value="{{user.lastName}}">
+    </label>
+    <button id="save" on-click="{{_doSave}}" class="modelInput">Save</button>
   </template>
 
   <script>

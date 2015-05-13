@@ -74,7 +74,6 @@ class SAILS_IO extends Adapter {
    * @returns {Promise}
    */
   executeRequest(data) {
-    console.log('execute request adapter', arguments);
     return new Promise((resolve, reject) => {
       this.raw.request(data, (_data, JWR) => {
         if (JWR.statusCode >= 200 && JWR.statusCode < 400) {

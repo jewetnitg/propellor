@@ -98,7 +98,9 @@ class View {
         selector = $(selector, this.el);
       }
 
-      $(selector).on(event, this[eventHandler]);
+      $(selector).on(event, (ev, data) => {
+        this[eventHandler](data);
+      });
     }
   }
 
