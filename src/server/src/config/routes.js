@@ -42,5 +42,7 @@ module.exports.routes = {
    *                                                                          *
    ***************************************************************************/
   'GET  /policy/:name': 'PolicyController.execute',
+  'POST /uploads/:config': 'FileController.upload',
+  'GET  /uploads/:config/:file': 'FileController.download',
   'POST /validate/:name': 'ValidateController.execute'
 };

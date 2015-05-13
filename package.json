@@ -50,6 +50,7 @@
     "sails-disk": "~0.10.0",
     "sails-mongo": "^0.11.1",
     "sails-mysql": "^0.10.11",
+    "skipper": "^0.5.5",
     "through2": "^0.6.5",
     "underscore": "^1.8.3",
     "vinyl": "^0.4.6",

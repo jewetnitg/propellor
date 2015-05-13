@@ -1,5 +1,6 @@
 export default {
   'controllers.DescribeController': require('../api/controllers/DescribeController'),
+  'controllers.FileController': require('../api/controllers/FileController'),
   'controllers.PolicyController': require('../api/controllers/PolicyController'),
   'controllers.UserController': require('../api/controllers/UserController'),
   'controllers.ValidateController': require('../api/controllers/ValidateController'),
