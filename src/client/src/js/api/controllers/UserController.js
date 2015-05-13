@@ -12,13 +12,11 @@ class UserController extends Controller {
         firstName: 'Joe'
       })
       .then((user) => {
-        console.log(user);
         res.send({
           user,
           testText: 'Hello View, I\'m a Controller, and this is my data!'
         });
       });
-
   }
 }
 
