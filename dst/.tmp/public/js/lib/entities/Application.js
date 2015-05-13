@@ -254,6 +254,21 @@ class Application {
 
     _.each(data.models, this.instantiateModel);
     _.each(data.requests, this.instantiateRequest);
+
+    this.mapServerObjectOntoModels();
+  }
+
+  /**
+   * adds a reference on app.models.X.server to app.server.X
+   */
+  mapServerObjectOntoModels() {
+    _.each(this.models, (val, key) => {
+      const server = app.server[key];
+
+      if (server) {
+       val.server = server;
+      }
+    });
   }
 
   /**

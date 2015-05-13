@@ -29,16 +29,9 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/main.js.map" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/robots.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/styles/importer.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/js/api/views/HomeView.js" afterPath="$PROJECT_DIR$/dst/assets/js/api/views/HomeView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/js/api/views/HomeView.js" afterPath="$PROJECT_DIR$/src/client/dst/js/api/views/HomeView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/src/js/api/views/HomeView.js" afterPath="$PROJECT_DIR$/src/client/src/js/api/views/HomeView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/js/api/adapters/SAILS_IO.js" afterPath="$PROJECT_DIR$/dst/assets/js/api/adapters/SAILS_IO.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/js/api/adapters/SAILS_IO.js" afterPath="$PROJECT_DIR$/src/client/dst/js/api/adapters/SAILS_IO.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/js/api/controllers/UserController.js" afterPath="$PROJECT_DIR$/dst/assets/js/api/controllers/UserController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/js/api/controllers/UserController.js" afterPath="$PROJECT_DIR$/src/client/dst/js/api/controllers/UserController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/js/lib/entities/View.js" afterPath="$PROJECT_DIR$/dst/assets/js/lib/entities/View.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/js/lib/entities/View.js" afterPath="$PROJECT_DIR$/src/client/dst/js/lib/entities/View.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/src/js/lib/entities/View.js" afterPath="$PROJECT_DIR$/src/client/src/js/lib/entities/View.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/js/lib/entities/Application.js" afterPath="$PROJECT_DIR$/dst/assets/js/lib/entities/Application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/js/lib/entities/Application.js" afterPath="$PROJECT_DIR$/src/client/dst/js/lib/entities/Application.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/src/js/lib/entities/Application.js" afterPath="$PROJECT_DIR$/src/client/src/js/lib/entities/Application.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/views/layout.ejs" afterPath="$PROJECT_DIR$/dst/views/layout.ejs" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/main.js.map" afterPath="$PROJECT_DIR$/dst/assets/main.js.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/.tmp/main.js.map" afterPath="$PROJECT_DIR$/src/client/.tmp/main.js.map" />
@@ -46,9 +39,6 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/main.js" afterPath="$PROJECT_DIR$/dst/assets/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/.tmp/main.js" afterPath="$PROJECT_DIR$/src/client/.tmp/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/main.js" afterPath="$PROJECT_DIR$/src/client/dst/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/js/api/webcomponents/view-home/view-home.html" afterPath="$PROJECT_DIR$/dst/assets/js/api/webcomponents/view-home/view-home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/js/api/webcomponents/view-home/view-home.html" afterPath="$PROJECT_DIR$/src/client/dst/js/api/webcomponents/view-home/view-home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/src/js/api/webcomponents/view-home/view-home.html" afterPath="$PROJECT_DIR$/src/client/src/js/api/webcomponents/view-home/view-home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="boilerplate_v2.iws" />
@@ -121,11 +111,11 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="Application.js" pinned="false" current-in-tab="false">
+            <file leaf-file-name="Application.js" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/client/src/js/lib/entities/Application.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0">
-                    <caret line="87" column="7" selection-start-line="87" selection-start-column="7" selection-end-line="87" selection-end-column="7" />
+                  <state vertical-scroll-proportion="0.5561735">
+                    <caret line="263" column="6" selection-start-line="263" selection-start-column="6" selection-end-line="263" selection-end-column="6" />
                     <folding>
                       <element signature="e#0#47#0" expanded="false" />
                     </folding>
@@ -163,11 +153,11 @@
                 </provider>
               </entry>
             </file>
-            <file leaf-file-name="HomeView.js" pinned="false" current-in-tab="true">
+            <file leaf-file-name="HomeView.js" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/client/src/js/api/views/HomeView.js">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.3381535">
-                    <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+                  <state vertical-scroll-proportion="0.0">
+                    <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
                     <folding />
                   </state>
                 </provider>
@@ -240,7 +230,6 @@
         <option value="$PROJECT_DIR$/src/server/src/api/models/User.js" />
         <option value="$PROJECT_DIR$/src/server/src/config/bootstrap.js" />
         <option value="$PROJECT_DIR$/src/client/src/js/lib/entities/Request.js" />
-        <option value="$PROJECT_DIR$/src/client/src/js/lib/entities/Application.js" />
         <option value="$PROJECT_DIR$/src/client/src/js/lib/entities/Model.js" />
         <option value="$PROJECT_DIR$/src/server/src/config/models.js" />
         <option value="$PROJECT_DIR$/src/server/src/config/connections.js" />
@@ -249,6 +238,7 @@
         <option value="$PROJECT_DIR$/src/client/src/js/api/webcomponents/view-home/view-home.html" />
         <option value="$PROJECT_DIR$/src/client/src/js/lib/entities/View.js" />
         <option value="$PROJECT_DIR$/src/client/src/js/api/views/HomeView.js" />
+        <option value="$PROJECT_DIR$/src/client/src/js/lib/entities/Application.js" />
       </list>
     </option>
   </component>
@@ -366,7 +356,7 @@
     <option name="x" value="1536" />
     <option name="y" value="23" />
     <option name="width" value="384" />
-    <option name="height" value="527" />
+    <option name="height" value="1053" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -526,7 +516,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="editor.config.accepted" value="true" />
     <property name="JavaScriptLanguageLevel" value="ES6" />
-    <property name="SearchEverywhereHistoryKey" value="home&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/HomeView.js&#10;Home&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/HomeView.js&#10;View&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/View.js&#10;HomeV&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/HomeView.js&#10;view-h&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/webcomponents/view-home/view-home.html&#10;brow&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/tasks/config/browserify.js&#10;alwaysde&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/policies/alwaysDeny.js&#10;UserCont&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/controllers/UserController.js&#10;sailsio&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/adapters/SAILS_IO.js&#10;mode&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/models.js&#10;model&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Model.js&#10;reque&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Request.js&#10;connect&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/connections.js&#10;connec&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Connection.js&#10;UserCOn&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/controllers/UserController.js&#10;HomeView&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/HomeView.js&#10;bootst&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/bootstrap.js&#10;UserCo&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/controllers/UserController.js&#10;Appli&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Application.js&#10;bootstr&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/bootstrap.js&#10;connectio&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/connections.js&#10;user&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/models/User.js&#10;routes&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/config/routes.js&#10;Req&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Request.js&#10;route&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Route.js&#10;Reques&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Request.js&#10;makeIndex&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/tasks/config/makeIndexFile.js&#10;always&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/policies/alwaysAllow.js&#10;Route&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Route.js&#10;User&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/models/User.js&#10;adapter&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Adapter.js&#10;bootstrap&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/bootstrap.js&#10;Sails&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/adapters/SAILS_IO.js&#10;SAILS&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/adapters/SAILS_IO.js&#10;Ap&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Application.js&#10;reques&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Request.js&#10;ROuter&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Router.js&#10;copy&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/tasks/config/copy.js&#10;index&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/index.html&#10;view-&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/webcomponents/view-home/view-home.html&#10;view&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/View.js&#10;view-home&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/webcomponents/view-home/view-home.html&#10;files&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/files.js&#10;Contr&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Controller.js&#10;makeinde&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/tasks/config/makeIndexFile.js&#10;usercontr&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/controllers/UserController.js&#10;useco&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/controllers/UserController.js&#10;boots&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/bootstrap.js&#10;defau&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/tasks/register/default.js&#10;usercon&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/controllers/UserController.js" />
+    <property name="SearchEverywhereHistoryKey" value="Applica&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Application.js&#10;home&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/HomeView.js&#10;Home&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/HomeView.js&#10;View&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/View.js&#10;HomeV&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/HomeView.js&#10;view-h&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/webcomponents/view-home/view-home.html&#10;brow&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/tasks/config/browserify.js&#10;alwaysde&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/policies/alwaysDeny.js&#10;UserCont&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/controllers/UserController.js&#10;sailsio&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/adapters/SAILS_IO.js&#10;mode&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/models.js&#10;model&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Model.js&#10;reque&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Request.js&#10;connect&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/connections.js&#10;connec&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Connection.js&#10;UserCOn&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/controllers/UserController.js&#10;HomeView&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/HomeView.js&#10;bootst&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/bootstrap.js&#10;UserCo&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/controllers/UserController.js&#10;Appli&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Application.js&#10;bootstr&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/bootstrap.js&#10;connectio&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/connections.js&#10;user&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/models/User.js&#10;routes&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/config/routes.js&#10;Req&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Request.js&#10;route&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Route.js&#10;Reques&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Request.js&#10;makeIndex&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/tasks/config/makeIndexFile.js&#10;always&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/policies/alwaysAllow.js&#10;Route&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Route.js&#10;User&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/models/User.js&#10;adapter&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Adapter.js&#10;bootstrap&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/bootstrap.js&#10;Sails&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/adapters/SAILS_IO.js&#10;SAILS&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/adapters/SAILS_IO.js&#10;Ap&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Application.js&#10;reques&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Request.js&#10;ROuter&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Router.js&#10;copy&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/tasks/config/copy.js&#10;index&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/index.html&#10;view-&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/webcomponents/view-home/view-home.html&#10;view&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/View.js&#10;view-home&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/webcomponents/view-home/view-home.html&#10;files&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/files.js&#10;Contr&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Controller.js&#10;makeinde&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/tasks/config/makeIndexFile.js&#10;usercontr&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/controllers/UserController.js&#10;useco&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/controllers/UserController.js&#10;boots&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/bootstrap.js&#10;defau&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/tasks/register/default.js" />
     <property name="last.edited.regexp" value="" />
     <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -643,17 +633,17 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="1536" y="23" width="384" height="527" extended-state="0" />
-    <editor active="true" />
+    <frame x="1536" y="23" width="384" height="1053" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Gulp" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.7719298" sideWeight="0.50157726" order="4" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.7719298" sideWeight="0.50157726" order="4" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298647" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Atlassian " active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298647" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32778355" sideWeight="0.49614644" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.291954" sideWeight="0.5263158" order="12" side_tool="false" content_ui="tabs" x="1995" y="579" width="1899" height="370" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.132154" sideWeight="0.5263158" order="12" side_tool="false" content_ui="tabs" x="1995" y="579" width="1899" height="370" />
       <window_info id="Structure" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24561404" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.7710718" sideWeight="0.47368422" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
@@ -1014,16 +1004,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/src/js/lib/entities/Application.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="87" column="7" selection-start-line="87" selection-start-column="7" selection-end-line="87" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#47#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/src/js/lib/entities/Model.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1100,9 +1080,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/client/src/js/api/views/HomeView.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3381535">
-          <caret line="34" column="4" selection-start-line="34" selection-start-column="4" selection-end-line="34" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="40" column="0" selection-start-line="40" selection-start-column="0" selection-end-line="40" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/src/js/lib/entities/Application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5561735">
+          <caret line="263" column="6" selection-start-line="263" selection-start-column="6" selection-end-line="263" selection-end-column="6" />
+          <folding>
+            <element signature="e#0#47#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
