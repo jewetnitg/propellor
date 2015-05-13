@@ -98,7 +98,7 @@ class SAILS_IO extends Adapter {
   bindSocketListenerForEntity(entity) {
     const event = entity.toLowerCase();
     this.on(event, (event) => {
-      if (event.verb === 'update' || event.verb === 'created') {
+      if (event.verb === 'updated' || event.verb === 'created') {
         app.models[entity].add(event.data);
       } else if (event.verb === 'destroyed') {
         app.models[entity].remove(event.id);

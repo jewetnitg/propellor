@@ -53,8 +53,18 @@ module.exports.connections = {
   localMongoDbServer: {
     adapter: 'sails-mongo',
     host: 'localhost',
-    port: 27017, 
-    database: 'boilerplate_v2'
+    port: 27017,
+    database: 'boilerplate_v2',
+
+    /* fix for sails-mongo@0.11.1
+    *  will be deprecated in version 0.11.2
+    * */
+    poolSize: 5,
+    socketOptions: {
+      noDelay: true,
+      connectTimeoutMS: 0,
+      socketTimeoutMS: 0
+    }
   },
 
   /***************************************************************************
