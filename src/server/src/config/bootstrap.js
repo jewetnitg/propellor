@@ -29,6 +29,7 @@ export function bootstrap (cb) {
   function makeConfigObject(config) {
     return {
       adapter: "SAILS_IO",
+      uploaders: config.uploaders,
       baseUrl: "http://localhost:1337"
     };
   }

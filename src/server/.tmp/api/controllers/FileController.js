@@ -73,9 +73,23 @@ exports['default'] = {
     var path = './.tmp/uploads/' + configDir + '/' + req.param('file');
 
     _fs2['default'].createReadStream(path).on('error', function (err) {
-      return res.serverError(err);
+      if (err.errno == 34) {
+        return res.send(404, err);
+      } else {
+        return res.serverError(err);
+      }
     }).pipe(res);
-  }
+  },
+
+  /**
+   * removes a file
+   */
+  remove: function remove(req, res) {},
+
+  /**
+   * replaces a files with another file
+   */
+  replace: function replace(req, res) {}
 
 };
 module.exports = exports['default'];

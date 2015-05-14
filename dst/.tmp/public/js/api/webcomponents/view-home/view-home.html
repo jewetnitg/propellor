@@ -15,6 +15,7 @@
       <input type="text" id="lastName" class="modelInput" value="{{user.lastName}}">
     </label>
     <button id="save" on-click="{{_doSave}}" class="modelInput">Save</button>
+    <propeller-uploader-dropzone></propeller-uploader-dropzone>
   </template>
 
   <script>
@@ -37,6 +38,10 @@
         if (this.user) {
           this.user = JSON.parse(this.user);
         }
+
+        $('propeller-uploader-dropzone', this.shadowRoot).on('drop', function(ev, data) {
+          $(self).trigger('drop', data);
+        });
 
         $(this).on('datachange', function (ev, data) {
           _.extend(self, data);

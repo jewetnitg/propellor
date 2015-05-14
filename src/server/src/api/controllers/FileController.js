@@ -37,7 +37,7 @@ export default {
           .map((path) => {
             const match = path.match(/[^\/]+$/g);
 
-            return match && match[0] && ('/uploads/' + configKey + '/' + match[0]);
+          return match && match[0] && ('/uploads/' + configKey + '/' + match[0]);
           })
           .compact()
           .value();
@@ -69,9 +69,29 @@ export default {
 
     fs.createReadStream(path)
       .on('error', function (err) {
-        return res.serverError(err);
+        if (err.errno == 34) {
+          return res.send(404, err);
+        } else {
+          return res.serverError(err);
+        }
       })
       .pipe(res);
+  },
+
+  /**
+   * removes a file
+   */
+  remove(req, res) {
+
+  },
+
+  /**
+   * replaces a files with another file
+   */
+  replace(req, res) {
+
   }
+
+
 
 };

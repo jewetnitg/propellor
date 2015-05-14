@@ -1,0 +1,63 @@
+<polymer-element name="propeller-uploader-dropzone">
+  <style>
+    propeller-uploader-dropzone {
+      width: 400px;
+      height: 200px;
+      background: rgb(242, 242, 222);
+      font-size: 20px;
+      font-family: "Open Sans", "Myriad Pro", Arial, sans-serif;
+    }
+  </style>
+
+  <template>
+    Drop something here
+  </template>
+
+  <script>
+
+
+    Polymer('propeller-uploader-dropzone', {
+
+      ready: function () {
+        const self = this;
+
+        function preventEvent(e) {
+          e.preventDefault();
+          e.stopPropagation();
+        }
+
+        function fileHandler(e) {
+          preventEvent(e);
+          var files = e.target.files || e.dataTransfer.files;
+
+          if (files) {
+            _.each(files, sendFile);
+          }
+        }
+
+        // actually send a file to the server
+        function sendFile(file) {
+
+          if (file && file.name) {
+//            const reader = new FileReader();
+
+//            reader.onload = function(e) {
+//              const buffer = e.target.result; // contains binary data
+
+              $(self).trigger('drop', file);
+//            };
+//            reader.readAsArrayBuffer(file);
+//            reader.readAsBinaryString(file);
+          }
+        }
+
+        this.addEventListener('dragover', preventEvent, false);
+        this.addEventListener('dragout', preventEvent, false);
+        this.addEventListener('drop', fileHandler, false);
+
+      }
+
+    });
+  </script>
+
+</polymer-element>

@@ -12,7 +12,3 @@ context.$ = $;
 context.files = files;
 
 context.app = new Application();
-
-$(function () {
-  $('body').text('Hello World :) !!');
-});

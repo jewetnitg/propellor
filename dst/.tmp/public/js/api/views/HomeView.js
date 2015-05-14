@@ -19,14 +19,18 @@ class HomeView extends View {
 
       /* Backbone.View like events */
       events: {
-        'save': 'handleSave'
+        'save': 'handleSave',
+        'drop': 'handleDrop'
       }
 
     };
   }
 
   initialize() {
-    _.bindAll(this, 'handleSave');
+    _.bindAll(this,
+      'handleSave',
+      'handleDrop'
+    );
   }
 
   handleSave(data) {
@@ -34,6 +38,22 @@ class HomeView extends View {
 
     app.server.User.update(this.attributes.user);
   }
+
+  handleDrop(data) {
+    app.upload({
+        file: data
+      })
+      .then(
+        (data) => {
+          console.log('Upload successful', data);
+        },
+        (data) => {
+          console.error('Upload failed', data);
+        }
+      );
+  }
+
+
 
 }
 

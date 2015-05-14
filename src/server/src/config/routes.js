@@ -44,5 +44,7 @@ module.exports.routes = {
   'GET  /policy/:name': 'PolicyController.execute',
   'POST /uploads/:config': 'FileController.upload',
   'GET  /uploads/:config/:file': 'FileController.download',
+  'DELETE  /uploads/:config/:file': 'FileController.remove',
+  'PUT  /uploads/:config/:file': 'FileController.replace',
   'POST /validate/:name': 'ValidateController.execute'
 };

@@ -18,6 +18,9 @@ import Backbone from 'backbone';
 class View {
 
   constructor(options) {
+    options = options || {};
+    options.attributes = options.attributes || {};
+
     _.extend(this, this.constructor.instanceProperties(), options);
 
     this.options = options;
@@ -141,6 +144,7 @@ class View {
       this.$el = $('<' + tag + '></' + tag + '>');
       this.__addAttributesToEl();
     }
+    this.el = this.$el; // temporarily, when appended will be vanilla dom object
   }
 
   /**

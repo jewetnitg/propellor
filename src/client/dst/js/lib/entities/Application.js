@@ -26,14 +26,17 @@ let singleton = null;
 class Application {
 
   constructor(options) {
+    // make sure there is only one instance of Application
     if (singleton) {
       return singleton;
     } else {
       singleton = this;
     }
 
+    // app is a singleton, make it available globally
     window.app = this;
 
+    // some instance defaults
     const defaults = {
       _files: files,
       routerOptions: {
@@ -54,7 +57,10 @@ class Application {
       }
     };
 
-    _.extend(this, defaults, options);
+    // extend instance with defaults and options
+    _.extend(this, defaults, options || {});
+
+    // make sure some methods are always called in the context of this
     _.bindAll(this,
       'interpretServerDefinition',
       'instantiateModel',
@@ -68,8 +74,10 @@ class Application {
       'connectToServer'
     );
 
+    // interpret client side files, controllers, adapters, routes
     this.files = this.interpretFiles();
 
+    // first call to the server
     this.getServerDefinition()
       .then(this.interpretServerDefinition)
       .then(this.connectToServer)
@@ -194,6 +202,14 @@ class Application {
     }
   }
 
+  /**
+   * executes an array of policies,
+   * takes an array of policy names (strings) as first param
+   * and takes a data object that will be passed to the policies as second param
+   * @param policies
+   * @param data
+   * @returns {Promise}
+   */
   executePolicies(policies, data) {
     return Promise.all(
       _.chain(policies)
@@ -206,6 +222,12 @@ class Application {
     );
   }
 
+  /**
+   * executes a policy
+   * @param key
+   * @param data
+   * @returns {*}
+   */
   executePolicy(key, data) {
     if (!this.policies[key]) {
       console.warn('policy', key, 'doensn\'t exist');
@@ -225,23 +247,46 @@ class Application {
    */
   instantiateRoute(obj, key) {
     if (typeof obj === 'object' && !(obj instanceof Array)) {
-      const split = obj.controller.split('.');
-      const controller = split[0];
-      const controllerMethod = split[1] || 'index';
-
-      obj.controller = this.controllers[controller][controllerMethod];
-      obj.view = this.views[obj.view];
-
-      const route = new Route(key, obj);
-
-      this.routerOptions.routes[key] = route.execute;
-      this.routerOptions.routes[key]._route = route;
+      this.__addRouteToRouterOptions(obj, key);
     } else {
-      if (key === 'pushState') {
-        this.routerOptions.pushState = obj;
-      } else if (key === 'defaultRoute') {
-        this.routerOptions.defaultRoute = obj;
-      }
+      this.__setRouterOption(obj, key);
+    }
+  }
+
+  /**
+   * Instantiates a {Route} and adds its execute function to the routerOptions.routes object
+   * @param obj
+   * @param key
+   * @private
+   */
+  __addRouteToRouterOptions(obj, key) {
+    const split = obj.controller.split('.');
+    const controller = split[0];
+    const controllerMethod = split[1] || 'index';
+
+    _.extend(obj, {
+      controller: this.controllers[controller][controllerMethod],
+      view: this.views[obj.view]
+    });
+
+    const route = new Route(key, obj);
+    route.execute._route = route;
+
+    this.routerOptions.routes[key] = route.execute;
+  }
+
+  /**
+   * sets an options on the routerOptions,
+   * either pushState or defaultRoute
+   * @param obj
+   * @param key
+   * @private
+   */
+  __setRouterOption(obj, key) {
+    if (key === 'pushState') {
+      this.routerOptions.pushState = obj;
+    } else if (key === 'defaultRoute') {
+      this.routerOptions.defaultRoute = obj;
     }
   }
 
@@ -256,6 +301,47 @@ class Application {
     _.each(data.requests, this.instantiateRequest);
 
     this.mapServerObjectOntoModels();
+    this.makeUploadObject();
+    //this.makeDownloadObject();
+  }
+
+  /**
+   * makes an function/object available under app.upload
+   * it is a function has contains methods as well,
+   * one for every config, app.upload.picture for the picture config for example
+   * @returns {Function|*}
+   */
+  makeUploadObject() {
+    const uploadObject = {};
+
+    this.upload = this.makeUploadFunction();
+
+    _.each(this.serverDefinition.config.uploaders, (val, key) => {
+      uploadObject[key] = this.makeUploadFunction(val, key);
+    });
+
+    _.extend(this.upload, uploadObject);
+
+    return this.upload;
+  }
+
+  /**
+   * makes a function for an upload config so you dont have to specify it in the options
+   * @param val
+   * @param key
+   * @returns {Function}
+   */
+  makeUploadFunction(val, key) {
+    const defaultConfig = {};
+
+    if (val && key) {
+      defaultConfig.config = key;
+    }
+
+    return (options) => {
+      options = _.extend(defaultConfig, options || {});
+      return app.server.File.upload(options);
+    };
   }
 
   /**
