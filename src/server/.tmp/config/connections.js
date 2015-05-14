@@ -50,6 +50,13 @@ module.exports.connections = {
     database: 'boilerplate_v2'
   },
 
+  localMongoDbServer: {
+    adapter: 'sails-mongo',
+    host: 'localhost',
+    port: 27017,
+    database: 'boilerplate_v2'
+  },
+
   /***************************************************************************
    *                                                                          *
    * CouchDb is a document-oriented NoSQL database that uses JSON to store    *

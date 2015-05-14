@@ -19,6 +19,8 @@
  * http://sailsjs.org/#/documentation/reference/sails.config/sails.config.connections.html
  */
 
+'use strict';
+
 module.exports.connections = {
 
   /***************************************************************************
@@ -45,6 +47,13 @@ module.exports.connections = {
     host: 'localhost',
     user: 'root',
     password: '',
+    database: 'boilerplate_v2'
+  },
+
+  localMongoDbServer: {
+    adapter: 'sails-mongo',
+    host: 'localhost',
+    port: 27017, 
     database: 'boilerplate_v2'
   },
 
@@ -81,7 +90,6 @@ module.exports.connections = {
     password: 'YOUR_POSTGRES_PASSWORD',
     database: 'YOUR_POSTGRES_DB'
   }
-
 
   /***************************************************************************
   *                                                                          *
