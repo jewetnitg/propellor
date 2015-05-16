@@ -40,7 +40,12 @@
         }
 
         $('propeller-uploader-dropzone', this.shadowRoot).on('drop', function(ev, data) {
-          $(self).trigger('drop', data);
+          ev.preventDefault();
+          ev.stopPropagation();
+
+          if (data) {
+            $(self).trigger('drop', data);
+          }
         });
 
         $(this).on('datachange', function (ev, data) {

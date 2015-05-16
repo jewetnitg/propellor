@@ -40,6 +40,7 @@ class HomeView extends View {
   }
 
   handleDrop(obj) {
+    console.log('handleDrop', obj);
     app.upload(obj)
       .then(
         (data) => {
