@@ -2,9 +2,9 @@
 
   <template>
     {{testText}}
-    <!--<should-be-visible if="alwaysAllow">-->
-      <!--{{(user && welcomeText) || deletedStr}}-->
-    <!--</should-be-visible>-->
+    <should-be-visible if="alwaysDeny">
+      TEST 123
+    </should-be-visible>
     This is <b>{{user.firstName}} {{user.lastName}}</b>'s element.
     <label>
       first name:

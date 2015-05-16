@@ -30,16 +30,10 @@
       <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/main.js.map" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/robots.txt" afterPath="" />
       <change type="DELETED" beforePath="$PROJECT_DIR$/dst/.tmp/public/styles/importer.css" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/js/api/views/HomeView.js" afterPath="$PROJECT_DIR$/dst/assets/js/api/views/HomeView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/js/api/views/HomeView.js" afterPath="$PROJECT_DIR$/src/client/dst/js/api/views/HomeView.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/src/js/api/views/HomeView.js" afterPath="$PROJECT_DIR$/src/client/src/js/api/views/HomeView.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/index.html" afterPath="$PROJECT_DIR$/dst/assets/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/index.html" afterPath="$PROJECT_DIR$/src/client/dst/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/src/index.html" afterPath="$PROJECT_DIR$/src/client/src/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/views/layout.ejs" afterPath="$PROJECT_DIR$/dst/views/layout.ejs" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/main.js.map" afterPath="$PROJECT_DIR$/dst/assets/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/.tmp/main.js.map" afterPath="$PROJECT_DIR$/src/client/.tmp/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/main.js.map" afterPath="$PROJECT_DIR$/src/client/dst/main.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/main.js" afterPath="$PROJECT_DIR$/dst/assets/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/.tmp/main.js" afterPath="$PROJECT_DIR$/src/client/.tmp/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/main.js" afterPath="$PROJECT_DIR$/src/client/dst/main.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/dst/assets/js/api/webcomponents/view-home/view-home.html" afterPath="$PROJECT_DIR$/dst/assets/js/api/webcomponents/view-home/view-home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/dst/js/api/webcomponents/view-home/view-home.html" afterPath="$PROJECT_DIR$/src/client/dst/js/api/webcomponents/view-home/view-home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/client/src/js/api/webcomponents/view-home/view-home.html" afterPath="$PROJECT_DIR$/src/client/src/js/api/webcomponents/view-home/view-home.html" />
@@ -63,6 +57,16 @@
       <content type="file-editors">
         <state>
           <leaf>
+            <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/client/src/index.html">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="-8.125">
+                    <caret line="13" column="75" selection-start-line="13" selection-start-column="75" selection-end-line="13" selection-end-column="75" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
             <file leaf-file-name="testrunner.html" pinned="false" current-in-tab="false">
               <entry file="file://$PROJECT_DIR$/src/client/tests/testrunner.html">
                 <provider selected="true" editor-type-id="text-editor">
@@ -96,8 +100,18 @@
             <file leaf-file-name="view-home.html" pinned="false" current-in-tab="true">
               <entry file="file://$PROJECT_DIR$/src/client/src/js/api/webcomponents/view-home/view-home.html">
                 <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.3889515">
-                    <caret line="46" column="29" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="33" />
+                  <state vertical-scroll-proportion="0.03382187">
+                    <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
+                    <folding />
+                  </state>
+                </provider>
+              </entry>
+            </file>
+            <file leaf-file-name="should-be-visible.html" pinned="false" current-in-tab="false">
+              <entry file="file://$PROJECT_DIR$/src/client/src/js/api/webcomponents/should-be-visible/should-be-visible.html">
+                <provider selected="true" editor-type-id="text-editor">
+                  <state vertical-scroll-proportion="-22.5">
+                    <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
                     <folding />
                   </state>
                 </provider>
@@ -128,16 +142,6 @@
                 <provider selected="true" editor-type-id="text-editor">
                   <state vertical-scroll-proportion="0.0">
                     <caret line="42" column="35" selection-start-line="42" selection-start-column="35" selection-end-line="42" selection-end-column="35" />
-                    <folding />
-                  </state>
-                </provider>
-              </entry>
-            </file>
-            <file leaf-file-name="routes.js" pinned="false" current-in-tab="false">
-              <entry file="file://$PROJECT_DIR$/src/server/src/config/routes.js">
-                <provider selected="true" editor-type-id="text-editor">
-                  <state vertical-scroll-proportion="0.0">
-                    <caret line="1" column="17" selection-start-line="1" selection-start-column="17" selection-end-line="1" selection-end-column="17" />
                     <folding />
                   </state>
                 </provider>
@@ -181,7 +185,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/server/tasks/config/babel.js" />
         <option value="$PROJECT_DIR$/src/server/tasks/config/cucumber.js" />
         <option value="$PROJECT_DIR$/tasks/config/copy.js" />
         <option value="$PROJECT_DIR$/src/server/tasks/register/default.js" />
@@ -219,7 +222,6 @@
         <option value="$PROJECT_DIR$/src/client/src/js/api/views/UploadView.js" />
         <option value="$PROJECT_DIR$/src/client/src/js/lib/entities/View.js" />
         <option value="$PROJECT_DIR$/src/client/src/js/lib/entities/Application.js" />
-        <option value="$PROJECT_DIR$/src/client/src/index.html" />
         <option value="$PROJECT_DIR$/src/client/src/js/lib/main.js" />
         <option value="$PROJECT_DIR$/src/client/tasks/register/default.js" />
         <option value="$PROJECT_DIR$/src/client/tests/testrunner.html" />
@@ -231,6 +233,8 @@
         <option value="$PROJECT_DIR$/src/server/src/api/controllers/FileController.js" />
         <option value="$PROJECT_DIR$/src/client/src/js/api/views/HomeView.js" />
         <option value="$PROJECT_DIR$/src/client/src/js/api/webcomponents/propeller-uploader-dropzone/propeller-uploader-dropzone.html" />
+        <option value="$PROJECT_DIR$/src/client/src/index.html" />
+        <option value="$PROJECT_DIR$/src/client/src/js/api/webcomponents/should-be-visible/should-be-visible.html" />
         <option value="$PROJECT_DIR$/src/client/src/js/api/webcomponents/view-home/view-home.html" />
       </list>
     </option>
@@ -534,7 +538,7 @@
     <property name="HbShouldOpenHtmlAsHb" value="" />
     <property name="editor.config.accepted" value="true" />
     <property name="JavaScriptLanguageLevel" value="ES6" />
-    <property name="SearchEverywhereHistoryKey" value="prope&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/webcomponents/propeller-uploader-dropzone/propeller-uploader-dropzone.html&#10;vie-h&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/webcomponents/view-home/view-home.html&#10;uploaders&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/uploaders.js&#10;filcontr&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/controllers/FileController.js&#10;Homevi&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/HomeView.js&#10;packa&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/package.json&#10;packag&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/node_modules/sails-couchdb-orm/package.json&#10;routes&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/routes.js&#10;Homv&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/HomeView.js&#10;Upload&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/webcomponents/propeller-uploader-dropzone/propeller-uploader-dropzone.html&#10;upload&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/uploaders.js&#10;FileCon&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/controllers/FileController.js&#10;Applica&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Application.js&#10;main&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/main.js&#10;app&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Application.js&#10;view-h&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/webcomponents/view-home/view-home.html&#10;index&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/index.html&#10;Home&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/HomeView.js&#10;View&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/View.js&#10;Uploadvi&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/UploadView.js&#10;Vie&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/View.js&#10;view-&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/webcomponents/view-home/view-home.html&#10;homevi&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/HomeView.js&#10;bootstrap&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/bootstrap.js&#10;bootst&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/bootstrap.js&#10;UploadCon&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/controllers/UploadController.js&#10;uplc&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/controllers/UploadController.js&#10;http&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/http.js&#10;boots&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/bootstrap.js&#10;Up&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/uploaders.js&#10;Reque&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Request.js&#10;UploadCOn&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/controllers/UploadController.js&#10;boot&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/bootstrap.js&#10;home&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/HomeView.js&#10;HomeV&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/HomeView.js&#10;brow&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/tasks/config/browserify.js&#10;alwaysde&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/policies/alwaysDeny.js&#10;UserCont&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/controllers/UserController.js&#10;sailsio&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/adapters/SAILS_IO.js&#10;mode&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/models.js&#10;model&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Model.js&#10;reque&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Request.js&#10;connect&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/connections.js&#10;connec&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Connection.js&#10;UserCOn&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/controllers/UserController.js&#10;HomeView&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/HomeView.js&#10;UserCo&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/controllers/UserController.js&#10;Appli&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Application.js&#10;bootstr&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/bootstrap.js&#10;connectio&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/connections.js" />
+    <property name="SearchEverywhereHistoryKey" value="should-&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/webcomponents/should-be-visible/should-be-visible.html&#10;prope&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/webcomponents/propeller-uploader-dropzone/propeller-uploader-dropzone.html&#10;vie-h&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/webcomponents/view-home/view-home.html&#10;uploaders&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/uploaders.js&#10;filcontr&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/controllers/FileController.js&#10;Homevi&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/HomeView.js&#10;packa&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/package.json&#10;packag&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/node_modules/sails-couchdb-orm/package.json&#10;routes&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/routes.js&#10;Homv&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/HomeView.js&#10;Upload&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/webcomponents/propeller-uploader-dropzone/propeller-uploader-dropzone.html&#10;upload&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/uploaders.js&#10;FileCon&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/controllers/FileController.js&#10;Applica&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Application.js&#10;main&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/main.js&#10;app&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Application.js&#10;view-h&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/webcomponents/view-home/view-home.html&#10;index&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/index.html&#10;Home&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/HomeView.js&#10;View&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/View.js&#10;Uploadvi&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/UploadView.js&#10;Vie&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/View.js&#10;view-&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/webcomponents/view-home/view-home.html&#10;homevi&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/HomeView.js&#10;bootstrap&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/bootstrap.js&#10;bootst&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/bootstrap.js&#10;UploadCon&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/controllers/UploadController.js&#10;uplc&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/controllers/UploadController.js&#10;http&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/http.js&#10;boots&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/bootstrap.js&#10;Up&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/uploaders.js&#10;Reque&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Request.js&#10;UploadCOn&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/controllers/UploadController.js&#10;boot&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/bootstrap.js&#10;home&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/HomeView.js&#10;HomeV&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/HomeView.js&#10;brow&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/tasks/config/browserify.js&#10;alwaysde&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/api/policies/alwaysDeny.js&#10;UserCont&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/controllers/UserController.js&#10;sailsio&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/adapters/SAILS_IO.js&#10;mode&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/models.js&#10;model&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Model.js&#10;reque&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Request.js&#10;connect&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/connections.js&#10;connec&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Connection.js&#10;UserCOn&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/controllers/UserController.js&#10;HomeView&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/views/HomeView.js&#10;UserCo&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/api/controllers/UserController.js&#10;Appli&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/client/src/js/lib/entities/Application.js&#10;bootstr&#9;FILE&#9;file:///Users/RikHoffbauer/Develop/repositories/boilerplate_v2/src/server/src/config/bootstrap.js" />
     <property name="last.edited.regexp" value="" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Font" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
@@ -1008,26 +1012,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/src/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.32142857">
-          <caret line="26" column="0" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/tasks/register/default.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/client/tests/testrunner.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-13.75">
-          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
           <folding />
         </state>
       </provider>
@@ -1052,22 +1040,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.17519467">
           <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/src/api/services/UploadService.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/server/src/api/controllers/FileController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="83" column="55" selection-start-line="83" selection-start-column="55" selection-end-line="83" selection-end-column="55" />
           <folding />
         </state>
       </provider>
@@ -1114,10 +1086,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/src/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.125">
+          <caret line="13" column="75" selection-start-line="13" selection-start-column="75" selection-end-line="13" selection-end-column="75" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/tests/testrunner.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-13.75">
+          <caret line="22" column="11" selection-start-line="22" selection-start-column="11" selection-end-line="22" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/src/api/controllers/FileController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="83" column="55" selection-start-line="83" selection-start-column="55" selection-end-line="83" selection-end-column="55" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/server/src/api/services/UploadService.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="38" column="0" selection-start-line="38" selection-start-column="0" selection-end-line="38" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/client/src/js/api/webcomponents/should-be-visible/should-be-visible.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-22.5">
+          <caret line="36" column="44" selection-start-line="36" selection-start-column="44" selection-end-line="36" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/client/src/js/api/webcomponents/view-home/view-home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3889515">
-          <caret line="46" column="29" selection-start-line="46" selection-start-column="29" selection-end-line="46" selection-end-column="33" />
+        <state vertical-scroll-proportion="0.03382187">
+          <caret line="4" column="37" selection-start-line="4" selection-start-column="37" selection-end-line="4" selection-end-column="37" />
           <folding />
         </state>
       </provider>
