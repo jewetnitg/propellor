@@ -8,6 +8,7 @@ module.exports.uploaders = {
 
   "file": {
     "dir": "files",
+    "policies": ["alwaysAllow"],
     "type": "binary",
     "max_size": 4096 // 4mb
   },

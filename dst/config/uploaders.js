@@ -10,6 +10,7 @@ module.exports.uploaders = {
 
   "file": {
     "dir": "files",
+    "policies": ["alwaysDeny"],
     "type": "binary",
     "max_size": 4096 // 4mb
   },

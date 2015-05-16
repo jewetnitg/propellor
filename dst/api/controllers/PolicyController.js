@@ -1,23 +1,32 @@
+'use strict';
+
+Object.defineProperty(exports, '__esModule', {
+  value: true
+});
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { 'default': obj }; }
+
+var _lodash = require('lodash');
+
+var _lodash2 = _interopRequireDefault(_lodash);
+
 /**
  * PolicyController
  *
- * @description :: Server-side logic for managing Policies
+ * @description :: Server-side logic for executing Policies
  * @help        :: See http://links.sailsjs.org/docs/controllers
  */
 'use strict';
 
-var _ = require('lodash');
+exports['default'] = {
 
-module.exports = {
   execute: function execute(req, res) {
-    var name;
-    var module;
+    var name = req.param('name');
 
-    name = req.param('name');
-    module = require('../policies/' + name);
+    _lodash2['default'].bindAll(res, 'send');
 
-    _.bindAll(res, 'send');
-
-    module(req, res, res.send);
+    PolicyService.executePolicy(name, req, res, res.send);
   }
+
 };
+module.exports = exports['default'];

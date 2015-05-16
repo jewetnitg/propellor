@@ -30,46 +30,63 @@ function __makeFileNameArray(files, configKey) {
   }).compact().value();
 }
 
+function uploadUsingSkipper(req, res, config, configKey) {
+  var file = req.file && req.file('file');
+  var uploadConfig = {};
+
+  if (config.dir) {
+    uploadConfig.dirname = config.dir;
+  }
+
+  if (config.max_size) {
+    uploadConfig.maxBytes = config.max_size * 1024;
+  }
+
+  file.upload(uploadConfig, function (err, uploadedFiles) {
+    if (err) return res.send(500, err);
+    var fileNameArray = __makeFileNameArray(uploadedFiles, configKey);
+
+    return res.json(fileNameArray);
+  });
+}
+
+function uploadManually(req, res, config, configKey) {
+  var data = req.param('data');
+  var filename = req.param('filename');
+
+  UploadService.upload(config, filename, data, function (err, data) {
+    if (err) return res.send(500, 'Something went wrong while uploading the file');
+
+    var fileNameArray = __makeFileNameArray([{ fd: data }], configKey);
+    return res.json(fileNameArray);
+  });
+}
+
 exports['default'] = {
 
   upload: function upload(req, res) {
     var uploaders = sails.config.uploaders;
     var configKey = req.param('config') || uploaders['default'] || 'file';
     var config = configKey && uploaders[configKey];
-    var uploadConfig = {};
 
     if (config) {
-      if (config.dir) {
-        uploadConfig.dirname = config.dir;
-      }
-
-      if (config.max_size) {
-        uploadConfig.maxBytes = config.max_size * 1024;
-      }
-
-      if (req.isAjax) {
-        var _file = req.file && req.file('file');
-
-        _file.upload(uploadConfig, function (err, uploadedFiles) {
-          if (err) return res.send(500, err);
-          var fileNameArray = __makeFileNameArray(uploadedFiles, configKey);
-
-          return res.json(fileNameArray);
-        });
-      } else if (req.isSocket) {
-        // handle socket uploads manually, skipper doesn't support file uploads through sockets
-        var data = req.param('data');
-        var filename = req.param('filename');
-
-        UploadService.upload(config, filename, data, function (err, data) {
-          if (err) return res.send(500, 'Something went wrong while uploading the file');
-
-          var fileNameArray = __makeFileNameArray([{ fd: data }], configKey);
-          return res.json(fileNameArray);
+      if (config.policies instanceof Array && config.policies.length) {
+        PolicyService.executePolicyArray(config.policies, req, res, function (data) {
+          // policies passed, upload is allowed
+          if (req.isAjax) {
+            // use skipper for AJAX and regular HTTP uploads
+            uploadUsingSkipper(req, res, config, configKey);
+          } else if (req.isSocket) {
+            // handle socket uploads manually, skipper doesn't support file uploads through sockets
+            uploadManually(req, res, config, configKey);
+          }
+        }, function (data) {
+          // policies didn't pass, upload is not allowed
+          res.forbidden(data);
         });
       }
     } else if (file) {
-      return res.send(503, 'Config not found, no default specified');
+      return res.send(503, 'Config not found, no default specified, can\'t upload.');
     }
   },
 
@@ -103,7 +120,7 @@ exports['default'] = {
   remove: function remove(req, res) {},
 
   /**
-   * replaces a files with another file
+   * replaces a file with another file
    */
   replace: function replace(req, res) {}
 

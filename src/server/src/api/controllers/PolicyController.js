@@ -1,23 +1,21 @@
 /**
  * PolicyController
  *
- * @description :: Server-side logic for managing Policies
+ * @description :: Server-side logic for executing Policies
  * @help        :: See http://links.sailsjs.org/docs/controllers
  */
 'use strict';
 
-var _ = require('lodash');
+import _ from 'lodash';
 
-module.exports = {
+export default {
+
 	execute: function (req, res) {
-    var name;
-    var module;
-
-    name = req.param('name');
-    module = require('../policies/' + name);
+    var name = req.param('name');
 
     _.bindAll(res, 'send');
 
-    module(req, res, res.send);
+    PolicyService.executePolicy(name, req, res, res.send);
   }
+
 };
