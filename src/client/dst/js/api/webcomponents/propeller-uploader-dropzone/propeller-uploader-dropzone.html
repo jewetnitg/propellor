@@ -38,16 +38,21 @@
         // actually send a file to the server
         function sendFile(file) {
 
-          if (file && file.name) {
-//            const reader = new FileReader();
+          if (file) {
+            const reader = new FileReader();
 
-//            reader.onload = function(e) {
-//              const buffer = e.target.result; // contains binary data
+            reader.onload = function(e) {
+              const buffer = e.target.result; // contains binary data
 
-              $(self).trigger('drop', file);
-//            };
-//            reader.readAsArrayBuffer(file);
-//            reader.readAsBinaryString(file);
+              if (file.name) {
+                $(self).trigger('drop', {
+                  data: buffer,
+                  filename: file.name
+                });
+              }
+            };
+
+            reader.readAsBinaryString(file);
           }
         }
 

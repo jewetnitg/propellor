@@ -12,16 +12,27 @@
 
 import fs from 'fs';
 
+function __makeFileNameArray(files, configKey) {
+  return _.chain(files)
+    .pluck('fd')
+    .map((path) => {
+      const match = path.match(/[^\/]+$/g);
+
+      return match && match[0] && ('/uploads/' + configKey + '/' + match[0]);
+    })
+    .compact()
+    .value();
+}
+
 export default {
 
   upload(req, res) {
-    const configKey = req.param('config');
     const uploaders = sails.config.uploaders;
-    const config = (configKey && uploaders[configKey]) || uploaders[uploaders.default];
-    const file = req.file('file');
+    const configKey = req.param('config') || uploaders.default || 'file';
+    const config = (configKey && uploaders[configKey]);
     const uploadConfig = {};
 
-    if (config && file) {
+    if (config) {
       if (config.dir) {
         uploadConfig.dirname = config.dir;
       }
@@ -30,24 +41,29 @@ export default {
         uploadConfig.maxBytes = config.max_size * 1024;
       }
 
-      file.upload(uploadConfig, (err, uploadedFiles) => {
-        if (err) return res.send(500, err);
-        const fileNameArray = _.chain(uploadedFiles)
-          .pluck('fd')
-          .map((path) => {
-            const match = path.match(/[^\/]+$/g);
+      if (req.isAjax) {
+        const file = req.file && req.file('file');
 
-          return match && match[0] && ('/uploads/' + configKey + '/' + match[0]);
-          })
-          .compact()
-          .value();
+        file.upload(uploadConfig, (err, uploadedFiles) => {
+          if (err) return res.send(500, err);
+          const fileNameArray = __makeFileNameArray(uploadedFiles, configKey);
 
-        return res.json(fileNameArray);
-      });
+          return res.json(fileNameArray);
+        });
+      } else if (req.isSocket) {
+        // handle socket uploads manually, skipper doesn't support file uploads through sockets
+        const data      = req.param('data');
+        const filename  = req.param('filename');
+
+        UploadService.upload(config, filename, data, (err, data) => {
+          if (err) return res.send(500, "Something went wrong while uploading the file");
+
+          const fileNameArray = __makeFileNameArray([{fd: data}], configKey);
+          return res.json(fileNameArray);
+        });
+      }
     } else if (file) {
       return res.send(503, "Config not found, no default specified");
-    } else {
-      return res.send(422, "No file specified");
     }
 
   },

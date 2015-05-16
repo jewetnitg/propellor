@@ -1,0 +1,56 @@
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Mocha Tests</title>
+  <link rel="stylesheet" href="../../../node_modules/mocha/mocha.css" />
+</head>
+<body>
+  <div id="mocha"></div>
+  <script src="../../../node_modules/mocha/mocha.js"></script>
+  <script src="../../../node_modules/chai/chai.js"></script>
+
+  <!-- Setup Mocha -->
+  <script>
+    mocha.setup('bdd');
+    mocha.reporter('html');
+  </script>
+
+  <!-- Setup Chai-->
+  <script>
+    var context = window || global || {};
+    context.assert = chai.assert;
+    context.expect = chai.expect;
+  </script>
+
+  <!-- Tests -->
+  <script src="tests.js"></script>
+  <script src="../dst/js/lib/entities/Application.js"></script>
+
+  <script>
+
+    // Sample test
+    describe('Application', function(){
+
+      describe('#initialize', function(){
+        it('should return -1 when the value is not present', function(done) {
+
+
+          done();
+        });
+      });
+
+    });
+
+  </script>
+
+  <!-- Run Mocha -->
+  <script>
+    var context = window || global || {};
+    if (context.mochaPhantomJS) {
+      mochaPhantomJS.run();
+    } else {
+      mocha.run();
+    }
+  </script>
+</body>
+</html>
