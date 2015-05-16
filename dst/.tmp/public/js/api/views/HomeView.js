@@ -39,10 +39,8 @@ class HomeView extends View {
     app.server.User.update(this.attributes.user);
   }
 
-  handleDrop(data) {
-    app.upload({
-        file: data
-      })
+  handleDrop(obj) {
+    app.upload(obj)
       .then(
         (data) => {
           console.log('Upload successful', data);

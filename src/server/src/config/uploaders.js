@@ -8,7 +8,13 @@ module.exports.uploaders = {
 
   "file": {
     "dir": "files",
+    "type": "binary",
     "max_size": 4096 // 4mb
+  },
+
+  "code": {
+    "type": "text",
+    "dir": "code"
   },
 
   "picture": {

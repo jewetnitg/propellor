@@ -5,7 +5,6 @@ module.exports = function (gulp, plugins) {
       'makeIndexFile:client',
       'browserify',
       'copy:client',
-      'cucumber:client',
 			cb
 		);
 	});
