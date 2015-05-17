@@ -11,6 +11,8 @@
 import _ from 'lodash';
 import fs from 'fs';
 import files from '../lib/files';
+import mkdirp from 'mkdirp';
+import RSVP from 'rsvp';
 
 export function bootstrap (cb) {
   // It's very important to trigger this callback method when you are finished
@@ -25,6 +27,33 @@ export function bootstrap (cb) {
   serverDefinition.requests = makeRequestArray(sails, serverDefinition.models, serverDefinition.policies);
 
   sails.serverDefinition = serverDefinition;
+  const uploadRoot = '../uploads';
+
+  function ensureUploadDirectories() {
+    const promises = _.map(sails.serverDefinition.config.uploaders, ensureUploader);
+
+    return RSVP.all(promises);
+  }
+
+  function ensureUploader(obj) {
+    if (obj.dir) {
+      return ensureUploadDirectory(obj.dir);
+    }
+  }
+
+  function ensureUploadDirectory(dir) {
+    return ensureDirectory(uploadRoot + '/' + dir);
+  }
+
+  function ensureDirectory(dir) {
+    return new RSVP.Promise((resolve, reject) => {
+      mkdirp(dir, function(err) {
+        if (err) return reject(err);
+
+        resolve();
+      });
+    });
+  }
 
   function makeConfigObject(config) {
     return {
@@ -344,5 +373,8 @@ export function bootstrap (cb) {
     return policyArray;
   }
 
-  cb();
+  ensureUploadDirectories()
+    .then(() => {
+      cb();
+    });
 }
