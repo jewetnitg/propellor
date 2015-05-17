@@ -67,6 +67,7 @@ export function bootstrap (cb) {
     return _.map(_models,  (_model) => {
       const model = {
         defaults: {},
+        properties: {},
         requests: [],
         name: _model.globalId,
         entity: _model.globalId
@@ -84,6 +85,7 @@ export function bootstrap (cb) {
       };
 
       _.each(_model.attributes,  (_attribute, key) =>  {
+        model.properties[key] = _attribute;
         const value = _attribute.defaultsTo;
 
         if (typeof value !== 'undefined') {
