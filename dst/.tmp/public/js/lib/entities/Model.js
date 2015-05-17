@@ -46,6 +46,10 @@ class Model {
     return app.connection.unsubscribe(this.entity);
   }
 
+  typeCastModels() {
+
+  }
+
   /**
    * gets a model from the array of models on the client,
    * accepts one argument that can be a string or number if it should get a model by id,

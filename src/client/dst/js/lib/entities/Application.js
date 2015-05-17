@@ -12,6 +12,7 @@ import Route      from './Route';
 import Controller from './Controller';
 import Router     from './Router';
 import Connection from './Connection';
+import Subset     from './Subset';
 
 import setDottedKeyOnObject from '../helpers/setDottedKeyOnObject';
 
@@ -43,6 +44,7 @@ class Application {
         routes: {}
       },
       adapters: {},
+      subsets: {},
       router: null,
       data: {},
       session: {},
@@ -70,6 +72,7 @@ class Application {
       'instantiateController',
       'instantiateRouter',
       'instantiateAdapter',
+      'instantiateSubsets',
       'subscribeToServerModelChanges',
       'connectToServer'
     );
@@ -82,6 +85,7 @@ class Application {
       .then(this.interpretServerDefinition)
       .then(this.connectToServer)
       .then(this.subscribeToServerModelChanges)
+      .then(this.instantiateSubsets)
       .then(this.executeBootstrap)
       .then(this.instantiateRouter);
   }
@@ -251,6 +255,24 @@ class Application {
     } else {
       this.__setRouterOption(obj, key);
     }
+  }
+
+  instantiateSubsets() {
+    this.files.config.subsets = this.files.config.subsets || {};
+    _.each(this.files.config.subsets, (obj, key) => {
+      this.initializeEntitySubsets(obj, key);
+    });
+  }
+
+  initializeEntitySubsets(_obj, _key) {
+    _.each(_obj, (obj, key) => {
+      this.instantiateSubset(obj, _key, key)
+    });
+  }
+
+  instantiateSubset(obj, entity, name) {
+    this.subsets[entity] = this.subsets[entity] || {};
+    this.subsets[entity][name] = new Subset(obj, entity, name);
   }
 
   /**
