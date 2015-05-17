@@ -11,6 +11,17 @@
  */
 
 import fs from 'fs';
+import child_process from 'child_process';
+
+const exec = child_process.exec;
+
+function copyToActualUploadDirectory(path, callback) {
+  exec('cp ./.tmp/uploads/' + path + ' ../uploads/' + path, (error, stdout, stderr) => {
+    if (error) throw error;
+
+    callback();
+  });
+}
 
 function __makeFileNameArray(files, configKey) {
   return _.chain(files)
@@ -26,11 +37,9 @@ function __makeFileNameArray(files, configKey) {
 
 function uploadUsingSkipper(req, res, config, configKey) {
   const file = req.file && req.file('file');
-  const uploadConfig = {};
-
-  if (config.dir) {
-    uploadConfig.dirname = config.dir;
-  }
+  const uploadConfig = {
+    dirname: config.dir ? config.dir : ''
+  };
 
   if (config.max_size) {
     uploadConfig.maxBytes = config.max_size * 1024;
@@ -38,9 +47,12 @@ function uploadUsingSkipper(req, res, config, configKey) {
 
   file.upload(uploadConfig, (err, uploadedFiles) => {
     if (err) return res.send(500, err);
+
     const fileNameArray = __makeFileNameArray(uploadedFiles, configKey);
 
-    return res.json(fileNameArray);
+    copyToActualUploadDirectory(config.dir + '/' + fileNameArray[0].match(/[^\/]+$/g)[0], () => {
+      return res.json(fileNameArray);
+    });
   });
 }
 
@@ -50,7 +62,6 @@ function uploadManually(req, res, config, configKey) {
 
   UploadService.upload(config, filename, data, (err, data) => {
     if (err) return res.send(500, "Something went wrong while uploading the file");
-
     const fileNameArray = __makeFileNameArray([{fd: data}], configKey);
     return res.json(fileNameArray);
   });
@@ -97,7 +108,7 @@ export default {
     const config = (configKey && uploaders[configKey]) || uploaders[uploaders.default];
 
     const configDir = config.dir.replace(/^\//, '').replace(/\/$/, '');
-    const path = './.tmp/uploads/' + configDir + '/' + req.param('file');
+    const path = '../uploads/' + configDir + '/' + req.param('file');
 
     fs.createReadStream(path)
       .on('error', function (err) {

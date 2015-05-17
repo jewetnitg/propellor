@@ -22,6 +22,20 @@ var _fs = require('fs');
 
 var _fs2 = _interopRequireDefault(_fs);
 
+var _child_process = require('child_process');
+
+var _child_process2 = _interopRequireDefault(_child_process);
+
+var exec = _child_process2['default'].exec;
+
+function copyToActualUploadDirectory(path, callback) {
+  exec('cp ./.tmp/uploads/' + path + ' ../uploads/' + path, function (error, stdout, stderr) {
+    if (error) throw error;
+
+    callback();
+  });
+}
+
 function __makeFileNameArray(files, configKey) {
   return _.chain(files).pluck('fd').map(function (path) {
     var match = path.match(/[^\/]+$/g);
@@ -32,11 +46,9 @@ function __makeFileNameArray(files, configKey) {
 
 function uploadUsingSkipper(req, res, config, configKey) {
   var file = req.file && req.file('file');
-  var uploadConfig = {};
-
-  if (config.dir) {
-    uploadConfig.dirname = config.dir;
-  }
+  var uploadConfig = {
+    dirname: config.dir ? config.dir : ''
+  };
 
   if (config.max_size) {
     uploadConfig.maxBytes = config.max_size * 1024;
@@ -44,9 +56,12 @@ function uploadUsingSkipper(req, res, config, configKey) {
 
   file.upload(uploadConfig, function (err, uploadedFiles) {
     if (err) return res.send(500, err);
+
     var fileNameArray = __makeFileNameArray(uploadedFiles, configKey);
 
-    return res.json(fileNameArray);
+    copyToActualUploadDirectory(config.dir + '/' + fileNameArray[0].match(/[^\/]+$/g)[0], function () {
+      return res.json(fileNameArray);
+    });
   });
 }
 
@@ -56,7 +71,6 @@ function uploadManually(req, res, config, configKey) {
 
   UploadService.upload(config, filename, data, function (err, data) {
     if (err) return res.send(500, 'Something went wrong while uploading the file');
-
     var fileNameArray = __makeFileNameArray([{ fd: data }], configKey);
     return res.json(fileNameArray);
   });
@@ -103,7 +117,7 @@ exports['default'] = {
     var config = configKey && uploaders[configKey] || uploaders[uploaders['default']];
 
     var configDir = config.dir.replace(/^\//, '').replace(/\/$/, '');
-    var path = './.tmp/uploads/' + configDir + '/' + req.param('file');
+    var path = '../uploads/' + configDir + '/' + req.param('file');
 
     _fs2['default'].createReadStream(path).on('error', function (err) {
       if (err.errno == 34) {

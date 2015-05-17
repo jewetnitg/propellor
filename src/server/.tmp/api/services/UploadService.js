@@ -38,7 +38,7 @@ exports['default'] = {
   },
 
   __writeToTmp: function __writeToTmp(dir, filename, data, type, callback) {
-    var path = './.tmp/uploads/' + dir + '/' + filename;
+    var path = '../uploads/' + dir + '/' + filename;
 
     return this.writeToFolder(path, data, type, callback);
   },

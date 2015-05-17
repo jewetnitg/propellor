@@ -28,7 +28,7 @@ export default {
   },
 
   __writeToTmp(dir, filename, data, type, callback) {
-    const path = "./.tmp/uploads/" +  dir + '/' + filename;
+    const path = "../uploads/" +  dir + '/' + filename;
 
     return this.writeToFolder(path, data, type, callback);
   },
@@ -36,7 +36,6 @@ export default {
   writeToFolder(path, data, type, callback) {
     fs.writeFile(path, data, (type || 'binary'), (err) => {
       callback(err, path);
-
     });
   }
 
