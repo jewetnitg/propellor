@@ -64,6 +64,7 @@ class Model {
       'getIndex',
       'subscribe',
       'unsubscribe',
+      '__onDataChange',
       'isNew'
     );
     _.extend(this, options);
@@ -74,6 +75,7 @@ class Model {
     // expose the model's data on app.data so it's easily accessible
     app.data[this.name] = this.data;
     this.__bindListeners();
+    this.__typeCastInitialData();
   }
 
   __bindListeners() {
@@ -81,6 +83,10 @@ class Model {
       this.__bindArrayListener();
       this.__bindObjectListeners();
     }
+  }
+
+  __typeCastInitialData() {
+    _.each(this.data, this.__onDataChange)
   }
 
   __bindArrayListener() {
@@ -106,7 +112,7 @@ class Model {
     });
   }
 
-  __onDataChange() {
+  __onDataChange(model) {
     this.typeCastAttributes(model);
   }
 
@@ -236,9 +242,12 @@ class Model {
     } else if (typeof arg === 'object') {
       const model = this.get(arg.id);
       if(model && arg.id) {
-        return _.extend(model, arg);
+        _.extend(model, arg);
+        this.__onDataChange(model);
+        return model;
       } else {
         this.data.push(arg);
+        this.__onDataChange(arg);
         return arg;
       }
     }
