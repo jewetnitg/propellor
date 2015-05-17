@@ -73,6 +73,7 @@ class Application {
       'instantiateRouter',
       'instantiateAdapter',
       'instantiateSubsets',
+      'instantiateService',
       'subscribeToServerModelChanges',
       'connectToServer'
     );
@@ -159,6 +160,7 @@ class Application {
     this.views = files.views;
 
     _.each(files.controllers, this.instantiateController);
+    _.each(files.services, this.instantiateService);
     _.each(files.adapters, this.instantiateAdapter);
     _.each(files.config.routes, this.instantiateRoute);
 
@@ -176,16 +178,30 @@ class Application {
   /**
    * instantiates a {Controller} singleton,
    * stores it on app.controllers[key] so app.controllers.UserController for example
-   * @param controller
+   * @param Controller
    * @param key
    */
-  instantiateController(controller, key) {
-    controller.prototype.entity = key.replace(/controller$/ig, '');
+  instantiateController(Controller, key) {
+    Controller.prototype.entity = key.replace(/controller$/ig, '');
 
-    this.controllers[key] = new controller({
-      entity: controller.prototype.entity
+    this.controllers[key] = new Controller({
+      entity: Controller.prototype.entity
     });
 
+  }
+
+  /**
+   * instantiates a {Service} singleton,
+   * stores it on app.services[key], so app.services.UserService for example
+   * @param Service
+   * @param key
+   */
+  instantiateService(Service, key) {
+    Service.prototype.entity = key.replace(/service/ig, '');
+
+    this.services[key] = new Service({
+      entity: Service.prototype.entity
+    });
   }
 
   /**
