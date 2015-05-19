@@ -6,7 +6,7 @@
 import _            from 'lodash';
 import $            from 'jquery';
 
-import files        from '../../dst/js/lib/files';
+import files        from './files';
 
 import Application  from '../../dst/js/lib/entities/Application';
 import Model        from '../../dst/js/lib/entities/Model';

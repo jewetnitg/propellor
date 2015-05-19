@@ -11,15 +11,16 @@
 var fs   = require('fs'),
      _   = require('lodash');
 
-function makeHashMapEntry (key, path, addComma) {
-  return "  '" + key + "': require('../" + path + "')" + (addComma ? ',' : '') + '\n';
+function makeHashMapEntry (key, path, addComma, forTest) {
+  var pathPrefix = forTest ? '../../src/js/' : '../';
+  return "  '" + key + "': require('" + pathPrefix + path + "')" + (addComma ? ',' : '') + '\n';
 }
 
 function getFilesInDirectory (dir, prefix) {
   return fs.readdirSync(prefix + dir);
 }
 
-function makeIndexesForDirectory (key, dir, addComma, prefix) {
+function makeIndexesForDirectory (key, dir, addComma, prefix, forTest) {
   var files = getFilesInDirectory(dir, prefix),
       str   = '';
 
@@ -31,7 +32,7 @@ function makeIndexesForDirectory (key, dir, addComma, prefix) {
         fullKey         = key + '.' + simpleFilename;
 
     if (filename.match(/\.js$/gi)) {
-      str += makeHashMapEntry(fullKey, dir + '/' + simpleFilename, (addComma && i < files.length));
+      str += makeHashMapEntry(fullKey, dir + '/' + simpleFilename, (addComma && i < files.length), forTest);
     }
   }
 
@@ -58,7 +59,7 @@ module.exports = function(gulp, plugins, growl) {
 
     for (var i = 0; i < len; i++) {
       var key = pairs[i][0],
-          dir = pairs[i][1];
+        dir = pairs[i][1];
 
       fileStr += makeIndexesForDirectory(key, dir, i !== len - 1, root);
     }
@@ -66,5 +67,24 @@ module.exports = function(gulp, plugins, growl) {
     fileStr += '};';
 
     return fs.writeFile('./src/client/src/js/lib/files.js', fileStr, cb);
+  });
+
+  gulp.task('makeIndexFile:test:client', function(cb) {
+    var fileStr = '',
+        pairs   = _.pairs(paths),
+        len     = pairs.length;
+
+    fileStr += 'module.exports = {\n';
+
+    for (var i = 0; i < len; i++) {
+      var key = pairs[i][0],
+        dir = pairs[i][1];
+
+      fileStr += makeIndexesForDirectory(key, dir, i !== len - 1, root, true);
+    }
+
+    fileStr += '};';
+
+    return fs.writeFile('./src/client/test/lib/files.js', fileStr, cb);
   });
 };

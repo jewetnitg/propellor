@@ -3,6 +3,7 @@ module.exports = function (gulp, plugins) {
 		plugins.sequence(
 			'clean:client',
       'makeIndexFile:client',
+      'makeIndexFile:test:client',
       'babel:client',
       'browserify',
       'copy:client',
