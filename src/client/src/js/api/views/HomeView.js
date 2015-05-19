@@ -10,7 +10,7 @@ class HomeView extends View {
     return {
 
       name: 'view-home', /* reference to a webcomponent */
-      holder: 'body', /* DOM selector or element in which the webcomponent will be placed  */
+      holder: '.view-container', /* DOM selector or element in which the webcomponent will be placed  */
 
       /* default attributes */
       defaults: {

@@ -5,7 +5,6 @@
 
 import _          from 'lodash';
 import files      from '../files';
-import $          from 'jquery';
 import Model      from './Model';
 import Request    from './Request';
 import Route      from './Route';

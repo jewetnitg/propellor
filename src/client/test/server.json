@@ -1,0 +1,420 @@
+{
+  "get /User": [{
+    "firstName": "Rik",
+    "lastName": "Hoffbauer",
+    "age": 22
+  }],
+
+  "get /describe": {
+    "config": {
+      "adapter": "SAILS_IO",
+      "uploaders": {
+        "default": "file",
+        "file": {
+          "dir": "files",
+          "policies": [
+            "alwaysAllow"
+          ],
+          "type": "binary",
+          "max_size": 4096
+        },
+        "code": {
+          "type": "text",
+          "dir": "code"
+        },
+        "picture": {
+          "dir": "pictures",
+          "policies": [
+            "fileUploadIsPicture"
+          ],
+          "max_size": 4096
+        },
+        "video": {
+          "dir": "videos",
+          "policies": [
+            "fileUploadIsVideo"
+          ],
+          "min_size": 1024,
+          "max_size": 204800
+        }
+      },
+      "baseUrl": "http://localhost:1337"
+    },
+    "models": [
+      {
+        "defaults": {
+          "firstName": "John",
+          "lastName": "",
+          "age": null,
+          "id": ""
+        },
+        "properties": {
+          "firstName": {
+            "defaultsTo": "John"
+          },
+          "lastName": {
+            "type": "string"
+          },
+          "age": {
+            "type": "number",
+            "required": true
+          },
+          "id": {
+            "type": "string",
+            "autoIncrement": true,
+            "primaryKey": true,
+            "unique": true
+          },
+          "createdAt": {
+            "type": "datetime",
+            "default": "NOW"
+          },
+          "updatedAt": {
+            "type": "datetime",
+            "default": "NOW"
+          }
+        },
+        "requests": [
+          {
+            "entity": "User",
+            "method": "GET",
+            "name": "findAll",
+            "restful": true,
+            "route": "/User",
+            "pathVariables": []
+          },
+          {
+            "entity": "User",
+            "method": "GET",
+            "name": "findOne",
+            "restful": true,
+            "single": true,
+            "route": "/User",
+            "pathVariables": []
+          },
+          {
+            "entity": "User",
+            "method": "GET",
+            "name": "findById",
+            "restful": true,
+            "route": "/User/:id",
+            "pathVariables": [
+              "id"
+            ]
+          },
+          {
+            "entity": "User",
+            "method": "DELETE",
+            "name": "destroy",
+            "restful": true,
+            "destroy": true,
+            "route": "/User/:id",
+            "pathVariables": [
+              "id"
+            ]
+          },
+          {
+            "entity": "User",
+            "method": "POST",
+            "name": "create",
+            "restful": true,
+            "route": "/User",
+            "pathVariables": []
+          },
+          {
+            "entity": "User",
+            "method": "PUT",
+            "name": "update",
+            "restful": true,
+            "route": "/User/:id",
+            "pathVariables": [
+              "id"
+            ]
+          },
+          {
+            "entity": "User",
+            "method": "GET",
+            "name": "READ",
+            "restful": true,
+            "route": "/User/find/:id",
+            "pathVariables": [
+              "id"
+            ]
+          },
+          {
+            "entity": "User",
+            "method": "POST",
+            "name": "CREATE",
+            "restful": true,
+            "route": "/User/create",
+            "pathVariables": []
+          },
+          {
+            "entity": "User",
+            "method": "DELETE",
+            "name": "DELETE",
+            "restful": true,
+            "destroy": true,
+            "route": "/User/destroy/:id",
+            "pathVariables": [
+              "id"
+            ]
+          },
+          {
+            "entity": "User",
+            "method": "PUT",
+            "name": "UPDATE",
+            "restful": true,
+            "route": "/User/update/:id",
+            "pathVariables": [
+              "id"
+            ]
+          },
+          {
+            "entity": "User",
+            "route": "/validate/User",
+            "method": "POST",
+            "pathVariables": [],
+            "name": "validate"
+          },
+          {
+            "name": "login",
+            "entity": "User",
+            "route": "/User/login/:id",
+            "pathVariables": [
+              "id"
+            ]
+          }
+        ],
+        "name": "User",
+        "entity": "User"
+      }
+    ],
+    "policies": [
+      "alwaysAllow",
+      "alwaysDeny",
+      "sessionAuth"
+    ],
+    "requests": [
+      {
+        "method": "GET",
+        "entity": "Policy",
+        "name": "execute",
+        "pathVariables": [
+          "name"
+        ],
+        "route": "/policy/:name"
+      },
+      {
+        "method": "POST",
+        "entity": "File",
+        "name": "upload",
+        "pathVariables": [],
+        "route": "/uploads"
+      },
+      {
+        "method": "POST",
+        "entity": "File",
+        "name": "upload",
+        "pathVariables": [
+          "config"
+        ],
+        "route": "/uploads/:config"
+      },
+      {
+        "method": "GET",
+        "entity": "File",
+        "name": "download",
+        "pathVariables": [
+          "config",
+          "file"
+        ],
+        "route": "/uploads/:config/:file"
+      },
+      {
+        "method": "DELETE",
+        "entity": "File",
+        "name": "remove",
+        "pathVariables": [
+          "config",
+          "file"
+        ],
+        "route": "/uploads/:config/:file"
+      },
+      {
+        "method": "PUT",
+        "entity": "File",
+        "name": "replace",
+        "pathVariables": [
+          "config",
+          "file"
+        ],
+        "route": "/uploads/:config/:file"
+      },
+      {
+        "method": "POST",
+        "entity": "Validate",
+        "name": "execute",
+        "pathVariables": [
+          "name"
+        ],
+        "route": "/validate/:name"
+      },
+      {
+        "method": null,
+        "entity": "",
+        "name": "csrfToken",
+        "pathVariables": [],
+        "route": "/csrfToken"
+      },
+      {
+        "name": "index",
+        "entity": "Describe",
+        "route": "/Describe//:id",
+        "pathVariables": [
+          "id"
+        ]
+      },
+      {
+        "entity": "User",
+        "method": "GET",
+        "name": "findAll",
+        "restful": true,
+        "route": "/User",
+        "pathVariables": []
+      },
+      {
+        "entity": "User",
+        "method": "GET",
+        "name": "findOne",
+        "restful": true,
+        "single": true,
+        "route": "/User",
+        "pathVariables": []
+      },
+      {
+        "entity": "User",
+        "method": "GET",
+        "name": "findById",
+        "restful": true,
+        "route": "/User/:id",
+        "pathVariables": [
+          "id"
+        ]
+      },
+      {
+        "entity": "User",
+        "method": "DELETE",
+        "name": "destroy",
+        "restful": true,
+        "destroy": true,
+        "route": "/User/:id",
+        "pathVariables": [
+          "id"
+        ]
+      },
+      {
+        "entity": "User",
+        "method": "POST",
+        "name": "create",
+        "restful": true,
+        "route": "/User",
+        "pathVariables": []
+      },
+      {
+        "entity": "User",
+        "method": "PUT",
+        "name": "update",
+        "restful": true,
+        "route": "/User/:id",
+        "pathVariables": [
+          "id"
+        ]
+      },
+      {
+        "entity": "User",
+        "method": "GET",
+        "name": "READ",
+        "restful": true,
+        "route": "/User/find/:id",
+        "pathVariables": [
+          "id"
+        ]
+      },
+      {
+        "entity": "User",
+        "method": "POST",
+        "name": "CREATE",
+        "restful": true,
+        "route": "/User/create",
+        "pathVariables": []
+      },
+      {
+        "entity": "User",
+        "method": "DELETE",
+        "name": "DELETE",
+        "restful": true,
+        "destroy": true,
+        "route": "/User/destroy/:id",
+        "pathVariables": [
+          "id"
+        ]
+      },
+      {
+        "entity": "User",
+        "method": "PUT",
+        "name": "UPDATE",
+        "restful": true,
+        "route": "/User/update/:id",
+        "pathVariables": [
+          "id"
+        ]
+      },
+      {
+        "entity": "User",
+        "route": "/validate/User",
+        "method": "POST",
+        "pathVariables": [],
+        "name": "validate"
+      },
+      {
+        "name": "login",
+        "entity": "User",
+        "route": "/User/login/:id",
+        "pathVariables": [
+          "id"
+        ]
+      },
+      {
+        "entity": "Policy",
+        "method": "GET",
+        "name": "alwaysAllow",
+        "route": "/policy/alwaysAllow",
+        "pathVariables": []
+      },
+      {
+        "entity": "Policy",
+        "method": "GET",
+        "name": "alwaysDeny",
+        "route": "/policy/alwaysDeny",
+        "pathVariables": []
+      },
+      {
+        "entity": "Policy",
+        "method": "GET",
+        "name": "sessionAuth",
+        "route": "/policy/sessionAuth",
+        "pathVariables": []
+      }
+    ]
+  },
+
+  "post /upload": [
+    "someFile"
+  ],
+
+  "post /upload": [
+    "someFile"
+  ]
+
+}
