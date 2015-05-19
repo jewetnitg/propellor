@@ -3,8 +3,10 @@ module.exports = function (gulp, plugins) {
 		plugins.sequence(
 			'clean:client',
       'makeIndexFile:client',
+      'babel:client',
       'browserify',
       'copy:client',
+      'browserify:test',
 			cb
 		);
 	});

@@ -1,0 +1,21 @@
+{
+  "framework": "mocha+chai",
+
+  "launch_in_dev": [
+    "PhantomJS"
+  ],
+
+  "launch_in_ci": [
+    "PhantomJS"
+  ],
+
+  "src_files": [
+    "./tests/**/*.js"
+  ],
+
+  "serve_files": [
+    "./tests/**/*.js"
+  ],
+
+  "test_page": "./testem.mustache"
+}

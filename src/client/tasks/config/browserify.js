@@ -23,13 +23,12 @@ module.exports = function(gulp, plugins, growl) {
   gulp.task('browserify', function () {
     // set up the browserify instance on a task basis
     var b = browserify({
-      entries: './src/client/src/js/lib/main.js',
+      entries: './src/client/.tmp/js/lib/main.js',
       debug: true
     });
 
     return b
       .ignore('jade')
-      .transform(babelify)
       .bundle()
       .pipe(source('main.js'))
       .pipe(buffer())
@@ -44,4 +43,22 @@ module.exports = function(gulp, plugins, growl) {
       .pipe(sourcemaps.write('./'))
       .pipe(gulp.dest('./src/client/.tmp/'));
   });
+
+  gulp.task('browserify:test', function () {
+    // set up the browserify instance on a task basis
+    var b = browserify({
+      entries: './src/client/test/lib/main.js',
+      debug: true
+    });
+
+    return b
+      .ignore('jade')
+      .transform(babelify)
+      .bundle()
+      .pipe(source('browserified.js'))
+      .pipe(buffer())
+      .on('error', gutil.log)
+      .pipe(gulp.dest('./src/client/test/'));
+  });
+
 };

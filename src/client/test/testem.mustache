@@ -1,0 +1,27 @@
+<!doctype html>
+<html>
+<head>
+    <title>Test'em</title>
+    <link rel="stylesheet" href="mocha.css">
+
+    <script src="lib/mocha.js"></script>
+    <script src="lib/chai.js"></script>
+    <script src="lib/mocha_adapter.js"></script>
+    <script src="lib/testem_client.js"></script>
+    <script src="browserified.js"></script>
+    <script>mocha.setup('bdd')</script>
+    {{#serve_files}}
+      <script src="{{{src}}}"></script>
+    {{/serve_files}}
+
+  {{#styles}}<link rel="stylesheet" href="{{.}}">{{/styles}}
+</head>
+
+<body>
+<div id="mocha"></div>
+<script>
+    // TODO: we need to run a another makeIndexFile for tests, relative path is different
+    mocha.run();
+</script>
+</body>
+</html>
