@@ -6,6 +6,48 @@ import _ from 'lodash';
 
 const singletons = {};
 
+const dataTypeHashMap = {
+  "int": "number",
+  "integer": "number",
+  "float": "number",
+  "decimal": "number",
+
+  "text": "string",
+
+  "bool": "boolean"
+};
+
+// typeCasters[currentDataType][desiredDataType](currentVal)
+const typeCasters = {
+  "number": {
+    "string": (val) => {
+      return val + "";
+    },
+
+    "boolean": (val) => {
+      return !!val;
+    },
+  },
+
+  "string": {
+    "boolean": (val) => {
+      return !(!val || val === "0" || val === "false");
+    },
+    "number": (val) => {
+      return parseInt(val, 10);
+    }
+  },
+
+  "boolean": {
+    "string": (val) => {
+      return val.toString();
+    },
+    "number": (val) => {
+      return val - 0;
+    }
+  }
+};
+
 class Model {
 
   constructor(options) {
@@ -22,14 +64,83 @@ class Model {
       'getIndex',
       'subscribe',
       'unsubscribe',
+      '__onDataChange',
       'isNew'
     );
     _.extend(this, options);
 
+    this.__observedObjects = [];
     this.data = [];
 
     // expose the model's data on app.data so it's easily accessible
     app.data[this.name] = this.data;
+    this.__bindListeners();
+    this.__typeCastInitialData();
+  }
+
+  __bindListeners() {
+    if (this.data) {
+      this.__bindArrayListener();
+      this.__bindObjectListeners();
+    }
+  }
+
+  __typeCastInitialData() {
+    _.each(this.data, this.__onDataChange)
+  }
+
+  __bindArrayListener() {
+    Array.observe(this.data, (data) => {
+      const model = data.object && data.object[data.index];
+      if (model) {
+        this.__onDataChange(model);
+      }
+      this.__bindObjectListeners();
+    });
+  }
+
+  __bindObjectListeners() {
+    _.each(this.data, (data, key) => {
+      const model = this.data[key];
+
+      if (this.__observedObjects.indexOf(model) === -1) {
+        this.__observedObjects.push(model);
+        Object.observe(model, () => {
+          this.__onDataChange(model);
+        });
+      }
+    });
+  }
+
+  __onDataChange(model) {
+    this.typeCastAttributes(model);
+  }
+
+  typeCastAttributes(model) {
+    _.each(this.properties, (obj, key) => {
+      this.constructor.typeCastAttribute(obj, key, model);
+    });
+  }
+
+  static typeCastAttribute(obj, key, model) {
+    const currentValue = model[key];
+    const currentDataType = typeof currentValue;
+    let   desiredDataType = obj && (obj.type && obj.type.toLowerCase());
+
+    desiredDataType = dataTypeHashMap[desiredDataType] || desiredDataType;
+
+    if (desiredDataType  && desiredDataType !== currentDataType) {
+      const typeCaster = typeCasters[currentDataType] && typeCasters[currentDataType][desiredDataType];
+
+      if (typeCaster) {
+        const newValue = typeCaster(currentValue);
+
+        if (newValue !== currentValue) {
+          // typecast needed
+          model[key] = newValue;
+        }
+      }
+    }
   }
 
   /**
@@ -44,10 +155,6 @@ class Model {
    */
   unsubscribe() {
     return app.connection.unsubscribe(this.entity);
-  }
-
-  typeCastModels() {
-
   }
 
   /**
@@ -135,9 +242,12 @@ class Model {
     } else if (typeof arg === 'object') {
       const model = this.get(arg.id);
       if(model && arg.id) {
-        return _.extend(model, arg);
+        _.extend(model, arg);
+        this.__onDataChange(model);
+        return model;
       } else {
         this.data.push(arg);
+        this.__onDataChange(arg);
         return arg;
       }
     }
