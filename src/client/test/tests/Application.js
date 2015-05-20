@@ -16,9 +16,9 @@ describe('Application', function(){
   };
 
   describe('#initialize', function(){
-    window.app = new Application({
-      adapter: 'MOCK'
-    });
+    // window.app = new Application({
+    //   adapter: 'MOCK'
+    // });
     it('should get the server definition from the server', function (done){
 
       done();
