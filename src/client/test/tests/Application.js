@@ -1,24 +1,9 @@
 var expect = chai.expect;
 
 describe('Application', function(){
-  const Application = classes.Application;
-  const Connection = classes.Connection;
-  Application.prototype.connectToServer = function () {
-    const adapter = this.adapters['MOCK'];
-    const baseUrl = this.config.baseUrl;
 
-    this.connection = new Connection({
-      adapter,
-      baseUrl
-    });
-
-    return this.connection.connect()
-  };
 
   describe('#initialize', function(){
-    // window.app = new Application({
-    //   adapter: 'MOCK'
-    // });
     it('should get the server definition from the server', function (done){
 
       done();
@@ -75,4 +60,5 @@ describe('Application', function(){
     });
 
   });
+  
 });

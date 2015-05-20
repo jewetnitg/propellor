@@ -26,6 +26,9 @@ window.files = files;
 
 window.mockServer = true;
 
+window.$._get = $.get;
+window.$._post = $.post;
+
 window.doServerRequest = function (options) {
   options = options || {};
   var method = options.method && options.method.toLowerCase() || 'get';
